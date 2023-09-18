@@ -7,3 +7,13 @@ To learn more about Quarto books visit <https://quarto.org/docs/books>.
 ```{r}
 1 + 1
 ```
+
+What is metadata
+
+Why do I need it
+
+Types of metadata
+
+What is json
+
+Why is json useful
