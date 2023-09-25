@@ -1,9 +1,11 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+Parts to this documentation
 
-See @knuth84 for additional discussion of literate programming.
+Three Goals\
 
-```{r}
-1 + 1
-```
+1\) Project Management
+
+2\) Documentation
+
+3\) Transparency

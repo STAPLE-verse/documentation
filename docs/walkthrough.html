@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAPLE Documentation - 8&nbsp; References</title>
+<title>STAPLE Documentation - 5&nbsp; Example Walkthroughs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./terminology.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./staple-elements.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -91,7 +73,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">References</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./walkthrough.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Example Walkthroughs</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,7 +124,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./walkthrough.html" class="sidebar-item-text sidebar-link">
+  <a href="./walkthrough.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Example Walkthroughs</span></span></a>
   </div>
 </li>
@@ -160,7 +142,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
@@ -170,14 +152,21 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#example-1-one-pi-multiple-data-sources" id="toc-example-1-one-pi-multiple-data-sources" class="nav-link active" data-scroll-target="#example-1-one-pi-multiple-data-sources"><span class="header-section-number">5.1</span> Example 1: One PI, Multiple Data Sources</a></li>
+  <li><a href="#complex-example" id="toc-complex-example" class="nav-link" data-scroll-target="#complex-example"><span class="header-section-number">5.2</span> Complex Example</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">References</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Example Walkthroughs</span></h1>
 </div>
 
 
@@ -192,11 +181,61 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" role="list" style="display: none">
+<style>
+a.glossary {
+  color: black;
+  text-decoration: underline;
+  cursor: help;
+  position: relative;
+}
 
-</div>
+/* only needed for popup = "click" */
+/* popup-definition */
+a.glossary .def {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 6px;
+}
+/* show on click */
+a.glossary:active .def {
+  display: inline-block;
+}
+/* triangle arrow */
+a.glossary:active .def::after {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+</style>
+<p>In this section, we will examine a few examples of how a user may interact with STAPLE to document their project.</p>
+<section id="example-1-one-pi-multiple-data-sources" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="example-1-one-pi-multiple-data-sources"><span class="header-section-number">5.1</span> Example 1: One PI, Multiple Data Sources</h2>
+<p>The first example study covers a computational linguistics project in which a researcher collects <a class="glossary">primary data<span class="def">Data generated by the researcher using surveys, interviews, experiments or other sources to explore a research problem.</span></a> and uses a <a class="glossary">secondary data<span class="def">Data that previously existed to explore a research problem, generally not generated by the researcher using the data.</span></a> source. In this project, the researcher collects data on <a class="glossary">semantic priming<span class="def">Semantic priming occurs when someone processes a second word faster after seeing a related word first. For example, you will read the word DOG faster if you see CAT before it in comparison to SPOON.</span></a> to show that people read faster when the words are related to each other like <em>cat-dog</em> rather than unrelated like <em>spoon-dog</em>. Researchers can define similarity - how related words are - in multiple ways, so the researcher wishes to clearly document how they calculated similarity using an secondary data source. Further, the researcher used other psycholinguistic databases to see if they could predict the amount of semantic priming in their study based on the characteristics of the words in the study.</p>
+<p>One PI team</p>
+<ul>
+<li><p>using real data from the lab</p></li>
+<li><p>using cited data from the wild</p></li>
+</ul>
+</section>
+<section id="complex-example" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="complex-example"><span class="header-section-number">5.2</span> Complex Example</h2>
+<p>Multiple PI team doing a big team project</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -434,11 +473,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./terminology.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Terminology</span></span>
+      <a href="./staple-elements.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of the Software</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

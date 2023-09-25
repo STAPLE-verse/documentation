@@ -1,0 +1,73 @@
+# Metadata
+
+Why do I need it
+
+Types of metadata
+
+What is json
+
+Why is json useful
+
+## STAPLE Metadata
+
+### Project
+
+Required elements of project-level metadata:
+
+-   Name of the project
+-   Project description
+-   Authors
+    -   Corresponding Author
+-   Citation
+    -   Persistent identifier (DOI)
+-   Subject/keywords
+-   Funders
+-   Date
+
+https://schema.org/ResearchProject
+
+### Data
+
+Data gets a special type of schema, etc.
+
+https://schema.org/Dataset
+
+#### Primary Data
+
+#### Secondary Data
+
+### Project Outputs
+
+Note that data can be text, but this is the spot we classify other objects you may output.
+
+#### Text
+
+https://schema.org/TextObject
+
+#### Audio
+
+https://schema.org/AudioObject
+
+#### Video
+
+https://schema.org/VideoObject
+
+### Image
+
+https://schema.org/ImageObject
+
+### Author
+
+https://schema.org/Person
+
+### Organization
+
+https://schema.org/Organization https://schema.org/FundingAgency (probably don't need separate)
+
+### CRediT
+
+## Add your specific requirements
+
+json format
+
+metadata builder?

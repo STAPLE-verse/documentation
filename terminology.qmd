@@ -1,0 +1,10 @@
+# Terminology
+
+```{r echo = FALSE, results = 'asis'}
+library(glossary)
+glossary_path("glossary.yml")
+```
+
+```{r echo = FALSE, results = 'asis'}
+glossary_table()
+```

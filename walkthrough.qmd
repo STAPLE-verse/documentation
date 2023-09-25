@@ -1,0 +1,28 @@
+# Example Walkthroughs
+
+```{r echo = FALSE, results = 'asis'}
+library(glossary)
+glossary_path("glossary.yml")
+glossary_popup("click")
+
+glossary_style(color = "black", 
+               text_decoration = "underline",
+               def_bg = "#333",
+               def_color = "white")
+```
+
+In this section, we will examine a few examples of how a user may interact with STAPLE to document their project.
+
+## Example 1: One PI, Multiple Data Sources
+
+The first example study covers a computational linguistics project in which a researcher collects `r glossary("primary data")` and uses a `r glossary("secondary data")` source. In this project, the researcher collects data on `r glossary("semantic priming")` to show that people read faster when the words are related to each other like *cat-dog* rather than unrelated like *spoon-dog*. Researchers can define similarity - how related words are - in multiple ways, so the researcher wishes to clearly document how they calculated similarity using an secondary data source. Further, the researcher used other psycholinguistic databases to see if they could predict the amount of semantic priming in their study based on the characteristics of the words in the study.
+
+One PI team
+
+-   using real data from the lab
+
+-   using cited data from the wild
+
+## Complex Example
+
+Multiple PI team doing a big team project

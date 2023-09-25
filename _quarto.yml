@@ -2,13 +2,17 @@ project:
   type: book
   output-dir: docs
 book:
-  title: "documentation"
-  author: "Norah Jones"
-  date: "8/28/2023"
+  title: "STAPLE Documentation"
+  author: "Erin M. Buchanan"
+  date: "`r Sys.Date()`"
   chapters:
     - index.qmd
     - intro.qmd
+    - metadata.qmd
+    - staple-elements.qmd
+    - walkthrough.qmd
     - summary.qmd
+    - terminology.qmd
     - references.qmd
 
 bibliography: references.bib
