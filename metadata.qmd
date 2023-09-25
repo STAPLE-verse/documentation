@@ -17,9 +17,9 @@ Required elements of project-level metadata:
 -   Name of the project
 -   Project description
 -   Authors
-    -   Corresponding Author
+-   Corresponding Author
 -   Citation
-    -   Persistent identifier (DOI)
+-   Persistent identifier (DOI)
 -   Subject/keywords
 -   Funders
 -   Date
