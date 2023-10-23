@@ -9,19 +9,100 @@ glossary_style(color = "black",
                text_decoration = "underline",
                def_bg = "#333",
                def_color = "white")
+
+library(knitr)
 ```
 
 In this section, we will examine a few examples of how a user may interact with STAPLE to document their project.
 
-## Example 1: One PI, Multiple Data Sources
+In each of the following examples, you would first log in. These tutorials assume *you* are the data entry manager (project manager, principal investigator, person in charge of managing project tracking). However, data entry for metadata and tasks is the same for project managers and contributors. This section also covers how to enter project information, and thus, does not cover profiles and other small components of STAPLE. Those are described on the [STAPLE Elements](staple-elements.qmd) section. Finally, there are *many* ways to manage the project within the software, and these examples are here to get you started.
+
+*To do*:
+
+- Implement log in single sign on from ORCID.
+- Add glossary terms across this document. 
+- Update at the end with actual pictures and flow.
+
+```{r echo = FALSE}
+include_graphics("pics/login.jpg")
+```
+
+## Example 1: One Principal Investigator, Multiple Data Sources
 
 The first example study covers a computational linguistics project in which a researcher collects `r glossary("primary data")` and uses a `r glossary("secondary data")` source. In this project, the researcher collects data on `r glossary("semantic priming")` to show that people read faster when the words are related to each other like *cat-dog* rather than unrelated like *spoon-dog*. Researchers can define similarity - how related words are - in multiple ways, so the researcher wishes to clearly document how they calculated similarity using an secondary data source. Further, the researcher used other psycholinguistic databases to see if they could predict the amount of semantic priming in their study based on the characteristics of the words in the study.
 
-One PI team
+### Add a Project
 
--   using real data from the lab
+First, you will go to the project page by using the top navigation bar. To add a new project, click "CREATE PROJECT".
 
--   using cited data from the wild
+```{r echo = FALSE}
+include_graphics("pics/create_project.jpg")
+```
+
+Enter your project name and description.
+
+*To do*: add all project level metadata.
+
+```{r echo = FALSE}
+include_graphics("pics/create_project2.jpg")
+```
+
+Once the project page is created, you will be brought to the overview page for the project.
+
+*To do*: the data dashboard is temporary, ideas welcome.
+
+```{r echo = FALSE}
+include_graphics("pics/project_dashboard.jpg")
+```
+
+Each component of the project dashboard is explained more on [STAPLE Elements](staple-elements.qmd) section. In short:
+
+-   Tasks: a place to create to-dos, track contributions, and add reminders to get things done. Tasks are always tied to projects and a specific user or team.
+-   Elements: elements are storage boxes for specific project steps. You can think of them as ways to organize your tasks or project. For example, you may use Ethics, Data, Analysis and Results, and Manuscript as ways to group tasks, contributions, and outputs together. Tasks can be tied to a specific element.
+-   Contributors: people involved in the project. This part does *not* necessarily mean authorship, it simply means someone who did something for the project.
+-   Settings: the place to update the project level metadata.
+
+*To do*: figure out how to add users and teams for different levels of project tasks.
+
+### Add Elements
+
+I would then add the different elements to my project. I click on elements to get the elements page and create element for adding new areas of organization. There are lots of ways to organize these. I could have created "data" and put both primary and secondary data within that element. I also could add separate elements for the pre-registration (if applicable) or potentially separate materials and translation into two elements.
+
+```{r echo = FALSE}
+include_graphics("pics/element_page.jpg")
+```
+
+```{r echo = FALSE}
+include_graphics("pics/element_page2.jpg")
+```
+
+*To do*: figure out a view and updating for these.
+
+### Add Tasks
+
+In theory, you could create and run a project with no elements. You would use the task tab for all functionality. To create a task, click on tasks. Note that a lot of task functionality is not available yet, but we will pretend it is.
+
+```{r echo = FALSE}
+include_graphics("pics/tasks_page.jpg")
+```
+
+When creating a task, you will define: - The task name - The task description or a how-to complete the task - The element a task should be assigned to (or none) - The person or team associated with the task - If the task needs an "output" (something that needs metadata) - If so, what type of metadata should the task include?
+
+```{r echo = FALSE}
+include_graphics("pics/tasks_page2.jpg")
+```
+
+Once you create a task, the information on what needs to be done will be emailed to the user or team with the task information. They (or you) will be able to complete the task, and information about when the task was assigned and completed will be stored.
+
+If the task has been tagged with needing an output - you will then need to enter the metadata for the requested output. For example, I created a task called "upload IRB documents". In this case, the required output would be ethics approval for the study. I would store that document in my favorite repository (OSF, GitHub, FigShare, etc.) and create a permanent link for the document. Then I would enter the required metadata for that document. In this case, it would be a simple explanation of what the text document contains.
+
+*To do*: 
+
+- Allow tasks to be tagged within element. 
+- View tasks within elements pages. 
+- Allow tasks to be tagged with a person or team. 
+- Allow tasks to be tagged with "needs metadata" or not. 
+- Provide example of difference in metadata for primary and secondary data.
 
 ## Complex Example
 
