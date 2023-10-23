@@ -19,9 +19,9 @@ In each of the following examples, you would first log in. These tutorials assum
 
 *To do*:
 
-- Implement log in single sign on from ORCID.
-- Add glossary terms across this document. 
-- Update at the end with actual pictures and flow.
+-   Implement log in single sign on from ORCID.
+-   Add glossary terms across this document.
+-   Update at the end with actual pictures and flow.
 
 ```{r echo = FALSE}
 include_graphics("pics/login.jpg")
@@ -78,6 +78,25 @@ include_graphics("pics/element_page2.jpg")
 
 *To do*: figure out a view and updating for these.
 
+### Add Contributors
+
+From the project dashboard, you can click on contributors to add a new person to the project. Note: this process adds them *only* to that project. 
+
+```{r echo = FALSE}
+include_graphics("pics/contributors_page.jpg")
+```
+
+You would be able to add contributors by email on this page. It will notify them that you have added them to the project. Once a contributor has been added to a project, you can begin to assign them tasks. 
+
+```{r echo = FALSE}
+include_graphics("pics/contributors_page2.jpg")
+```
+
+*To do:* 
+
+- Allow adding by email. 
+- Create teams and add contributors to them. 
+
 ### Add Tasks
 
 In theory, you could create and run a project with no elements. You would use the task tab for all functionality. To create a task, click on tasks. Note that a lot of task functionality is not available yet, but we will pretend it is.
@@ -86,7 +105,14 @@ In theory, you could create and run a project with no elements. You would use th
 include_graphics("pics/tasks_page.jpg")
 ```
 
-When creating a task, you will define: - The task name - The task description or a how-to complete the task - The element a task should be assigned to (or none) - The person or team associated with the task - If the task needs an "output" (something that needs metadata) - If so, what type of metadata should the task include?
+When creating a task, you will define:
+
+-   The task name
+-   The task description or a how-to complete the task
+-   The element a task should be assigned to (or none)
+-   The person or team associated with the task
+-   If the task needs an "output" (something that needs metadata)
+-   If so, what type of metadata should the task include?
 
 ```{r echo = FALSE}
 include_graphics("pics/tasks_page2.jpg")
@@ -96,14 +122,34 @@ Once you create a task, the information on what needs to be done will be emailed
 
 If the task has been tagged with needing an output - you will then need to enter the metadata for the requested output. For example, I created a task called "upload IRB documents". In this case, the required output would be ethics approval for the study. I would store that document in my favorite repository (OSF, GitHub, FigShare, etc.) and create a permanent link for the document. Then I would enter the required metadata for that document. In this case, it would be a simple explanation of what the text document contains.
 
-*To do*: 
+*To do*:
 
-- Allow tasks to be tagged within element. 
-- View tasks within elements pages. 
-- Allow tasks to be tagged with a person or team. 
-- Allow tasks to be tagged with "needs metadata" or not. 
-- Provide example of difference in metadata for primary and secondary data.
+-   Allow tasks to be tagged within element.
+-   View tasks within elements pages.
+-   Allow tasks to be tagged with a person or team.
+-   Allow tasks to be tagged with "needs metadata" or not.
+-   Provide example of difference in metadata for primary and secondary data.
 
-## Complex Example
+### Project Outputs
 
-Multiple PI team doing a big team project
+*To do:* Add examples for each type of metadata here. Please see the [Metadata](metadata.qmd) section at the moment. 
+ 
+### Project Completion
+
+When all tasks are complete and all metadata is entered for the project outputs, you can build a project timeline from the dashboard page. This information will present:
+
+- What was done on a project with a timestamp (example)
+  - Who/When a task was assigned
+  - Who/When a task was completed
+  - Who/When metadata was added
+  - Who/When elements were created
+  - And so on
+- A machine readable format of all the metadata for the study 
+- A contributorship output matching the model you wish to use 
+  - For example, tagged CRediT categories
+
+*To do:* update dashboard to include this option.
+
+## Example 2: Big-Team Project, Multiple Data Collection Sites
+
+
