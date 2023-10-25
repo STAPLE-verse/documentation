@@ -1,5 +1,11 @@
 # Metadata
 
+*To do:* Add glossary terms throughout this document. 
+
+https://www.nature.com/articles/s41597-022-01815-3
+https://direct.mit.edu/qss/article/1/1/414/15577/Crossref-The-sustainable-source-of-community-owned
+https://www.cell.com/patterns/pdf/S2666-3899(21)00170-7.pdf
+
 Why do I need it
 
 Types of metadata
