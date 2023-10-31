@@ -21,6 +21,7 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    css: glossary.css
   pdf:
     documentclass: scrreprt
 

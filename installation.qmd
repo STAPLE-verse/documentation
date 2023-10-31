@@ -1,3 +1,275 @@
-# Installation
+# Installation Guide
 
-This page will cover how to install the software on your own server. 
+## Assumptions
+
+- This guide assumes the following:
+  
+  - You are working on a Linux server. We are specifically using Ubuntu 20, but this guide should be consistent for most versions of Linux.
+  - You have access to the shell command console. You will need access to install files directly onto the server computer.
+  - You have worked with the command line before. 
+  - You have `sudo` rights to add files and services. 
+  - You know what a hidden file is and at least how to google how to view them. 
+  - You know what SQL and databases are, even if you've never worked with PostgreSQL before. 
+  - You know what Apache and/or nginx servers are and how to edit their files. 
+  - You can at least imagine yourself using git. 
+
+## Web Server Installation
+
+- Apache - [Installation Instructions](https://ubuntu.com/tutorials/install-and-configure-apache)
+- Nginx - [Installation Instructions](https://ubuntu.com/tutorials/install-and-configure-nginx)
+- They really aren't big fans of each other, only install one. We are using nginx on our server.
+
+## Blitz/JS Installation
+
+- Install `node.js` and `npm` - [Installation Instructions](https://www.linode.com/docs/guides/install-nodejs-on-ubuntu-22-04/)
+  - [Other downloads](https://nodejs.org/en/download)
+  - You should have at least node v18+ and npm v9+.
+  - You can check your versions by using `node -v` and `npm -v` in a terminal or command window.
+  - You may also use yarn, but this guide uses npm.
+- Install `blitzjs`: `npm install -g blitz` in a terminal/command window. Check your version is at least v2+ by using `blitz -v` in a command window.
+- Depending on server setup, you may need `sudo` privileges. 
+
+## Clone This Repository
+
+- Clone or copy this github repository to the server.
+  - Install git on the machine using:
+    `sudo apt-get update`
+    `sudo apt-get install git`
+  - Navigate to `/var/www/html/` or `/var/www/` on the Linux machine.
+  - Clone the repository by using this guide - [Installation Instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). 
+    `git clone https://github.com/STAPLE-verse/STAPLE.git`
+  - This will make a folder called STAPLE with all the files you need. 
+- Navigate to that folder by using `cd STAPLE`. 
+
+## Database Installation 
+
+- Ensure that you have a local postgres service running on your computer. 
+- To install see: [Installation Instructions](https://www.prisma.io/dataguide/postgresql/setting-up-a-local-postgresql-database). 
+  - Be sure to write down the superuser information as you are installing the setup for non-Linux machines.
+  - You may use other databases, but will need to modify the provided code for their implementation.
+- Create the databases for STAPLE. Go to terminal and use: 
+  - Note that all lines that start with # are comments for explanation.
+
+```
+# get into postgres on linux
+sudo -u postgres psql 
+# enter your password for superuser when prompted
+CREATE DATABASE staple;
+CREATE DATABASE staple_test;
+```
+
+- Create a user with appropriate privileges after postgres installation. While in the terminal and postgres, create a new user:
+- Change out `username` and `password` (be sure to leave the quotes!) for your desired user.
+
+```
+CREATE USER username WITH PASSWORD 'password';
+```
+
+- Get into the STAPLE database. You can use `\l` and should see something like this:
+
+```
+postgres=# \l
+                                     List of databases
+    Name     |  Owner   | Encoding |   Collate   |    Ctype    |     Access privileges     
+-------------+----------+----------+-------------+-------------+---------------------------
+ postgres    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ staple      | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =Tc/postgres             +
+             |          |          |             |             | postgres=CTc/postgres    +
+             |          |          |             |             | staple=CTc/postgres      +
+             |          |          |             |             | staple_admin=CTc/postgres
+ staple_test | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres              +
+             |          |          |             |             | postgres=CTc/postgres
+ template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres              +
+             |          |          |             |             | postgres=CTc/postgres
+(5 rows)
+```
+
+- Use the following to get into the STAPLE database. 
+
+```
+postgres=# \c staple
+You are now connected to database "staple" as user "postgres".
+staple=# 
+```
+
+- You can check that schema exist using `\dn`:
+
+```
+staple=# \dn
+ List of schemas
+  Name  | Owner  
+--------+--------
+ public | staple
+(1 row)
+
+staple=# 
+```
+
+- Give your user the appropriate permissions to write to the database. Change out `username` for the user you created a minute ago. 
+
+```
+GRANT ALL ON SCHEMA public TO username;
+```
+
+- Use `quit;` to exit out of postgres.
+
+## Connect Database to STAPLE App
+
+- Make sure you are in the folder that you copied the github repository into. 
+- You can use `ls -al` to view all files in that folder. 
+
+```
+# for example on my server 
+erin@staple:~$ cd /var/www/html/STAPLE
+erin@staple:/var/www/html/STAPLE$ ls -al
+total 764
+drwxr-xr-x  13 root root   4096 Oct 24 06:17 .
+drwxr-xr-x   6 root root   4096 Oct 24 05:02 ..
+drwxr-xr-x   3 root root   4096 Oct 24 04:27 db
+-rw-r--r--   1 root root    175 Oct 24 04:27 .editorconfig
+-rw-r--r--   1 root root    494 Oct 24 06:17 .env
+# more truncated # 
+```
+
+- Copy the `.env` file and rename it `.env.local`. 
+  - You may need to turn on settings to see these hidden files on your machine. 
+  - You can create and edit this file at once with `nano .env.local` or `vim` if you want. 
+- Ensure the `.env.local` file has required environment variables.
+  - After the commented lines, add the `DATABASE_URL` line and change <YOUR_DB_USERNAME> to `username:password` (no <> these are here to show you what to change).
+  - Create and add a `SESSION_SECRET_KEY`. 
+    - In the command line prompt, use `openssl rand -hex 16` and copy this long letter/number combination instead of <SESSIONKEY>. 
+
+```
+# This env file should be checked into source control
+# This is the place for default values for all environments
+# Values in `.env.local` and `.env.production` will override these values
+DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/staple
+SESSION_SECRET_KEY=<SESSIONKEY>
+```
+
+- Copy the `.env.test` file and rename `.env.test.local`.
+- Ensure the `.env.test.local` file has required environment variables in the same way you did above.
+
+```
+DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/staple_test
+```
+
+## Install STAPLE Requirements 
+
+- Make sure you are in the STAPLE main folder. Use the following (not the `#` line, these are notes) to install packages, tailwind, and daisyui. 
+
+```
+# to install all packages for staple
+npm install
+# install tailwind css
+blitz install tailwind
+# install daisyui
+npm i -D daisyui@latest
+```
+
+- Next, use the following line to create the database structure/schema for STAPLE to run. 
+
+```
+# to create database with the right set up
+blitz prisma migrate dev
+```
+
+## Starting the App - Local Testing
+
+- In a terminal window, go to the folder you cloned this repository and type:
+
+```
+blitz dev
+```
+
+- Open (usually) [http://localhost:3000](http://localhost:3000) (or whatever it says for localhost in the terminal) with your browser to see the result.
+- This step works great on a "regular" computer, but may not be useful for a server. Instead run the service "in production" to view on your website. 
+
+## Starting the App - Production
+
+- In a terminal window, go to the folder you cloned this repository and type:
+
+```
+blitz build
+```
+
+- This step may produce errors in the build. You will need to fix these errors before running the application. Check below for common issues. 
+
+## Keeping the App Going
+
+- Create a service. 
+- Generally, you might consider putting it here: `/etc/systemd/system/` on a linux machine. 
+- We've named the file `blitz.service` as an example creating it using `nano`. 
+- Tutorial for those who do not know how to do this - [Installation Instructions](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples)
+
+```
+# for example 
+erin@staple:/var/www/html/STAPLE$ cd /etc/systemd/system/
+erin@staple:/etc/systemd/system$ nano blitz.service
+```
+
+- Example file structure:
+- Change the `WorkingDirectory` to your folder. 
+
+```
+[Unit]
+Description=Starts the Blitz service.
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/html/STAPLE
+ExecStart=/usr/local/bin/blitz start
+Restart=always
+
+[Install]
+WantedBy=default.target
+```
+
+- Commands:
+  - stop: `sudo systemctl stop blitz`
+  - start: `sudo systemctl start blitz`
+  - restart: `sudo systemctl restart blitz`
+  - reload: `sudo systemctl reload blitz`
+  - disable: `sudo systemctl disable blitz`
+  - re-enable: `sudo systemctl enable blitz`
+  - status: `sudo systemctl status blitz`
+  - reset: `sudo systemctl reset-failed blitz`
+
+_Many thanks to Scott B. for setting this up and giving instructions_.
+
+- Run `sudo systemctl start blitz`.
+- Check the status using `sudo systemctl status blitz`. Type the letter `q` to exit. 
+- Status can also help you troubleshoot when you have an error. 
+
+## Setting Up the Proxy
+
+- Use the following to get to the nginx web server: `cd /etc/nginx/sites-enabled`
+- Create a file by using `nano YOURWEBSITE` ... for example ours is `nana app.staple.science` because that is the website of our hosted version of STAPLE.
+- Create the server file setup:
+
+```
+# Default server configuration
+#
+server {
+
+    server_name YOURWEBSITE;
+    error_log /var/www/html/YOURFOLDER/logs/web-server.log;
+    location / {
+        proxy_pass http://localhost:3000/;
+    }
+}
+
+server {
+    server_name YOURWEBSITE;
+    listen 80;
+}
+
+```
+
+- For `https` you need to set up a certificate and the easiest solution is through `certbot`. See [Installation Instructions](https://certbot.eff.org/).
+
+## Common Errors
+
+

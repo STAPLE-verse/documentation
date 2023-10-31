@@ -9,6 +9,7 @@ glossary_style(color = "black",
                text_decoration = "underline",
                def_bg = "#333",
                def_color = "white")
+glossary_persistent(TRUE)
 
 library(knitr)
 ```
@@ -80,22 +81,22 @@ include_graphics("pics/element_page2.jpg")
 
 ### Add Contributors
 
-From the project dashboard, you can click on contributors to add a new person to the project. Note: this process adds them *only* to that project. 
+From the project dashboard, you can click on contributors to add a new person to the project. Note: this process adds them *only* to that project.
 
 ```{r echo = FALSE}
 include_graphics("pics/contributors_page.jpg")
 ```
 
-You would be able to add contributors by email on this page. It will notify them that you have added them to the project. Once a contributor has been added to a project, you can begin to assign them tasks. 
+You would be able to add contributors by email on this page. It will notify them that you have added them to the project. Once a contributor has been added to a project, you can begin to assign them tasks.
 
 ```{r echo = FALSE}
 include_graphics("pics/contributors_page2.jpg")
 ```
 
-*To do:* 
+*To do:*
 
-- Allow adding by email. 
-- Create teams and add contributors to them. 
+-   Allow adding by email.
+-   Create teams and add contributors to them.
 
 ### Add Tasks
 
@@ -132,24 +133,22 @@ If the task has been tagged with needing an output - you will then need to enter
 
 ### Project Outputs
 
-*To do:* Add examples for each type of metadata here. Please see the [Metadata](metadata.qmd) section at the moment. 
- 
+*To do:* Add examples for each type of metadata here. Please see the [Metadata](metadata.qmd) section at the moment.
+
 ### Project Completion
 
 When all tasks are complete and all metadata is entered for the project outputs, you can build a project timeline from the dashboard page. This information will present:
 
-- What was done on a project with a timestamp (example)
-  - Who/When a task was assigned
-  - Who/When a task was completed
-  - Who/When metadata was added
-  - Who/When elements were created
-  - And so on
-- A machine readable format of all the metadata for the study 
-- A contributorship output matching the model you wish to use 
-  - For example, tagged CRediT categories
+-   What was done on a project with a timestamp (example)
+    -   Who/When a task was assigned
+    -   Who/When a task was completed
+    -   Who/When metadata was added
+    -   Who/When elements were created
+    -   And so on
+-   A machine readable format of all the metadata for the study
+-   A contributorship output matching the model you wish to use
+    -   For example, tagged CRediT categories
 
 *To do:* update dashboard to include this option.
 
 ## Example 2: Big-Team Project, Multiple Data Collection Sites
-
-
