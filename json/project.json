@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchProject",
+  "contactPoint": {
+    "@type": "Person",
+    "@id": "STAPLE id for corresponding author"
+  },
+  "keywords": "Keywords separated by commas",
+  "member": {
+    "@type": "Person"
+    "@id": "STAPLE id for contributor"
+  },
+  "name": "Title of the project",
+  "description": "Abstract or longer description of the project",
+
+  "funding": {
+     "@type": "Grant",
+     "identifier": "1448821",
+     "funder": {
+       "@type": "Organization",
+       "name": "National Science Foundation",
+       "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+
+https://schema.org/Report
+
+-   Name of the project
+-   Project description
+-   Authors
+-   Corresponding Author
+-   Citation
+-   Persistent identifier (DOI)
+-   Subject/keywords
+-   Funders
+-   Date

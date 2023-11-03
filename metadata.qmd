@@ -1,5 +1,33 @@
 # Metadata
 
+Types:
+
+https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html
+https://project-open-data.cio.gov/v1.1/schema/
+
+  - XSD-XML
+    - Input: XSD for the schema
+    - Output: XML for the filled in (Native format)
+  - XML from w3
+  - RDF (which is often converted to json or xml)
+    - Other objects related to N3, turtle, etc. 
+    - Turtle, Triples, Quads, CSV
+  - JSON
+    - JSON-schema is the validation
+    - JSON-LD is the output 
+  
+
+
+## these words aren't yours
+
+While the metadata application is manifold, covering a large variety of fields, there are specialized and well-accepted models to specify types of metadata. Bretherton & Singley (1994) distinguish between two distinct classes: structural/control metadata and guide metadata.[24] Structural metadata describes the structure of database objects such as tables, columns, keys and indexes. Guide metadata helps humans find specific items and is usually expressed as a set of keywords in a natural language. According to Ralph Kimball, metadata can be divided into three categories: technical metadata (or internal metadata), business metadata (or external metadata), and process metadata.
+
+NISO distinguishes three types of metadata: descriptive, structural, and administrative.[22] Descriptive metadata is typically used for discovery and identification, as information to search and locate an object, such as title, authors, subjects, keywords, and publisher. Structural metadata describes how the components of an object are organized. An example of structural metadata would be how pages are ordered to form chapters of a book. Finally, administrative metadata gives information to help manage the source. Administrative metadata refers to the technical information, such as file type, or when and how the file was created. Two sub-types of administrative metadata are rights management metadata and preservation metadata. Rights management metadata explains intellectual property rights, while preservation metadata contains information to preserve and save a resource.[8] 
+
+
+## end 
+
+
 *To do:* Add glossary terms throughout this document. 
 
 https://www.nature.com/articles/s41597-022-01815-3
@@ -15,6 +43,10 @@ What is json
 Why is json useful
 
 ## STAPLE Metadata
+
+### Action 
+
+- done 
 
 ### Project
 
@@ -69,25 +101,20 @@ https://schema.org/Person
 ### Organization
 
 ```json
-{ "@context" : "https://staple.science",
-  "@type" : "Organization",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "Country or geopolitical region using 2-letter iso codes.",
-    "addressLocality": "City name",
-    "addressRegion": "State name",
-    "postalCode": "Zip code"
-  },
-  "department": "Department or unit associated with",
-  "legalName": "The name of the organization, university, or other affiliation"
-}
 
 ```
+
+### Funder 
+
+
 
 
 ### CRediT
 
 ## Add your specific requirements
+
+
+
 
 json format
 

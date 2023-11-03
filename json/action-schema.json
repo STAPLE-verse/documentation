@@ -1,0 +1,84 @@
+
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "pattern": "https://schema.org"
+    },
+    "@type": {
+      "type": "string",
+      "pattern": "Action"
+    },
+    "startTime": {
+      "type": "string"
+      "pattern": "[-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]"
+    },
+    "agent": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "pattern": "Person"
+        },
+        "@id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "@id"
+      ]
+    },
+    "participant": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "pattern": "Person"
+        },
+        "@id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "@id"
+      ]
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "pattern": "Thing"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "subjectOf": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "name",
+        "description",
+        "subjectOf"
+      ]
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "startTime",
+    "agent",
+    "participant",
+    "result"
+  ]
+}
