@@ -1,0 +1,6 @@
+{ "givenName": "First Name",
+  "familyName": "Last/family Name",
+  "additionalName": "Middle Name/Initial",
+  "email": "Email to include for this project",
+  "identifier": "ORCID"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "object",
+      "properties": {
+        "addressCountry": {
+          "type": "string",
+          "pattern": "[A-Z][A-Z]"
+        },
+        "addressLocality": {
+          "type": "string"
+        },
+        "addressRegion": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "addressCountry",
+        "addressLocality",
+        "addressRegion",
+        "postalCode"
+      ]
+    },
+    "department": {
+      "type": "string"
+    },
+    "legalName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "address",
+    "department",
+    "legalName"
+  ]
+}

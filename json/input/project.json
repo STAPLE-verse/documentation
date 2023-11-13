@@ -1,0 +1,9 @@
+{
+  "name": "Title of the project",
+  "description": "Description of the project",
+  "abstract": "Abstract information",
+  "keywords": "Keywords separated by commas",
+  "citation": "Citation for the project",
+  "publisher": "Company that published the work",
+  "identifier": "DOI identifier",
+  }

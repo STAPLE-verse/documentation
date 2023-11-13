@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "givenName": {
+      "type": "string"
+    },
+    "familyName": {
+      "type": "string"
+    },
+    "additionalName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "https://orcid.org/[0-9].*"
+    }
+  },
+  "required": [
+    "givenName",
+    "familyName",
+    "additionalName",
+    "email",
+    "identifier"
+  ]
+}

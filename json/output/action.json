@@ -1,0 +1,16 @@
+{ "@context" : "https://schema.org",
+  "@type" : "Action",
+  "startTime": "Date and time of action",
+  "agent": {
+    // pulled directly from the person who assigned the task
+  },
+  "participant": {
+    // pulled directly from the person who did the task 
+  },
+  "result": {
+    "@type": "Thing",
+    "name": "The name of the task from STAPLE",
+    "description": "The provided description of the task from STAPLE",
+    "subjectOf": "The STAPLE Project ID"
+  }
+}

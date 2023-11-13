@@ -1,0 +1,20 @@
+# create example that would generate html that people need to enter
+# create exmaple that would be the one we put out
+# example of how to \"rig\" the system
+
+# what if they want to depend on the data we collect but don't want to share all of it
+
+staple metaschema that builds on json schema
+- lets the user create schema and leverages our apps functionality
+
+
+- create meta-json schema that checks the individual json-schemas for each type
+  - have a field that indicates if it should be literal or entered by the user
+  - translate only the entered by users into the forms
+  - backtranslate into the default/user-entered schema
+
+
+- goal put together presentation on schema meta schema stuff and things
+- get a meeting together with chris, matt, brenton, and co
+- dropbox / radio button conversions
+- react-json-schema-form
