@@ -13,8 +13,8 @@
     -   You know what Apache and/or nginx servers are and how to edit their files.
     -   You can at least imagine yourself using git.
 
-
 ## Installation on a Server
+
 ### Web Server Installation
 
 -   Apache - [Installation Instructions](https://ubuntu.com/tutorials/install-and-configure-apache)
@@ -272,12 +272,12 @@ server {
 
 ## Run on Your Own Computer
 
-You can also run the software locally on your own computer with a few limitations. If you are using a Linux system, you can follow the instructions above from Blitz/JS Installation through Starting the App - Production. You will be the only user allowed to enter data if you use the software on your own computer, as you are not hosting it on the web for others to connect to. However, you can still use all the functionality of project management and metadata entry/output.  
+You can also run the software locally on your own computer with a few limitations. If you are using a Linux system, you can follow the instructions above from Blitz/JS Installation through Starting the App - Production. You will be the only user allowed to enter data if you use the software on your own computer, as you are not hosting it on the web for others to connect to. However, you can still use all the functionality of project management and metadata entry/output.
 
 ### Blitz/JS Installation
 
--   Install `node.js` and `npm` for  - [Installation Instructions](https://nodejs.org/en/download)
-    -   This installer includes both `node.js` and `npm`. 
+-   Install `node.js` and `npm` for - [Installation Instructions](https://nodejs.org/en/download)
+    -   This installer includes both `node.js` and `npm`.
     -   You should have at least node v18+ and npm v9+.
     -   You can check your versions by using `node -v` and `npm -v` in a terminal or command window.
     -   You may also use yarn, but this guide uses npm.
@@ -433,7 +433,7 @@ blitz dev
 ```
 
 -   Open (usually) <http://localhost:3000> (or whatever it says for localhost in the terminal) with your browser to see the result.
-- Everything you do will be saved this way, so closing the app would mean just closing the app. 
+-   Everything you do will be saved this way, so closing the app would mean just closing the app.
 
 ### Starting the App - Production
 

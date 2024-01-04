@@ -1,13 +1,62 @@
-# Overview of the Software
+# Overview of STAPLE
 
-This section will explain the parts and pieces.
+## Definitions of Terms
 
-## Sign-In Screen
+### User
 
-## Main Menu
+A user in STAPLE is a person who has an account and agreed to terms and conditions. Users can create all the elements described below on their own accounts and complete tasks as part of projects that were created an another person's account.
 
-## Project Area
+Users have the ability to log in/log out, update their personal information (username, password, email, and profile information), and delete their account. Users also have the ability to add and manage contributors who are part of their projects. They can create teams for individual projects.
 
-## Project Menu
+Note: Deleting your account *does not* delete you from contributions tied to other projects. You will lose the ability to edit those contributions but you must have the administrator of that project delete you from that project if you wish.
 
-## Elements
+#### Project Admin
+
+A use can be a project administrator:
+
+-   By default, those who "create" a project are a project administrator on that project. See the permissions section below for an explanation of what that means.
+-   Additional project administrators can be added to individual projects.
+
+#### Contributor
+
+-   A user can also be added as a contributor on a project. Contributors have limited access to other projects, generally only able to complete tasks that have been assigned to them.
+
+#### Teams
+
+-   Teams are a special type of contributor for projects. Each user can be part of multiple teams within a project. Teams are used for tasks that involve a group of people who need to complete a goal. For example, a data collection team for a project with human subjects will need to complete an ethics application to cover their team for data collection. Therefore, each person gets credit for completing the ethics review, but only one person on the team needs to complete the "task" within STAPLE. Another example could be a team of translators who work on converting materials into Spanish from French. The goal is to provide the final Spanish materials, but the entire team gets credit for completing this task.
+
+### Permissions
+
+-   Project administrators have permissions to edit everything within a project (people, structure \[see below\], tasks, documentation, and more). They can add, edit, delete, and update all information within a project.
+
+-   Contributors only have permission to view and edit tasks that are assigned to them, along with the global project information on a project to which they have been added.
+
+### Projects
+
+[]("pics/projectStructure.png")
+
+-   Projects are the main organizational structure within STAPLE. Projects are defined by the user but can be thought of as: a research paper, a thesis, a grant application, a meta-analysis, a team report, and more.
+
+-   Users will be able to create, read, update, and delete projects. They can define project roles by adding contributors (and contributor teams) and defining additional project administrators. They can create, update, and delete all the possible options described below (elements, tasks, metadata).
+
+### Tasks
+
+-   Tasks are the "to-do" list within a project. Tasks *must* be assigned to a project. Each task must have a contributor and/or team assigned to them (and the default is the person who creates the task). Additionally, tasks can include a requirement for documentation. These documentation standards can be selected from our minimum requirement list or can your own options can be uploaded.
+
+-   The documentation will appear as a "form" online for a person to fill out. They will fill in the required information for that type of task (defined by the creator, please see metadata section for types). These form outputs can be updated by the project administrator at any time or can be updated as part of the review process.
+
+-   Once a task has been assigned to a user, the user will get an email to complete the task. At this point, once the user has "completed" the task, the project administrator will receive an email that the task has been completed. They can review the task to ensure it has been completed correctly. If not, they can send the task back to the original user who can then update the task information. This structure is designed in a similar way to GitHub - once a person completes as task, it is reviewed. If ok, the task is marked done, and if not, it requires the original contributor to update and resubmit.
+
+### Elements
+
+-   Elements are a special placeholder within a project. You can create projects entirely without elements. However, many people like to group tasks into larger categories. Elements are storage boxes for groups of tasks or outputs that fit together. For example, you may create an element for a project that contains all the stimuli materials. This element could be assigned tasks such as "upload the stimuli online", "translate the stimuli into French", "translate the stimuli in Arabic", and so on.
+
+-   You can also use elements to label specific sections of a project. For example, you can use elements to hold materials, data, analyses, and the final manuscript, which will put these outputs into labeled sections on the final documentation.
+
+-   Tasks can be assigned to elements. By assigning a task to an element, you are grouping them together on STAPLE and the final output documentation provided for transparency purposes.
+
+### Dashboard
+
+-   The project dashboard allows you to review the elements, tasks, contributors, and documentation available for the project.
+
+-   Additionally, you can view and export a human and machine readable timeline for the project. This documentation will include the project documentation collected from contributors, the element structure of the project, and what each contributor did for the project (and a timestamp of when they did it).

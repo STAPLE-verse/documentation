@@ -1,5 +1,37 @@
 # Metadata
 
+
+
+
+
+## Metadata?{.smaller}
+
+- Metadata is the data about your "outputs"
+- Citations are just metadata for a research article
+- Metadata can include codebooks for datasets
+- But also can be included for nearly everything we do 
+- You will check out our proposed metadata categories
+  - Are we missing any?
+  - What should be included with each category?
+  
+## Metadata?{.smaller}
+
+- Action: tracking when things happen within a project
+- Project: the global project level information 
+- Contributor: person information about who is doing stuff on project
+- Contributorship System: how you will track CRediT or others
+- Organization: the university/ngo/organization a contributor is attached to 
+
+## Metadata?{.smaller}
+- Documents: data, stimuli, materials, ethics, and much more
+  - Text
+  - Audio
+  - Video
+  - Pictures
+- Data: a special category of documents that will include special extra parts 
+  - Primary Data
+  - Secondary Data 
+
 Types:
 
 https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html https://project-open-data.cio.gov/v1.1/schema/

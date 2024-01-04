@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,11 +57,13 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
 
+<link rel="stylesheet" href="glossary.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -76,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -119,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./staple-elements.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of the Software</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of STAPLE</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -130,20 +132,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation Guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./terminology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Terminology</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Terminology</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
@@ -174,12 +182,17 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Parts to this documentation</p>
-<p>Three Goals<br>
-</p>
-<p>1) Project Management</p>
-<p>2) Documentation</p>
-<p>3) Transparency</p>
+<p>The STAPLE mission: <em>Project Management</em> software that allows you to <em>document</em> your research project to improve <em>transparency</em>.</p>
+<p>As researchers, we need to focus on the big picture - the overarching goals of a project, timelines, theory, hypotheses, and more. We then need to understand the smaller goals and tasks necessary to achieve the big picture. Researchers are often taught how to run projects, collect data, analyze that data, and write a paper summary. Training in project management is learned by example through the research lab, depending on the supervisor, and often not directly taught. Each project often involves special needs and circumstances, and the addition of even one more local collaborator can create complexity with multiple moving parts.</p>
+<p>Research shows that the number of co-authors and collaborators on research projects is increasing over time. The globalization of research, the Internet, and software tools for collaboration (Zoom, GitHub, Google, etc.) has improved our ability to work together on new ideas. Large-scale collaboration has been encouraged to improve the diversity of participants, researchers, and cultures represented in data. Once we add other people (with different lab cultures and expectations!), institutions, geopolitical regions, and languages - the complexity of a research project also increases.</p>
+<p><em>So why do we need software</em>?</p>
+<p>Project management software exists: Asana, Monday, Clickup, and Trello for example. These products were designs based on project management templates that are often business focuses. Research projects have their own unique and special needs that do not fit neatly into business models. Large-scale teams have found success treating a research project with many smaller teams as a classroom - but software designed for educational purposes is also not completely compatible with research project goals and management. STAPLE is designed for scientists by scientists with input from important stakeholders including funders, librarians, journals, and more.</p>
+<p><em>So what’s the deal with documentation</em>?</p>
+<p>In tandem with the encouragement for interdisciplinary, diverse teams, researchers have begun to focus on the improvement of science through transparency and sharing. The Transparency and Openness guidelines (https://www.cos.io/initiatives/top-guidelines) establish ideals for projects to be reproducible, open, and transparency through data sharing, code/analysis sharing, materials sharing, pre-registration, and replication. Journals require different levels of sharing for publication, which has pushed researchers to begin to implement these practices. However, the simple sharing of data, code, and materials does not make them FAIR: Findable, Accessible, Interoperable, and Reusable. Simple sharing of data does not necessarily allow someone to find that data in relation to the research project, or allow a researcher to know what <code>V1</code> means in the data, or even reuse part of the data.</p>
+<p>Creating adequate documentation for the reuse of any output from a project can be difficult. There are often no clear standards, the work can be time consuming, and is often left to the end of a project when important details may have been forgotten. STAPLE is designed to encourage you to document information along the way and to provide guidance with what you should include with each document. As you complete specific task, such as create your materials for a study, you will be able to link your project to those materials and include information to interpret and understand those documents. We provide a set of minimum documentation standards for multiple types of documents - and the ability for you to include extra information if your field has set standards.</p>
+<p><em>Ok, so that’s transparent</em>?</p>
+<p>STAPLE allows you to track and run your project - and then include research outputs from that project. Each step of the way, STAPLE collects data about who did what and when. If you are the only person working on a project, it’s simple: you will export a final project timeline that includes information about each step of the project, each output, and the documentation needed to make those outputs useful. If you work with other people, STAPLE will allow you to assign tasks to those individuals (or teams of individuals!) to complete as part of the project management functionality. At the same time, STAPLE tracks their work and creates a project timeline that shows that they completed a task for the project.</p>
+<p>This component of the software was designed to align with contributorship models of research - instead of “authorship”, each person receives credit for the components they contributed to the project. Each field has different standards for authorship, and many individual’s work may be unacknowledge due to those cultures. Using STAPLE, their work would be credited, even if they did not earn final “authorship” on a publication. This output is also useful for defining contributions into systems such as CRediT (https://credit.niso.org/) - where each person’s role is binned into categories. By linking each role to specific tasks, we can transparently show what each role means to a specific project.</p>
 
 
 

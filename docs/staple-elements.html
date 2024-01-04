@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAPLE Documentation - 4&nbsp; Overview of the Software</title>
+<title>STAPLE Documentation - 4&nbsp; Overview of STAPLE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -74,10 +75,10 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./staple-elements.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of the Software</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./staple-elements.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of STAPLE</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -120,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./staple-elements.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of the Software</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of STAPLE</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -132,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation Guide</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -163,11 +164,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sign-in-screen" id="toc-sign-in-screen" class="nav-link active" data-scroll-target="#sign-in-screen"><span class="header-section-number">4.1</span> Sign-In Screen</a></li>
-  <li><a href="#main-menu" id="toc-main-menu" class="nav-link" data-scroll-target="#main-menu"><span class="header-section-number">4.2</span> Main Menu</a></li>
-  <li><a href="#project-area" id="toc-project-area" class="nav-link" data-scroll-target="#project-area"><span class="header-section-number">4.3</span> Project Area</a></li>
-  <li><a href="#project-menu" id="toc-project-menu" class="nav-link" data-scroll-target="#project-menu"><span class="header-section-number">4.4</span> Project Menu</a></li>
-  <li><a href="#elements" id="toc-elements" class="nav-link" data-scroll-target="#elements"><span class="header-section-number">4.5</span> Elements</a></li>
+  <li><a href="#definitions-of-terms" id="toc-definitions-of-terms" class="nav-link active" data-scroll-target="#definitions-of-terms"><span class="header-section-number">4.1</span> Definitions of Terms</a>
+  <ul class="collapse">
+  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">4.1.1</span> User</a></li>
+  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions"><span class="header-section-number">4.1.2</span> Permissions</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"><span class="header-section-number">4.1.3</span> Projects</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4.1.4</span> Tasks</a></li>
+  <li><a href="#elements" id="toc-elements" class="nav-link" data-scroll-target="#elements"><span class="header-section-number">4.1.5</span> Elements</a></li>
+  <li><a href="#dashboard" id="toc-dashboard" class="nav-link" data-scroll-target="#dashboard"><span class="header-section-number">4.1.6</span> Dashboard</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -176,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of the Software</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of STAPLE</span></h1>
 </div>
 
 
@@ -191,23 +196,74 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This section will explain the parts and pieces.</p>
-<section id="sign-in-screen" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="sign-in-screen"><span class="header-section-number">4.1</span> Sign-In Screen</h2>
+<section id="definitions-of-terms" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="definitions-of-terms"><span class="header-section-number">4.1</span> Definitions of Terms</h2>
+<section id="user" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="user"><span class="header-section-number">4.1.1</span> User</h3>
+<p>A user in STAPLE is a person who has an account and agreed to terms and conditions. Users can create all the elements described below on their own accounts and complete tasks as part of projects that were created an another person’s account.</p>
+<p>Users have the ability to log in/log out, update their personal information (username, password, email, and profile information), and delete their account. Users also have the ability to add and manage contributors who are part of their projects. They can create teams for individual projects.</p>
+<p>Note: Deleting your account <em>does not</em> delete you from contributions tied to other projects. You will lose the ability to edit those contributions but you must have the administrator of that project delete you from that project if you wish.</p>
+<section id="project-admin" class="level4" data-number="4.1.1.1">
+<h4 data-number="4.1.1.1" class="anchored" data-anchor-id="project-admin"><span class="header-section-number">4.1.1.1</span> Project Admin</h4>
+<p>A use can be a project administrator:</p>
+<ul>
+<li>By default, those who “create” a project are a project administrator on that project. See the permissions section below for an explanation of what that means.</li>
+<li>Additional project administrators can be added to individual projects.</li>
+</ul>
 </section>
-<section id="main-menu" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="main-menu"><span class="header-section-number">4.2</span> Main Menu</h2>
+<section id="contributor" class="level4" data-number="4.1.1.2">
+<h4 data-number="4.1.1.2" class="anchored" data-anchor-id="contributor"><span class="header-section-number">4.1.1.2</span> Contributor</h4>
+<ul>
+<li>A user can also be added as a contributor on a project. Contributors have limited access to other projects, generally only able to complete tasks that have been assigned to them.</li>
+</ul>
 </section>
-<section id="project-area" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="project-area"><span class="header-section-number">4.3</span> Project Area</h2>
+<section id="teams" class="level4" data-number="4.1.1.3">
+<h4 data-number="4.1.1.3" class="anchored" data-anchor-id="teams"><span class="header-section-number">4.1.1.3</span> Teams</h4>
+<ul>
+<li>Teams are a special type of contributor for projects. Each user can be part of multiple teams within a project. Teams are used for tasks that involve a group of people who need to complete a goal. For example, a data collection team for a project with human subjects will need to complete an ethics application to cover their team for data collection. Therefore, each person gets credit for completing the ethics review, but only one person on the team needs to complete the “task” within STAPLE. Another example could be a team of translators who work on converting materials into Spanish from French. The goal is to provide the final Spanish materials, but the entire team gets credit for completing this task.</li>
+</ul>
 </section>
-<section id="project-menu" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="project-menu"><span class="header-section-number">4.4</span> Project Menu</h2>
 </section>
-<section id="elements" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="elements"><span class="header-section-number">4.5</span> Elements</h2>
+<section id="permissions" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="permissions"><span class="header-section-number">4.1.2</span> Permissions</h3>
+<ul>
+<li><p>Project administrators have permissions to edit everything within a project (people, structure [see below], tasks, documentation, and more). They can add, edit, delete, and update all information within a project.</p></li>
+<li><p>Contributors only have permission to view and edit tasks that are assigned to them, along with the global project information on a project to which they have been added.</p></li>
+</ul>
+</section>
+<section id="projects" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="projects"><span class="header-section-number">4.1.3</span> Projects</h3>
+<p><a href="&quot;pics/projectStructure.png&quot;"></a></p>
+<ul>
+<li><p>Projects are the main organizational structure within STAPLE. Projects are defined by the user but can be thought of as: a research paper, a thesis, a grant application, a meta-analysis, a team report, and more.</p></li>
+<li><p>Users will be able to create, read, update, and delete projects. They can define project roles by adding contributors (and contributor teams) and defining additional project administrators. They can create, update, and delete all the possible options described below (elements, tasks, metadata).</p></li>
+</ul>
+</section>
+<section id="tasks" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4.1.4</span> Tasks</h3>
+<ul>
+<li><p>Tasks are the “to-do” list within a project. Tasks <em>must</em> be assigned to a project. Each task must have a contributor and/or team assigned to them (and the default is the person who creates the task). Additionally, tasks can include a requirement for documentation. These documentation standards can be selected from our minimum requirement list or can your own options can be uploaded.</p></li>
+<li><p>The documentation will appear as a “form” online for a person to fill out. They will fill in the required information for that type of task (defined by the creator, please see metadata section for types). These form outputs can be updated by the project administrator at any time or can be updated as part of the review process.</p></li>
+<li><p>Once a task has been assigned to a user, the user will get an email to complete the task. At this point, once the user has “completed” the task, the project administrator will receive an email that the task has been completed. They can review the task to ensure it has been completed correctly. If not, they can send the task back to the original user who can then update the task information. This structure is designed in a similar way to GitHub - once a person completes as task, it is reviewed. If ok, the task is marked done, and if not, it requires the original contributor to update and resubmit.</p></li>
+</ul>
+</section>
+<section id="elements" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="elements"><span class="header-section-number">4.1.5</span> Elements</h3>
+<ul>
+<li><p>Elements are a special placeholder within a project. You can create projects entirely without elements. However, many people like to group tasks into larger categories. Elements are storage boxes for groups of tasks or outputs that fit together. For example, you may create an element for a project that contains all the stimuli materials. This element could be assigned tasks such as “upload the stimuli online”, “translate the stimuli into French”, “translate the stimuli in Arabic”, and so on.</p></li>
+<li><p>You can also use elements to label specific sections of a project. For example, you can use elements to hold materials, data, analyses, and the final manuscript, which will put these outputs into labeled sections on the final documentation.</p></li>
+<li><p>Tasks can be assigned to elements. By assigning a task to an element, you are grouping them together on STAPLE and the final output documentation provided for transparency purposes.</p></li>
+</ul>
+</section>
+<section id="dashboard" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="dashboard"><span class="header-section-number">4.1.6</span> Dashboard</h3>
+<ul>
+<li><p>The project dashboard allows you to review the elements, tasks, contributors, and documentation available for the project.</p></li>
+<li><p>Additionally, you can view and export a human and machine readable timeline for the project. This documentation will include the project documentation collected from contributors, the element structure of the project, and what each contributor did for the project (and a timestamp of when they did it).</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
