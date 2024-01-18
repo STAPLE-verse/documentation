@@ -2,15 +2,22 @@
   "@type" : "Action",
   "startTime": "Date and time of action",
   "agent": {
+    // json-schema reference thing 
+    // "$ref": "#/$defs/institution" within in same schema
+    // look at how to do it across schema
+    // look at what bioinformatics people are doing 
     // pulled directly from the person who assigned the task
+    // see if we can hide some of these in the form area 
   },
   "participant": {
-    // pulled directly from the person who did the task 
+    // pulled directly from the person who did the task
   },
   "result": {
     "@type": "Thing",
     "name": "The name of the task from STAPLE",
     "description": "The provided description of the task from STAPLE",
-    "subjectOf": "The STAPLE Project ID"
+    "subjectOf": {
+      // pulled from the project information 
+    }
   }
 }

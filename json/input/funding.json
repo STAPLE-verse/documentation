@@ -1,8 +1,0 @@
-{ "funding": {
-       "identifier": "Identifier number or marker for funding",
-       "description": "Description of the grant or further information",
-       "funder": {
-         "name": "Name of funder"
-       }
-     }
-  }

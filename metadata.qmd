@@ -1,93 +1,181 @@
-# Metadata
+# Documentation: Metadata
 
+## What is metadata?
 
+Metadata is *data* or information about a resource. Here, we use the term *resource* to denote anything you want to share with the larger community. Most obvious resources from scientific projects include datasets from which analyses and research reports are derived. However, there are many types of resources that can be shared from a project. For example, we have identified some of the following resources (not an exhaustive list):
 
+- Documents: 
+  - Ethical approval documents
+  - Stimuli and materials
+  - Translations of stimuli
+  - Other documentation of the research project (notes, approvals, presentations)
+  - Manuscript or research report 
+- Data: 
+  - Primary: Comes in many forms but likely text, audio, video, or images, created during the project
+  - Secondary: information about using another data source 
+- Code: 
+  - Code for analysis, study creation, or study implementation 
+  - Software code 
 
+Additionally, metadata can be provided about the global project, the people involved in that project, and how the project was completed:
 
-## Metadata?{.smaller}
+- Project information
+- Author information 
+  - Organization/Institutions
+  - Funders 
+- Contributions: who did what on the project 
 
-- Metadata is the data about your "outputs"
-- Citations are just metadata for a research article
-- Metadata can include codebooks for datasets
-- But also can be included for nearly everything we do 
-- You will check out our proposed metadata categories
-  - Are we missing any?
-  - What should be included with each category?
-  
-## Metadata?{.smaller}
+## Why should I create metadata?
 
-- Action: tracking when things happen within a project
-- Project: the global project level information 
-- Contributor: person information about who is doing stuff on project
-- Contributorship System: how you will track CRediT or others
-- Organization: the university/ngo/organization a contributor is attached to 
+The purpose of metadata within the scientific community is multi-fold and often described with the acronym FAIR (Wilkinson et al., 2016): 
 
-## Metadata?{.smaller}
-- Documents: data, stimuli, materials, ethics, and much more
-  - Text
-  - Audio
-  - Video
-  - Pictures
-- Data: a special category of documents that will include special extra parts 
-  - Primary Data
-  - Secondary Data 
+- *Findable*: allowing resources to be findable via database, search engine, etc. Metadata is indexed by journals, libraries, databases, and search engines to assist in discovery. 
+- *Accessible*: allowing resources to be accessible by providing information on how to download/use resources  
+- *Interoperable*: the ability to integrate resources with other resources 
+- *Reusable*: enough information should be provided that resources can be reused by other individuals.
 
-Types:
+Learn more about FAIR principles here: https://www.go-fair.org/fair-principles/
 
-https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html https://project-open-data.cio.gov/v1.1/schema/
+Metadata can be time consuming, confusing, and hard to make. So, why should you create metadata that makes your work FAIR? 
 
--   XSD-XML
-    -   Input: XSD for the schema
-    -   Output: XML for the filled in (Native format)
--   XML from w3
--   RDF (which is often converted to json or xml)
-    -   Other objects related to N3, turtle, etc.
-    -   Turtle, Triples, Quads, CSV
--   JSON
-    -   JSON-schema is the validation
-    -   JSON-LD is the output
+- It can be required: 
+  - Recent laws across the globe require at least open data to be provided with publications or research reports. 
+  - Journals have begun to adopt the Transparency and Openness Guidelines (https://www.cos.io/initiatives/top-guidelines), which requires the sharing of resources for a project. For stricter TOP guidelines, metadata would be required to adhere to those standards. 
+- Reproducibility: 
+  - Researchers can independently verify your work and correct errors if found (Piwowar & Vision, 2013).
+- Extension/Generalization:
+  - Researchers can extend your work by using resources in new projects, reanalyzing data in new ways, or combining resources for meta-analysis (Vadillo, Gold, & Osman, 2018; the Human Connectome Project—Van Essen et al., 2013). 
+- Visibility and Metrics:
+  - Publications with open resources have higher citation rates (McKiernan et al., 2016).s
 
-## these words aren't yours
+## How metadata is structured
 
-While the metadata application is manifold, covering a large variety of fields, there are specialized and well-accepted models to specify types of metadata. Bretherton & Singley (1994) distinguish between two distinct classes: structural/control metadata and guide metadata.\[24\] Structural metadata describes the structure of database objects such as tables, columns, keys and indexes. Guide metadata helps humans find specific items and is usually expressed as a set of keywords in a natural language. According to Ralph Kimball, metadata can be divided into three categories: technical metadata (or internal metadata), business metadata (or external metadata), and process metadata.
+Metadata can fall into two categories:
 
-NISO distinguishes three types of metadata: descriptive, structural, and administrative.\[22\] Descriptive metadata is typically used for discovery and identification, as information to search and locate an object, such as title, authors, subjects, keywords, and publisher. Structural metadata describes how the components of an object are organized. An example of structural metadata would be how pages are ordered to form chapters of a book. Finally, administrative metadata gives information to help manage the source. Administrative metadata refers to the technical information, such as file type, or when and how the file was created. Two sub-types of administrative metadata are rights management metadata and preservation metadata. Rights management metadata explains intellectual property rights, while preservation metadata contains information to preserve and save a resource.\[8\]
+- Human readable: human readable formats are structured as a report with titles of metadata information and the description for each provided. 
+- Examples of human-readable formats:
+  - Descriptive reports
+  - Simple tables provided resources and their descriptions
+- Machine readable: provides the same information as the human readable format, but in a structured/standardized format that can be integrated and read by computer systems. 
+  - Examples of machine-readable formats:
+    - Bar codes 
+    - eXtensible Markup Language (XML)
+    - JavaScript Object Notation (JSON)
+    - Resource Description Framework (RDF)
 
-## end
+In STAPLE, we allow you to create metadata through simple HTML forms that conforms to either our proposed minimum standard or your own uploaded standard. If you have never worked with metadata or created it before, you can use our templates to understand what needs to be provided and when. If your research field has existing standards, you can use STAPLE to ensure you include the required information. 
 
-*To do:* Add glossary terms throughout this document.
+We will describe our minimum metadata standards below and provide examples `JSON` or `JSON-LD` format. JSON is one of most popular machine readable formats because it is "lightweight" as a simple text file of key-value pairs. It resembles a dictionary where each entry has a name and a description. 
 
-https://www.nature.com/articles/s41597-022-01815-3 https://direct.mit.edu/qss/article/1/1/414/15577/Crossref-The-sustainable-source-of-community-owned https://www.cell.com/patterns/pdf/S2666-3899(21)00170-7.pdf
+For example, here's how you might format author information:
 
-Why do I need it
+```
+{
+  "author":[
+    {"firstName":"Erin", "lastName":"Buchanan"},
+    {"firstName":"Marton", "lastName":"Kovacs"},
+    {"firstName":"Engerst", "lastName":"Yedra"}
+  ]
+}
+```
 
-Types of metadata
+The author metadata includes three entries, which have more metadata: first and last names. Generally, metadata is *hierarchical* or *nested* to show the relationship between items (i.e., authors have first and last names). We will create output from STAPLE in JSON-Linked Data (JSON-LD) format which was created by the Resource Descriptive Framework (RDF Core Working Group, 2004). The LD formatting adds special pieces of information `@context` and `@type` - denoting the specific metadata style you are using and typology of the information you are sharing. This standardization of metadata allows for indexing in databases and search engines (especially https://datasetsearch.research.google.com/). 
 
-What is json
+Here's an example of the English Lexicon Project (Balota et al., 2007): 
 
-Why is json useful
+```
+{
+  "@context": ["https://schema.org/"],
+  "@type": ["Dataset"],
+  "name": ["The English Lexicon Project"],
+  "fileFormat": [".csv"],
+  "contentUrl": ["https://elexicon.wustl.edu/index.html"]
+}
+```
+
+STAPLE generally uses schema.org naming conventions for our minimum metadata standards. Schema.org is a collaborative working group that has provided a standardization for metadata vocabulary. For example, the author of this documentation may be formatted as: 
+
+```
+{ 
+  "author":[    
+    {
+      "@type":["Person"],
+      "identifier":["https://orcid.org/0000-0002-9689-4189"],
+      "givenName":["Erin"],
+      "familyName":["Buchanan"],
+      "email":["ebuchanan@harrisburgu.edu"],
+      "affiliation":["Harrisburg University of Science and Technology"]
+    }
+  ]
+}
+```
+
+Many communities use Schema.org and extend their formats for their own individual needs. See for example:
+
+- Bioschemas for the lifesciences (https://bioschemas.org/)
+- Brain Imaging Data Structure (BIDS; Gorgolewski et al., 2016; https://bids-specification.readthedocs.io/en/stable/appendices/schema.html) for brain imaging data 
+- psych-DS (Kline, 2018) for the psychology community
+- Finance and business (https://www.w3.org/community/fibo/)
+- Automotive industry (http://www.automotive-ontology.org/)
+
+The advantage to using Schema.org is it's popularity - many people use it and computers know how to read it. Further, it is considered *semantic* which details the connections between items (https://en.wikipedia.org/wiki/Semantic_Web). 
 
 ## STAPLE Metadata
 
-### Action
+Below, we explore the types of metadata that are available in STAPLE and their minimum requirements. Each of these requirements can be extended (see building your own metadata [LINK]), developed from scratch, or other community requirements can be imported into STAPLE (see converting metadata into STAPLE format [LINK]).
 
--   done
+You can view our JSON validation schema by examining each file [LINK](here). JSON validation schema are used to create the forms you see in the app and to ensure that the output files are formatted correctly. 
+
+You can view our JSON-LD examples of the output from each schema [LINK](here). These files would be downloaded from STAPLE to share in a repository like GitHub or the Open Science Framework. 
+
+The image below shows how each type of metadata collected within STAPLE for our minimum standard is related to each other. Each piece is described below with the required components. Within the descriptions below, we denote the official `keyword` for a object and then the description of what that keyword indicates. These are taken from Schema.org. In the app, they are given more descriptive titles/names to know what to enter in the form.
+
+For example:
+
+- `identifier` --> "Funding number or other identifier:"
+- `addressLocality` --> "City name of the Organization's Location:"
+
+```{r}
+knitr::include_graphics("pics/metadata.jpg")
+```
 
 ### Project
 
-Required elements of project-level metadata:
+Projects are separate research endeavors that you want to create information for and track using STAPLE's features. Projects can be as simple as a manuscript/report/document you want to share, grant applications, data collection, stimuli and translations, etc. Generally, we think of projects as work that will eventually be published, but this is not a necessary requirement. 
 
--   Name of the project
--   Project description
--   Authors
+Required elements of project-level metadata (you enter this information):
+
+-   `name`: Name of the project
+-   `description`: Project description
+-   `keywords`: Keywords
+-   `citation`: Citation (should probably break this down into parts)
+
+Suggested elements of project-level metadata (you enter this information):
+
+-   `abstract`: Abstract of the project, generally from the paper or more formal than the required description 
+-   `identifier`: Persistent identifier (DOI, ISSN, etc.)
+-   `publisher`: Publisher (should this be under citation)
+
+Other elements of project-level metadata (that are added automatically): 
+
+-   Contributors
 -   Corresponding Author
--   Citation
--   Persistent identifier (DOI)
--   Subject/keywords
 -   Funders
 -   Date
 
-https://schema.org/ResearchProject
+
+### Action
+
+Action describes all of the tasks completed within STAPLE. This metadata is collected for you by using the app. The following information is collected:
+
+- `startTime`: The date-time of when the action was assigned if it was a task
+- `endTime`: The date-time of when the action was completed 
+- `agent`: The person who assigned the task 
+- `participant`: The person who completed the task 
+- `result`: 
+  - `name`: The name of the task 
+  - `description`: The description of the task
+  - `subjectOf`: The project title from staple, linked to the project metadata
 
 ### Data
 
@@ -124,9 +212,6 @@ https://schema.org/ImageObject
 https://schema.org/Person
 
 ### Organization
-
-``` json
-```
 
 ### Funder
 

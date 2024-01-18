@@ -1,0 +1,55 @@
+{ "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Actions Performed",
+  "description": "Information about the actions performed within the STAPLE app on a project.",
+  "type": "object",
+  "required": [
+    "startTime",
+    "endTime",
+    "agent",
+    "participant",
+    "result"
+  ],
+  "properties": {
+    "startTime": {
+      "type": "string",
+      "title": "Date and time of action assignment",
+      "format": "date-time"
+    },
+    "endTime": {
+      "type": "string",
+      "title": "Date and time of action completion",
+      "format": "date-time"
+    },
+    "agent": {
+      "type": "string",
+      "title": "Name of Person or Team who assigned the action:"
+    },
+    "participant": {
+      "type": "string",
+      "title": "Name of Person or Team who completed the action:"
+    },
+    "result": {
+      "type": "string",
+      "title": "The result of the task:",
+      "required": [
+        "name",
+        "description",
+        "subjectOf"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The name of the task:"
+        },
+        "description": {
+          "type": "string",
+          "title": "The description of the task:"
+        },
+        "subjectOf": {
+          "type": "string",
+          "title": "Project Title:"
+        }
+      }
+    }
+  }
+}

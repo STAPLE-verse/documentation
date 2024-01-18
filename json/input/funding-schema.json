@@ -1,20 +1,28 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Funding for Contributor or Project",
+  "description": "Information about the funding for an Contributor or Project",
   "type": "object",
   "properties": {
     "funding": {
+      "title": "Funding for Contributor or Project",
+      "description": "Information about the funding for an Contributor or Project",
       "type": "object",
       "properties": {
         "identifier": {
           "type": "string"
+          "title": "Funding number or other identifier: "
         },
         "description": {
-          "type": "string"
+          "type": "string",
+          "title": "Description of the funding: "
         },
         "funder": {
+          "title": "Information about Funder:",
           "type": "object",
           "properties": {
             "name": {
+              "title": "Name of Funder:", "
               "type": "string"
             }
           },

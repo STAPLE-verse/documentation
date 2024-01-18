@@ -4,7 +4,7 @@
   "properties": {
     "@context": {
       "type": "string",
-      "pattern":  "https://schema.org"
+      "pattern":  "https://schema.org/Organization"
     },
     "@type": {
       "type": "string",

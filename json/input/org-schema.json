@@ -7,16 +7,21 @@
       "properties": {
         "addressCountry": {
           "type": "string",
+          "title": "Country or Geopolitical Region for Organization:",
+          "description": "Please use ISO two letter country codes."
           "pattern": "[A-Z][A-Z]"
         },
         "addressLocality": {
-          "type": "string"
+          "type": "string",
+          "title": "City name of the Organization's Location:"
         },
         "addressRegion": {
-          "type": "string"
+          "type": "string",
+          "title": "State name of the Organization's Location:"
         },
         "postalCode": {
-          "type": "string"
+          "type": "string",
+          "title": "Zip or postal code for the Organization's Location:"
         }
       },
       "required": [
@@ -28,9 +33,11 @@
     },
     "department": {
       "type": "string"
+      "title": "Department affiliation for Organization"
     },
     "legalName": {
-      "type": "string"
+      "type": "string",
+      "title": "Name of the Organization"
     }
   },
   "required": [
