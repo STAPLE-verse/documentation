@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00",
   "type": "object",
   "properties": {
     "address": {

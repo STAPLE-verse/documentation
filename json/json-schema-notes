@@ -1,0 +1,50 @@
+# options
+
+- Annotations:
+  - title: short description
+  - description: longer description 
+  - default: shows a default value for the object
+  - examples: shows examples, will include the default as an example
+  - readOnly: a boolean (true false) that shows it should only be read in
+  - writeOnly: indicates that a value may be set, but will remain hidden
+  
+  
+  
+- required: should be an array of names of objects
+- type: the type of object you want to create 
+  - object: a dictionary 
+    - properties: dictionary of key value pairs (nesting schema)
+    - additionalProperties: do you allow additional stuff to be added to this dictionary? (boolean)
+    - patternProperties: regular expressions for the types of properties that can be added 
+    - unevaluatedProperties: similar to additionalProperties, a boolean to have unevaluated properties 
+    - required: which properties are required within this object 
+    - propertyNames: ways to validate the names of properties 
+    - minProperties
+    - maxProperties 
+  - string
+    - maxLength: 
+    - minLength: 
+    - format: The format keyword allows for basic semantic identification of certain kinds of string values that are commonly used. 
+    - https://json-schema.org/understanding-json-schema/reference/string#built-in-formats
+    - pattern: allows you to use regex or other matching to determine what the input should look like, validation
+  - number
+    - multipleOf: can be a whole number or float point
+    - x ≥ minimum
+    - x > exclusiveMinimum
+    - x ≤ maximum
+    - x < exclusiveMaximum
+  - integer
+
+    
+  - array
+  - boolean
+  - null
+  - https://json-schema.org/understanding-json-schema/reference/type
+
+
+- const: restricts the input to a single value, this exact pattern match 
+  - "const": "United States of America"
+- enum: an array of allowable exact values
+  - "enum": ["red", "amber", "green"]
+
+
