@@ -245,7 +245,7 @@ WantedBy=default.target
 ### Setting Up the Proxy
 
 -   Use the following to get to the nginx web server: `cd /etc/nginx/sites-enabled`
--   Create a file by using `nano YOURWEBSITE` ... for example ours is `nana app.staple.science` because that is the website of our hosted version of STAPLE.
+-   Create a file by using `nano YOURWEBSITE` ... for example ours is `nano app.staple.science` because that is the website of our hosted version of STAPLE.
 -   Create the server file setup:
 
 ```         
