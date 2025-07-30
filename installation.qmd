@@ -1,5 +1,10 @@
 # Installation Guide
 
+SEPARATE:
+- DEVELOPMENT/CODING
+- RUN LOCAL MACHINE
+- PRODUCTION / SERVER VERSION 
+
 ## Assumptions
 
 -   This guide assumes the following:
@@ -29,6 +34,9 @@
     -   You can check your versions by using `node -v` and `npm -v` in a terminal or command window.
     -   You may also use yarn, but this guide uses npm.
 -   Install `blitzjs`: `npm install -g blitz` in a terminal/command window. Check your version is at least v2+ by using `blitz -v` in a command window.
+
+ERIN UPDATE THIS BECAUSE BLAH
+
 -   Depending on server setup, you may need `sudo` privileges.
 
 ### Clone This Repository
@@ -56,6 +64,9 @@ sudo -u postgres psql
 CREATE DATABASE staple;
 CREATE DATABASE staple_test;
 ```
+
+CHANGE THE USER TO A DIFFERENT NAME BECAUSE STAPLE CONFUSING
+
 
 -   Create a user with appropriate privileges after postgres installation. While in the terminal and postgres, create a new user:
 -   Change out `username` and `password` (be sure to leave the quotes!) for your desired user.
@@ -113,6 +124,8 @@ GRANT ALL ON SCHEMA public TO username;
 
 -   Use `quit;` to exit out of postgres.
 
+ALTER ROLE your_username CREATEDB; be sure to add this 
+
 ### Connect Database to STAPLE App
 
 -   Make sure you are in the folder that you copied the github repository into.
@@ -135,7 +148,10 @@ drwxr-xr-x   3 root root   4096 Oct 24 04:27 db
     -   You may need to turn on settings to see these hidden files on your machine.
     -   You can create and edit this file at once with `nano .env.local` or `vim` if you want.
 -   Ensure the `.env.local` file has required environment variables.
-    -   After the commented lines, add the `DATABASE_URL` line and change <YOUR_DB_USERNAME> to `username:password` (no \<\> these are here to show you what to change).
+    -   After the commented lines, add the `DATABASE_URL` line and change \<YOUR_DB_USERNAME\> to `username:password` (no \<\> these are here to show you what to change).
+    
+DID NOT RENDER CORRECTLY 
+    
     -   Create and add a `SESSION_SECRET_KEY`.
         -   In the command line prompt, use `openssl rand -hex 16` and copy this long letter/number combination instead of <SESSIONKEY>.
 
@@ -171,6 +187,7 @@ npm i -D daisyui@latest
 
 ```         
 # to create database with the right set up
+blitz prisma generate
 blitz prisma migrate dev
 ```
 
@@ -252,21 +269,18 @@ WantedBy=default.target
 # Default server configuration
 #
 server {
-
-    server_name YOURWEBSITE;
+    listen 80;
+    server_name app.staple.science;
     error_log /var/www/html/YOURFOLDER/logs/web-server.log;
     location / {
         proxy_pass http://localhost:3000/;
     }
 }
-
-server {
-    server_name YOURWEBSITE;
-    listen 80;
-}
 ```
 
 -   For `https` you need to set up a certificate and the easiest solution is through `certbot`. See [Installation Instructions](https://certbot.eff.org/).
+
+sudo apt install python3-certbot-nginx
 
 ## Common Errors
 

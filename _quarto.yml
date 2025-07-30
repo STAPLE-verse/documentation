@@ -21,7 +21,7 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-    css: glossary.css
+    css: "glossary/glossary.css"
   pdf:
     documentclass: scrreprt
 

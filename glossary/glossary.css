@@ -1,9 +1,9 @@
-<style>
 a.glossary {
-  color: black;
+  color: blue;
   text-decoration: underline;
   cursor: help;
   position: relative;
+  font-weight: bold;
 }
 
 /* only needed for popup = "click" */
@@ -36,5 +36,4 @@ a.glossary:active .def::after {
   border-style: solid;
   border-color: #333 transparent transparent transparent;
 }
-</style>
 
