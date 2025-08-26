@@ -12,6 +12,7 @@ book:
     - staple-elements.qmd
     - walkthrough.qmd
     - installation.qmd
+    - updates.qmd
     - summary.qmd
     - terminology.qmd
     - references.qmd

@@ -12,6 +12,8 @@ Currently, the tools and websites designed for researchers are focused on *getti
 
 To this end, we developed STAPLE, which not only helps with the unique challenges of project management of research but includes open and transparent documentation of data and metadata, as well as providing templates for minimum metadata collection. STAPLE allows users to add project components based on research type, assign timelines, delegate tasks to individuals or groups, and link to long-term storage of research outputs. STAPLE helps track authorship credit and contributor roles via tasks or contributors. STAPLE includes default metadata standards for documenting common research outputs and is fully open-source, enabling community input and adaptation. Designed for global reach, STAPLE supports the transition to open science by including researchers and outputs that are often overlooked, regardless of technical expertise. Through its point-and-click interface, and downloadable documentation outputs, STAPLE makes it easier for all researchers to participate in transparent, inclusive, and reproducible science.
 
+# Glossary
+
 ```{r echo = F}
 glossary_table()
 ```
