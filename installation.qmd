@@ -1,79 +1,177 @@
 # Installation Guide
 
-SEPARATE: - DEVELOPMENT/CODING - RUN LOCAL MACHINE - PRODUCTION / SERVER VERSION
+STAPLE is available as a hosted service at https://app.staple.science, which is the simplest way to get started.
+
+This guide is for individuals or organizations who would like to host their own instance of STAPLE. Running your own version gives you full control over your data, configuration, and integration with your existing infrastructure.
 
 ## Assumptions
 
--   This guide assumes the following:
+This guide assumes you meet the following prerequisites:
 
-    -   You are working on a Linux server. We are specifically using Ubuntu 20, but this guide should be consistent for most versions of Linux.
-    -   You have access to the shell command console. You will need access to install files directly onto the server computer.
-    -   You have worked with the command line before.
-    -   You have `sudo` rights to add files and services.
-    -   You know what a hidden file is and at least how to google how to view them.
-    -   You know what SQL and databases are, even if you've never worked with PostgreSQL before.
-    -   You know what Apache and/or nginx servers are and how to edit their files.
-    -   You can at least imagine yourself using git.
+-   You are working on a Linux server. We use Ubuntu 20.04 in this guide, but the steps should be consistent for most Linux distributions.
+-   You have shell/terminal access to the server.
+-   You have worked with the command line before.
+-   You have `sudo` privileges to install packages and manage services.
+-   You understand what hidden files are (and how to view them).
+-   You have a basic understanding of SQL and databases (familiarity with PostgreSQL is not required).
+-   You know what Apache and/or Nginx servers are and how to edit their configuration files.
+-   You can imagine yourself using git (even if you’re new to it).
 
-## Installation on a Server
+## Local Development or Hosting
+
+You can also run STAPLE locally on your own computer, with a few limitations.
+
+-   If you are using a Linux system, you can follow the same instructions described in this guide from Blitz/JS Installation through Starting the App – Production.
+-   On Windows, you can run STAPLE as well, but you’ll need to use a shell environment (such as PowerShell, Git Bash, or WSL2) to follow the same command-line instructions.
+-   On macOS, the setup is nearly identical to Linux, and you can use the standard Terminal application to run the commands.
+
+When running locally, you will be the only user able to enter data. The application is not hosted on the web, so others will not be able to connect.
+
+Despite this limitation, you will still have access to the full functionality of project management and metadata entry/output. This makes local installation useful for:
+
+-   Testing the system before deploying to a server
+-   Exploring functionality on your own
+-   Managing personal projects without a shared server
+
+## Installation Steps
 
 ### Web Server Installation
 
--   Apache - [Installation Instructions](https://ubuntu.com/tutorials/install-and-configure-apache)
--   Nginx - [Installation Instructions](https://ubuntu.com/tutorials/install-and-configure-nginx)
--   They really aren't big fans of each other, only install one. We are using nginx on our server.
+STAPLE requires a web server to handle requests. You can choose between **Apache** or **Nginx**:
+
+-   **Apache** – [Installation Instructions](https://ubuntu.com/tutorials/install-and-configure-apache)
+
+-   **Nginx** – [Installation Instructions](https://ubuntu.com/tutorials/install-and-configure-nginx)
+
+> ⚠️ Important: Only install one. Apache and Nginx don’t play nicely together if they’re both running on the same server.
+
+We recommend using **Nginx**, and our production server is configured with Nginx. This step is only required for people who want to host the software online. You do not need it for local development or use.
 
 ### Blitz/JS Installation
 
--   Install `node.js` and `npm` - [Installation Instructions](https://www.linode.com/docs/guides/install-nodejs-on-ubuntu-22-04/)
-    -   [Other downloads](https://nodejs.org/en/download)
-    -   You should have at least node v18+ and npm v9+.
-    -   You can check your versions by using `node -v` and `npm -v` in a terminal or command window.
-    -   You may also use yarn, but this guide uses npm.
--   Install `blitzjs`: `npm install -g blitz` in a terminal/command window. Check your version is at least v2+ by using `blitz -v` in a command window.
+STAPLE is built with **Blitz.js**, which runs on Node.js. To install the required tools:
 
-ERIN UPDATE THIS BECAUSE BLAH
+-   Install Node.js and npm
+    -   Follow the official installation instructions: [Node.js Downloads](https://nodejs.org/en/download)
+    -   Required versions:
+        -   **Node.js**: v18+
+        -   **npm**: v9+
+    -   Verify installation with:
 
--   Depending on server setup, you may need `sudo` privileges.
+```         
+node -v
+npm -v
+```
 
-### Clone This Repository
+-   (Optional) Yarn: You may use Yarn if you prefer, but this guide assumes **npm**.
+-   Install Blitz.js
+    -   Run:
 
--   Clone or copy this github repository to the server.
-    -   Install git on the machine using: `sudo apt-get update` `sudo apt-get install git`
-    -   Navigate to `/var/www/html/` or `/var/www/` on the Linux machine.
-    -   Clone the repository by using this guide - [Installation Instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). `git clone https://github.com/STAPLE-verse/STAPLE.git`
-    -   This will make a folder called STAPLE with all the files you need.
--   Navigate to that folder by using `cd STAPLE`.
+```         
+npm install -g blitz
+```
+
+-   Verify installation (version **v2+** required):
+
+```         
+blitz -v
+```
+
+> ℹ️ Note: Depending on your server setup, you may need to prepend commands with `sudo`.
+
+### Clone the Repository
+
+Next, you’ll need to copy the STAPLE source code onto your server.
+
+- Install Git (if not already installed):
+
+```
+sudo apt-get update
+sudo apt-get install git
+```
+
+- Navigate to your web directory (commonly `/var/www/html/` or `/var/www/`):
+- *Note*: you can use any folder on your computer if you are not hosting the software online or want to do local development. 
+
+```
+cd /var/www/html/
+```
+
+- Clone the repository:
+  - Follow the [GitHub guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) on cloning repositories.
+	- Or simply run:
+
+```
+git clone https://github.com/STAPLE-verse/STAPLE.git
+```
+- This will create a new folder named STAPLE containing all the files you need.
+- Move into the project folder:
+
+```
+cd STAPLE
+```
 
 ### Database Installation
 
--   Ensure that you have a local postgres service running on your computer.
--   To install see: [Installation Instructions](https://www.prisma.io/dataguide/postgresql/setting-up-a-local-postgresql-database).
-    -   Be sure to write down the superuser information as you are installing the setup for non-Linux machines.
-    -   You may use other databases, but will need to modify the provided code for their implementation.
--   Create the databases for STAPLE. Go to terminal and use:
-    -   Note that all lines that start with \# are comments for explanation.
+STAPLE requires a PostgreSQL database.
 
-```         
-# get into postgres on linux
-sudo -u postgres psql 
-# enter your password for superuser when prompted
+- Install PostgreSQL
+	- Ensure that you have a local PostgreSQL service running.
+	- Follow this guide for installation: [Postgres Setup Instructions](https://www.prisma.io/dataguide/postgresql/setting-up-a-local-postgresql-database).
+	- During installation:
+	  - Write down the superuser credentials (important on non-Linux systems).
+	  - Other databases may work, but you would need to modify the STAPLE codebase to support them.
+- Create Databases
+  - Open a terminal and run:
+
+```
+# Switch into PostgreSQL as the postgres superuser
+sudo -u postgres psql
+
+# Create databases for STAPLE
 CREATE DATABASE staple;
 CREATE DATABASE staple_test;
 ```
 
-CHANGE THE USER TO A DIFFERENT NAME BECAUSE STAPLE CONFUSING
+- Create a User
+  - It’s best not to use the default postgres user for STAPLE. Instead, create a new user:
+  - Replace username and password with your desired values (keep the quotes).
 
--   Create a user with appropriate privileges after postgres installation. While in the terminal and postgres, create a new user:
--   Change out `username` and `password` (be sure to leave the quotes!) for your desired user.
-
-```         
+```
 CREATE USER username WITH PASSWORD 'password';
+ALTER ROLE username CREATEDB;
 ```
 
--   Get into the STAPLE database. You can use `\l` and should see something like this:
+
+- Check Databases
+  - Inside the PostgreSQL prompt, you can verify:
+
+```
+\l   -- lists databases
+\c staple   -- connect to the STAPLE database
+\dn  -- lists schemas
+```
+
+  - You should see something like the following using those commands:
+  
+```         
+postgres=# \c staple
+You are now connected to database "staple" as user "postgres".
+staple=# 
+```
 
 ```         
+staple=# \dn
+ List of schemas
+  Name  | Owner  
+--------+--------
+ public | staple
+(1 row)
+
+staple=# 
+```
+
+```
 postgres=# \l
                                      List of databases
     Name     |  Owner   | Encoding |   Collate   |    Ctype    |     Access privileges     
@@ -91,45 +189,30 @@ postgres=# \l
 (5 rows)
 ```
 
--   Use the following to get into the STAPLE database.
+- Grant Privileges
+  - Finally, grant permissions for your new user to manage the staple schema:
 
-```         
-postgres=# \c staple
-You are now connected to database "staple" as user "postgres".
-staple=# 
 ```
-
--   You can check that schema exist using `\dn`:
-
-```         
-staple=# \dn
- List of schemas
-  Name  | Owner  
---------+--------
- public | staple
-(1 row)
-
-staple=# 
-```
-
--   Give your user the appropriate permissions to write to the database. Change out `username` for the user you created a minute ago.
-
-```         
 GRANT ALL ON SCHEMA public TO username;
 ```
 
--   Use `quit;` to exit out of postgres.
-
-ALTER ROLE your_username CREATEDB; be sure to add this
+- Exit PostgreSQL using `\q`
 
 ### Connect Database to STAPLE App
 
--   Make sure you are in the folder that you copied the github repository into.
--   You can use `ls -al` to view all files in that folder.
+- Now we’ll connect the PostgreSQL database you created to the STAPLE application.
+- Navigate to your STAPLE project folder
 
-```         
-# for example on my server 
-erin@staple:~$ cd /var/www/html/STAPLE
+```
+cd /var/www/html/STAPLE
+ls -al
+```
+
+  - You should see a file named `.env` along with other project files.
+  - You may need to enable hidden files to see .env files.
+  - Example:
+
+```
 erin@staple:/var/www/html/STAPLE$ ls -al
 total 764
 drwxr-xr-x  13 root root   4096 Oct 24 06:17 .
@@ -137,96 +220,211 @@ drwxr-xr-x   6 root root   4096 Oct 24 05:02 ..
 drwxr-xr-x   3 root root   4096 Oct 24 04:27 db
 -rw-r--r--   1 root root    175 Oct 24 04:27 .editorconfig
 -rw-r--r--   1 root root    494 Oct 24 06:17 .env
-# more truncated # 
 ```
 
--   Copy the `.env` file and rename it `.env.local`.
-    -   You may need to turn on settings to see these hidden files on your machine.
-    -   You can create and edit this file at once with `nano .env.local` or `vim` if you want.
--   Ensure the `.env.local` file has required environment variables.
-    -   After the commented lines, add the `DATABASE_URL` line and change \<YOUR_DB_USERNAME\> to `username:password` (no \<\> these are here to show you what to change).
+- Create a local environment file
+  - Copy the .env file and rename it to .env.local:
 
-DID NOT RENDER CORRECTLY
-
-```         
--   Create and add a `SESSION_SECRET_KEY`.
-    -   In the command line prompt, use `openssl rand -hex 16` and copy this long letter/number combination instead of <SESSIONKEY>.
+```
+cp .env .env.local
 ```
 
-```         
-# This env file should be checked into source control
-# This is the place for default values for all environments
-# Values in `.env.local` and `.env.production` will override these values
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/staple
-SESSION_SECRET_KEY=<SESSIONKEY>
+	- Open it for editing:
+
+```
+nano .env.local
 ```
 
--   Copy the `.env.test` file and rename `.env.test.local`.
--   Ensure the `.env.test.local` file has required environment variables in the same way you did above.
+- Add required environment variables
+  - At minimum, your .env.local file needs these:
 
-```         
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/staple_test
+```
+# This env file should NOT be checked into source control
+# Use this file for local overrides
+
+# Replace username:password with your Postgres user and password
+DATABASE_URL=postgresql://username:password@localhost:5432/staple
+
+# Generate a random session key
+SESSION_SECRET_KEY=your_generated_session_key
+
+# Where the app will live
+APP_ORIGIN="http://localhost:3000/"
+```
+
+- To generate a SESSION_SECRET_KEY:
+  - Copy the output and paste it in place of your_generated_session_key.
+
+```
+openssl rand -hex 16
+```
+
+- Set up a test environment
+	-	Copy .env.test to .env.test.local:
+
+```
+cp .env.test .env.test.local
+```
+
+  - Edit it to point to your test database:
+
+```
+DATABASE_URL=postgresql://username:password@localhost:5432/staple_test
+```
+
+### Configure Email
+
+STAPLE requires an email provider to send system emails (e.g., password resets, project invitations). You can use other options here, but we've configured three of them in our current code. 
+
+#### Secret Keys
+
+- You must configure at least one of the following options:
+
+- Gmail (App Passwords)
+  - Create a Gmail App Password: Google Guide
+  - Add to .env.local:
+
+```
+EMAIL_PASS="your_app_password"
+```
+
+- Amazon SES
+	- Set up Amazon Simple Email Service (SES): Amazon SES Docs
+  -	Add to .env.local:
+
+```
+ACCESS_KEY="amazonACCESS"
+SECRET_ACCESS_KEY="amazonSECRET"
+```
+
+- Resend
+  - Get an API key from Resend.
+  - Add to .env.local:
+
+```
+RESEND_API_KEY="resendAPI"
+```
+
+#### Edit the Mailer Configuration
+
+In addition to adding one of the above environment variables, you’ll need to edit the mailer configuration file so STAPLE knows which provider to use. 
+
+- Open the mailer configuration file:
+
+```
+nano integrations/mailer.js
+```
+
+- Delete non-used mailers: there are three chunks of code in this file - one for each type of email. You should delete the types you are not using to ensure the app runs. You can also insert your own mail options in this section. 
+
+- Edit the forgot password mailer:
+
+```
+nano mailers/forgotPasswordMailer.ts
+```
+
+- Change these sections to the mailer you want to use: 
+
+```
+// import { Mailer } from "integrations/mailer"
+import { createForgotPasswordMsg } from "integrations/emails"
+// import { Amazon } from "integrations/mailer"
+import { ResendMsg } from "integrations/mailer"
+```
+```
+//send the email
+await ResendMsg(createForgotPasswordMsg(to, resetUrl))
+// await Amazon(createForgotPasswordMsg(to, resetUrl)) # or amazon
+// await Mailer(createForgotPasswordMsg(to, resetUrl)) # or gmail
+```
+
+- Edit the emails.tsx file if you want to customize the emails that are sent with your own email address and logos.
+
+```
+nano integrations/emails.tsx
 ```
 
 ### Install STAPLE Requirements
 
--   Make sure you are in the STAPLE main folder. Use the following (not the `#` line, these are notes) to install packages, tailwind, and daisyui.
+- Make sure you are in the STAPLE main folder before running these commands.
+- Use the following (not the `#` line, these are notes) to install packages, tailwind, and daisyui.
 
 ```         
-# to install all packages for staple
+# Install all project dependencies
 npm install
-# install tailwind css
+
+# Install Tailwind CSS
 blitz install tailwind
-# install daisyui
+
+# Install DaisyUI
 npm i -D daisyui@latest
 ```
 
--   Next, use the following line to create the database structure/schema for STAPLE to run.
+- Set up the database schema:
 
 ```         
-# to create database with the right set up
+# Generate Prisma client
 blitz prisma generate
+
+# Run migrations to create database structure
 blitz prisma migrate dev
 ```
 
 ### Starting the App - Local Testing
 
--   In a terminal window, go to the folder you cloned this repository and type:
+- Open a terminal window and navigate to the STAPLE folder you cloned:
 
-```         
+```
+cd /var/www/html/STAPLE
+```
+
+- Start the development server:
+
+```
 blitz dev
 ```
 
--   Open (usually) <http://localhost:3000> (or whatever it says for localhost in the terminal) with your browser to see the result.
--   This step works great on a "regular" computer, but may not be useful for a server. Instead run the service "in production" to view on your website.
+- Once the server is running, open your browser and go to: http://localhost:3000 (or whatever address is shown in your terminal output).
 
 ### Starting the App - Production
 
--   In a terminal window, go to the folder you cloned this repository and type:
+- Open a terminal window and navigate to the STAPLE folder you cloned:
 
-```         
+```
+cd /var/www/html/STAPLE
+```
+
+- Build the application:
+
+```
 blitz build
 ```
 
--   This step may produce errors in the build. You will need to fix these errors before running the application. Check below for common issues.
+> ⚠️ Note: If the build process produces errors, you’ll need to fix these before you can continue. Common issues include missing dependencies or mismatched Prisma client versions. Check the terminal output for details. We do not update our dev or main branches without fixing these, but it may be that your edits for your server caused hiccups. 
+
+- Once the build completes successfully, start the app in production mode:
+
+```
+blitz start
+```
 
 ### Keeping the App Going
 
--   Create a service.
--   Generally, you might consider putting it here: `/etc/systemd/system/` on a linux machine.
--   We've named the file `blitz.service` as an example creating it using `nano`.
--   Tutorial for those who do not know how to do this - [Installation Instructions](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples)
+When running in production, you’ll want STAPLE to automatically restart after crashes or reboots. The recommended way to do this on Linux is by creating a systemd service.
 
-```         
-# for example 
-erin@staple:/var/www/html/STAPLE$ cd /etc/systemd/system/
-erin@staple:/etc/systemd/system$ nano blitz.service
+- Create a service file
+  - Navigate to the systemd directory and create a new file (we’ll call it `blitz.service`):
+
+```
+cd /etc/systemd/system/
+sudo nano blitz.service
 ```
 
--   Example file structure:
--   Change the `WorkingDirectory` to your folder.
+- Example service file: 
+  - Replace `WorkingDirectory` with the path to your STAPLE installation.
+  - You can also set specific users or production modes for security. 
 
-```         
+```
 [Unit]
 Description=Starts the Blitz service.
 After=network.target
@@ -240,219 +438,178 @@ Restart=always
 [Install]
 WantedBy=default.target
 ```
+- Enable and control the service
+  - Once your file is saved, you can manage it with:
 
--   Commands:
-    -   stop: `sudo systemctl stop blitz`
-    -   start: `sudo systemctl start blitz`
-    -   restart: `sudo systemctl restart blitz`
-    -   reload: `sudo systemctl reload blitz`
-    -   disable: `sudo systemctl disable blitz`
-    -   re-enable: `sudo systemctl enable blitz`
-    -   status: `sudo systemctl status blitz`
-    -   reset: `sudo systemctl reset-failed blitz`
+```
+# Start the service
+sudo systemctl start blitz  
 
-*Many thanks to Scott B. for setting this up and giving instructions*.
+# Check status (press "q" to quit)
+sudo systemctl status blitz  
 
--   Run `sudo systemctl start blitz`.
--   Check the status using `sudo systemctl status blitz`. Type the letter `q` to exit.
--   Status can also help you troubleshoot when you have an error.
+# Restart the service
+sudo systemctl restart blitz  
 
-### Setting Up the Proxy
+# Stop the service
+sudo systemctl stop blitz  
 
--   Use the following to get to the nginx web server: `cd /etc/nginx/sites-enabled`
--   Create a file by using `nano YOURWEBSITE` ... for example ours is `nano app.staple.science` because that is the website of our hosted version of STAPLE.
--   Create the server file setup:
+# Enable service on boot
+sudo systemctl enable blitz  
 
-```         
-# Default server configuration
-#
+# Disable service
+sudo systemctl disable blitz  
+
+# Reset if failed
+sudo systemctl reset-failed blitz  
+```
+
+- Tutorial reference
+  - If you’re new to systemd services, see this helpful guide: [Service Installation Instructions](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples)
+
+### Setting Up the Proxy (Nginx)
+
+Now that STAPLE is running as a background service, you’ll want to expose it through your web domain with Nginx.
+
+- Navigate to your Nginx configuration folder
+
+```
+cd /etc/nginx/sites-enabled
+```
+
+- Create a new site config file
+  - Name it after your site, e.g.:
+
+```
+sudo nano app.staple.science
+```
+
+- Add the server configuration
+  - Replace app.staple.science with your domain and update the log path if needed:
+
+```
 server {
     listen 80;
     server_name app.staple.science;
+
     error_log /var/www/html/YOURFOLDER/logs/web-server.log;
+
     location / {
         proxy_pass http://localhost:3000/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
     }
 }
 ```
 
--   For `https` you need to set up a certificate and the easiest solution is through `certbot`. See [Installation Instructions](https://certbot.eff.org/).
+> ⚠️ Important: Make sure the server_name matches your domain name, and the proxy_pass points to the port where Blitz is running (localhost:3000 by default).
 
-sudo apt install python3-certbot-nginx
+- Test your config:
 
-## Common Errors
-
-## Run on Your Own Computer
-
-You can also run the software locally on your own computer with a few limitations. If you are using a Linux system, you can follow the instructions above from Blitz/JS Installation through Starting the App - Production. You will be the only user allowed to enter data if you use the software on your own computer, as you are not hosting it on the web for others to connect to. However, you can still use all the functionality of project management and metadata entry/output.
-
-### Blitz/JS Installation
-
--   Install `node.js` and `npm` for - [Installation Instructions](https://nodejs.org/en/download)
-    -   This installer includes both `node.js` and `npm`.
-    -   You should have at least node v18+ and npm v9+.
-    -   You can check your versions by using `node -v` and `npm -v` in a terminal or command window.
-    -   You may also use yarn, but this guide uses npm.
--   Install `blitzjs`: `npm install -g blitz` in a terminal/command window. Check your version is at least v2+ by using `blitz -v` in a command window.
--   Depending on your computer setup, you may need `sudo` privileges.
-
-### Clone This Repository
-
--   Clone or copy this github repository to your computer - [Installation Instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). `git clone https://github.com/STAPLE-verse/STAPLE.git`
--   This will make a folder called STAPLE with all the files you need.
--   Navigate to that folder in your terminal window.
-
-### Database Installation
-
--   Ensure that you have a local postgres service running on your computer.
--   To install see: [Installation Instructions](https://www.prisma.io/dataguide/postgresql/setting-up-a-local-postgresql-database).
-    -   Be sure to write down the superuser information as you are installing the setup for non-Linux machines.
-    -   You may use other databases, but will need to modify the provided code for their implementation.
--   Create the databases for STAPLE. Go to terminal and use:
-    -   Note that all lines that start with \# are comments for explanation.
-
-```         
-# get into postgres on mac
-psql -U postgres
-# enter your password for superuser when prompted
-CREATE DATABASE staple;
-CREATE DATABASE staple_test;
+```
+sudo nginx -t
 ```
 
--   Create a user with appropriate privileges after postgres installation. While in the terminal and postgres, create a new user:
--   Change out `username` and `password` (be sure to leave the quotes!) for your desired user.
+- If you see syntax is ok and test is successful, reload Nginx:
 
-```         
-CREATE USER username WITH PASSWORD 'password';
+```
+sudo systemctl reload nginx
 ```
 
--   Get into the STAPLE database. You can use `\l` and should see something like this:
+### Enable HTTPS
 
-```         
-postgres=# \l
-                                     List of databases
-    Name     |  Owner   | Encoding |   Collate   |    Ctype    |     Access privileges     
--------------+----------+----------+-------------+-------------+---------------------------
- postgres    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
- staple      | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =Tc/postgres             +
-             |          |          |             |             | postgres=CTc/postgres    +
-             |          |          |             |             | staple=CTc/postgres      +
-             |          |          |             |             | staple_admin=CTc/postgres
- staple_test | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
- template0   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres              +
-             |          |          |             |             | postgres=CTc/postgres
- template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres              +
-             |          |          |             |             | postgres=CTc/postgres
-(5 rows)
+- Use Let’s Encrypt to add SSL by changing the location of your app in the following: 
+
+```
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d app.staple.science
 ```
 
--   Use the following to get into the STAPLE database.
+- This will automatically configure HTTPS and renew your certificate.
+- See [Installation Instructions](https://certbot.eff.org/).
 
-```         
-postgres=# \c staple
-You are now connected to database "staple" as user "postgres".
-staple=# 
+## Common Issues & Fixes
+
+### Prisma / Database Errors
+
+- Error: Error: P1000: Authentication failed against database server
+  - Fix: Double-check your DATABASE_URL in .env.local. Make sure the username/password match the Postgres user you created.
+- Error: Error: P3014: The underlying table does not exist
+  - Fix: Run migrations again:
+
 ```
-
--   You can check that schema exist using `\dn`:
-
-```         
-staple=# \dn
- List of schemas
-  Name  | Owner  
---------+--------
- public | staple
-(1 row)
-
-staple=# 
-```
-
--   Give your user the appropriate permissions to write to the database. Change out `username` for the user you created a minute ago.
-
-```         
-GRANT ALL ON SCHEMA public TO username;
-```
-
--   Use `quit;` to exit out of postgres.
-
-### Connect Database to STAPLE App
-
--   Make sure you are in the folder that you copied the github repository into.
--   You can use `ls -al` to view all files in that folder.
-
-```         
-# for example on my server 
-erin@staple:~$ cd /var/www/html/STAPLE
-erin@staple:/var/www/html/STAPLE$ ls -al
-total 764
-drwxr-xr-x  13 root root   4096 Oct 24 06:17 .
-drwxr-xr-x   6 root root   4096 Oct 24 05:02 ..
-drwxr-xr-x   3 root root   4096 Oct 24 04:27 db
--rw-r--r--   1 root root    175 Oct 24 04:27 .editorconfig
--rw-r--r--   1 root root    494 Oct 24 06:17 .env
-# more truncated # 
-```
-
--   Copy the `.env` file and rename it `.env.local`.
-    -   You may need to turn on settings to see these hidden files on your machine.
-    -   You can create and edit this file at once with `nano .env.local` or `vim` if you want.
--   Ensure the `.env.local` file has required environment variables.
-    -   After the commented lines, add the `DATABASE_URL` line and change <YOUR_DB_USERNAME> to `username:password` (no \<\> these are here to show you what to change).
-    -   Create and add a `SESSION_SECRET_KEY`.
-        -   In the command line prompt, use `openssl rand -hex 16` and copy this long letter/number combination instead of <SESSIONKEY>.
-
-```         
-# This env file should be checked into source control
-# This is the place for default values for all environments
-# Values in `.env.local` and `.env.production` will override these values
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/staple
-SESSION_SECRET_KEY=<SESSIONKEY>
-```
-
--   Copy the `.env.test` file and rename `.env.test.local`.
--   Ensure the `.env.test.local` file has required environment variables in the same way you did above.
-
-```         
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/staple_test
-```
-
-### Install STAPLE Requirements
-
--   Make sure you are in the STAPLE main folder. Use the following (not the `#` line, these are notes) to install packages, tailwind, and daisyui.
-
-```         
-# to install all packages for staple
-npm install
-# install tailwind css
-blitz install tailwind
-# install daisyui
-npm i -D daisyui@latest
-```
-
--   Next, use the following line to create the database structure/schema for STAPLE to run.
-
-```         
-# to create database with the right set up
 blitz prisma migrate dev
 ```
 
-### Starting the App - Local Testing
+- Permission denied when running migrations
+  - Fix: Ensure the Postgres user has privileges:
 
--   In a terminal window, go to the folder you cloned this repository and type:
-
-```         
-blitz dev
+```
+ALTER ROLE your_username CREATEDB;
+GRANT ALL ON SCHEMA public TO your_username;
 ```
 
--   Open (usually) <http://localhost:3000> (or whatever it says for localhost in the terminal) with your browser to see the result.
--   Everything you do will be saved this way, so closing the app would mean just closing the app.
+### Build Errors
 
-### Starting the App - Production
+- Error: blitz build fails with missing dependencies
+  - Fix: Run npm install again to ensure all dependencies are installed.
+- Prisma client mismatch
+  - Fix: Run:
 
--   In a terminal window, go to the folder you cloned this repository and type:
-
-```         
-blitz build
+```
+blitz prisma generate
 ```
 
--   This step may produce errors in the build. You will need to fix these errors before running the application. Check below for common issues.
+### Email Issues
+
+- No emails are being sent
+  - Fix: Check that you kept only one mailer provider in mailer.ts.
+  - Ensure the correct environment variables (EMAIL_PASS, ACCESS_KEY, SECRET_ACCESS_KEY, or RESEND_API_KEY) are set in .env.local.
+  - For Amazon SES, make sure your MAIL_FROM address is verified.
+  - For Gmail, use an App Password, not your regular password.
+
+### Nginx / Proxy Issues
+
+- Nginx won’t start
+  - Fix: Run `sudo nginx -t` to test configuration. Correct any syntax errors before restarting.
+- Site loads, but app doesn’t respond
+  - Fix: Make sure blitz is running (check with `sudo systemctl status blitz`).
+  - Check that the `proxy_pass` in your Nginx config matches the Blitz port (localhost:3000 by default).
+- SSL certificate not working
+  - Fix: Ensure port 80/443 are open on your firewall.
+  - Re-run certbot:
+
+```
+sudo certbot --nginx -d yourdomain.com
+```
+
+### Service Issues
+
+- Blitz doesn’t restart after reboot
+  - Fix: Make sure the service is enabled:
+
+```
+sudo systemctl enable blitz
+```
+
+- Service crashes with permission errors
+  - Fix: Ensure the User in `blitz.service` has read/write access to the STAPLE folder.
+
+### General Tips
+
+- After editing .env.local, .env.test.local, or blitz.service, restart the app:
+
+```
+sudo systemctl restart blitz
+```
+
+- Check logs:
+
+```
+journalctl -u blitz -f
+```
+
+Get help: contact [staple.helpdesk at gmail.com](mailto:staple.helpdesk@gmail.com).

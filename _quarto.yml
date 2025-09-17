@@ -12,6 +12,7 @@ book:
     - index.qmd
     - intro.qmd
     - core-concepts.qmd
+    - installation.qmd
     - glossary.qmd
     - references.qmd
 
