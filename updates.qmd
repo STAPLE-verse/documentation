@@ -4,19 +4,19 @@ This guide walks you through updating a deployed STAPLE instance (Blitz.js + Pri
 
 ## ✅ Quick Checklist
 
-- [ ] Announce maintenance window  
-- [ ] Back up your database  
-- [ ] Ensure `.env` is up to date (check release notes for new variables)
+-   [ ] Announce maintenance window\
+-   [ ] Back up your database\
+-   [ ] Ensure `.env` is up to date (check release notes for new variables)
 
 ## 1) Navigate to your STAPLE app
 
-```
+```         
 cd /path/to/staple
 ```
 
 ## 2) Pull the latest code
 
-```
+```         
 git fetch origin
 git checkout main
 git pull --ff-only origin main
@@ -44,7 +44,7 @@ If this release includes a migration, you must run it here before rebuilding.
 
 ## 7) Verify
 
-```
+```         
 sudo systemctl status blitz.service
 journalctl -u blitz.service -n 200 --no-pager
 ```
@@ -53,11 +53,11 @@ Then open your site and sanity-check core functionality (login, create/edit task
 
 ## Database Migration Notes
 
-- If a release ships schema changes, the migration step must be run on the server before restarting.
-- If something fails:
-  -	Read the error output (often flags column/index conflicts).
-	-	Check the generated SQL in prisma/migrations/*/migration.sql.
-	-	Restore from your backup and retry if needed.
+-   If a release ships schema changes, the migration step must be run on the server before restarting.
+-   If something fails:
+    -   Read the error output (often flags column/index conflicts).
+        -   Check the generated SQL in prisma/migrations/\*/migration.sql.
+        -   Restore from your backup and retry if needed.
 
 ## 
 
@@ -69,23 +69,17 @@ Option A: SQL directly on the server
 
 PostgreSQL example
 
-UPDATE "User" SET role = 'ADMIN' WHERE email = 'someone@example.com';
+UPDATE "User" SET role = 'ADMIN' WHERE email = 'someone\@example.com';
 
 MySQL/MariaDB example
 
-UPDATE `User` SET role = 'ADMIN' WHERE email = 'someone@example.com';
+UPDATE `User` SET role = 'ADMIN' WHERE email = 'someone\@example.com';
 
-Option B: Use an admin UI
-	•	pgAdmin (Postgres) or phpMyAdmin (MySQL/MariaDB)
-	•	Connect to your DB, open the User table, and set the role field to ADMIN.
+Option B: Use an admin UI • pgAdmin (Postgres) or phpMyAdmin (MySQL/MariaDB) • Connect to your DB, open the User table, and set the role field to ADMIN.
 
 ⸻
 
-⚠️ Security Note: Prisma Studio
-	•	Do not expose Prisma Studio publicly. By default it binds to a port that is accessible to anyone.
-	•	If you must use it:
-	•	Bind to localhost and tunnel over SSH, or
-	•	Put it behind a protected VPN/reverse proxy with authentication.
+⚠️ Security Note: Prisma Studio • Do not expose Prisma Studio publicly. By default it binds to a port that is accessible to anyone. • If you must use it: • Bind to localhost and tunnel over SSH, or • Put it behind a protected VPN/reverse proxy with authentication.
 
 ⸻
 
@@ -95,56 +89,46 @@ Service won’t start after upgrade
 
 journalctl -u blitz.service -n 200 --no-pager
 
-	•	Check .env for new variables.
-	•	Try a clean rebuild:
+```         
+•   Check .env for new variables.
+•   Try a clean rebuild:
+```
 
-rm -rf node_modules .next
-npm install
-blitz build
-sudo systemctl restart blitz.service
+rm -rf node_modules .next npm install blitz build sudo systemctl restart blitz.service
 
+Migration failed • Review the error and the specific migration folder under prisma/migrations. • Restore from backup if needed, fix data issues, and re-run.
 
-
-Migration failed
-	•	Review the error and the specific migration folder under prisma/migrations.
-	•	Restore from backup if needed, fix data issues, and re-run.
-
-Static files/styles look stale
-	•	Ensure blitz build completed without errors.
-	•	Clear CDN or proxy caches if applicable.
+Static files/styles look stale • Ensure blitz build completed without errors. • Clear CDN or proxy caches if applicable.
 
 ⸻
 
-Rollback (Quick Outline)
-	1.	Checkout the previous commit or tag:
+Rollback (Quick Outline) 1. Checkout the previous commit or tag:
 
-git checkout <previous-tag-or-commit>
-npm install
-blitz build
+git checkout <previous-tag-or-commit> npm install blitz build
 
-
-	2.	Restore the DB from backup if schema/data changed.
-	3.	Restart:
+```         
+2.  Restore the DB from backup if schema/data changed.
+3.  Restart:
+```
 
 sudo systemctl restart blitz.service
-
-
 
 ⸻
 
 Appendix — Common Commands
 
 # See service logs live
+
 journalctl -u blitz.service -f
 
 # Check Prisma version
+
 npx prisma -v
 
 # Run Prisma Studio safely via SSH tunnel
-ssh -L 5555:127.0.0.1:5555 user@your-server
-# On the server:
-npx prisma studio --port 5555 --hostname 127.0.0.1
 
----
+ssh -L 5555:127.0.0.1:5555 user\@your-server \# On the server: npx prisma studio --port 5555 --hostname 127.0.0.1
+
+------------------------------------------------------------------------
 
 Do you want me to also make a **short “Quick Upgrade Steps”** version at the top of this doc (like a TL;DR) so your team can see the commands all at once without scrolling?

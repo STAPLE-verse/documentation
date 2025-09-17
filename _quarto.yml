@@ -3,21 +3,20 @@ project:
   output-dir: docs
 book:
   title: "STAPLE Documentation"
-  author: "Erin M. Buchanan"
-  date: "`r Sys.Date()`"
+  author: 
+    - name: "Erin M. Buchanan"
+      orcid: "0000-0002-9689-4189"
+  date: today          # or a literal date like "2025-09-16"
+  date-format: "MMMM D, YYYY"   # controls how it shows on the page
   chapters:
     - index.qmd
     - intro.qmd
-    - metadata.qmd
-    - staple-elements.qmd
-    - walkthrough.qmd
-    - installation.qmd
-    - updates.qmd
-    - summary.qmd
-    - terminology.qmd
+    - core-concepts.qmd
+    - glossary.qmd
     - references.qmd
 
 bibliography: references.bib
+csl: apa.csl   # citation style
 
 format:
   html:

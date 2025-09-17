@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Documentation: Metadata – STAPLE Documentation</title>
+<title>3&nbsp; Core Concepts – STAPLE Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,7 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./staple-elements.html" rel="next">
+<link href="./glossary.html" rel="next">
 <link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./metadata.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Documentation: Metadata</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./core-concepts.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Core Concepts</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,50 +121,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./metadata.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Documentation: Metadata</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./staple-elements.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of STAPLE</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./walkthrough.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Example Walkthroughs</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation Guide</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./updates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">STAPLE — Upgrade Guide</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./core-concepts.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Core Concepts</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
@@ -211,22 +147,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-metadata" id="toc-what-is-metadata" class="nav-link active" data-scroll-target="#what-is-metadata"><span class="header-section-number">3.1</span> What is metadata?</a></li>
-  <li><a href="#why-should-i-create-metadata" id="toc-why-should-i-create-metadata" class="nav-link" data-scroll-target="#why-should-i-create-metadata"><span class="header-section-number">3.2</span> Why should I create metadata?</a></li>
-  <li><a href="#how-metadata-is-structured" id="toc-how-metadata-is-structured" class="nav-link" data-scroll-target="#how-metadata-is-structured"><span class="header-section-number">3.3</span> How metadata is structured</a></li>
-  <li><a href="#staple-metadata" id="toc-staple-metadata" class="nav-link" data-scroll-target="#staple-metadata"><span class="header-section-number">3.4</span> STAPLE Metadata</a>
+  <li><a href="#staple-elements" id="toc-staple-elements" class="nav-link active" data-scroll-target="#staple-elements"><span class="header-section-number">3.1</span> STAPLE Elements</a></li>
+  <li><a href="#metadata" id="toc-metadata" class="nav-link" data-scroll-target="#metadata"><span class="header-section-number">3.2</span> Metadata</a></li>
+  <li><a href="#definitions-of-terms" id="toc-definitions-of-terms" class="nav-link" data-scroll-target="#definitions-of-terms"><span class="header-section-number">3.3</span> Definitions of Terms</a>
   <ul class="collapse">
-  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project"><span class="header-section-number">3.4.1</span> Project</a></li>
-  <li><a href="#action" id="toc-action" class="nav-link" data-scroll-target="#action"><span class="header-section-number">3.4.2</span> Action</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">3.4.3</span> Data</a></li>
-  <li><a href="#project-outputs" id="toc-project-outputs" class="nav-link" data-scroll-target="#project-outputs"><span class="header-section-number">3.4.4</span> Project Outputs</a></li>
-  <li><a href="#image" id="toc-image" class="nav-link" data-scroll-target="#image"><span class="header-section-number">3.4.5</span> Image</a></li>
-  <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author"><span class="header-section-number">3.4.6</span> Author</a></li>
-  <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization"><span class="header-section-number">3.4.7</span> Organization</a></li>
-  <li><a href="#funder" id="toc-funder" class="nav-link" data-scroll-target="#funder"><span class="header-section-number">3.4.8</span> Funder</a></li>
-  <li><a href="#credit" id="toc-credit" class="nav-link" data-scroll-target="#credit"><span class="header-section-number">3.4.9</span> CRediT</a></li>
+  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">3.3.1</span> User</a></li>
+  <li><a href="#main-and-project-level-options" id="toc-main-and-project-level-options" class="nav-link" data-scroll-target="#main-and-project-level-options"><span class="header-section-number">3.3.2</span> Main and Project Level Options</a></li>
+  <li><a href="#project-level-options" id="toc-project-level-options" class="nav-link" data-scroll-target="#project-level-options"><span class="header-section-number">3.3.3</span> Project Level Options</a></li>
   </ul></li>
-  <li><a href="#add-your-specific-requirements" id="toc-add-your-specific-requirements" class="nav-link" data-scroll-target="#add-your-specific-requirements"><span class="header-section-number">3.5</span> Add your specific requirements</a></li>
   </ul>
 </nav>
     </div>
@@ -235,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Documentation: Metadata</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Core Concepts</span></h1>
 </div>
 
 
@@ -252,247 +180,163 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-is-metadata" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="what-is-metadata"><span class="header-section-number">3.1</span> What is metadata?</h2>
-<p>Metadata is <em>data</em> or information about a resource. Here, we use the term <em>resource</em> to denote anything you want to share with the larger community. Most obvious resources from scientific projects include datasets from which analyses and research reports are derived. However, there are many types of resources that can be shared from a project. For example, we have identified some of the following resources (not an exhaustive list):</p>
+<p>In this section, we introduce the core terminology for STAPLE elements to help users understand their purpose and function. The following section will demonstrate how these elements appear in practice, with screenshots and step-by-step guides for using them within STAPLE.</p>
+<section id="staple-elements" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="staple-elements"><span class="header-section-number">3.1</span> STAPLE Elements</h2>
+<p>Research projects are made up of many moving parts: overarching goals, specific hypotheses, tasks to carry out, and the people who contribute along the way. To manage this complexity, STAPLE organizes projects into a small set of core elements. These elements provide a shared structure that scientists and collaborators can understand quickly, regardless of discipline.</p>
+<p>At the highest level, a <a class="glossary" title="A container for a scientific effort, capturing the overall scope, goals, timeline, and team. All other elements: tasks, contributors, metadata, and outputs are organized within a project.">Project</a> represents the scientific effort being undertaken: its aims, scope, and timeline. Within each project, researchers define <a class="glossary" title="A discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress.">Task</a>s, which capture the individual units of work needed to achieve those aims. <a class="glossary" title="The group of contributors working together on a project. Teams may span labs, institutions, or disciplines, and are defined by shared access to project tasks and resources.">Team</a>s and <a class="glossary" title="An individual who actively participates in a project. Contributors may take on different roles, responsibilities, and levels of access within STAPLE.">Contributor/Member</a>s provide the human side of the system, reflecting roles, privileges, and collaborations across labs and institutions. Every action taken on a task, whether assigning it, updating its status, or marking it as complete, is recorded in <a class="glossary" title="A chronological record of all activity on a task, including assignments, updates, completions, and notes. Task logs create a transparent history of project work, making it easier to track progress, maintain accountability, and reconstruct decisions.">Task Logs</a>, creating a transparent history of progress. Finally, <a class="glossary" title="Flexible labels used to categorize and filter tasks or projects. Tags help organize work by theme, method, priority, or custom criteria.">Tags</a> allow projects to be categorized, searched, and documented in ways that make sense for science.</p>
+<p>Together, these elements form the backbone of STAPLE, giving research teams a clear, consistent framework for planning and documenting their work.</p>
+</section>
+<section id="metadata" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="metadata"><span class="header-section-number">3.2</span> Metadata</h2>
+<p>In scientific research, data alone is never enough, what makes data meaningful is the <a class="glossary" title="Metadata is information that describes other data. It helps explain what a dataset or research output is, how it was created, who created it, and how it can be used. Metadata makes data easier to find, understand, and reuse.">metadata</a> that describes it. Metadata captures the critical context behind research activities: the methods used, the instruments applied, the variables measured, and the conditions under which data were collected. Without metadata, results can be difficult to reproduce, interpret, or build upon.</p>
+<p>STAPLE treats metadata as a first-class feature, not an afterthought. The software also automatically records who did what, and when, embedding provenance metadata directly within projects. Project information, such as data, materials, and analysis code, can be linked within STAPLE and enriched with metadata. These details are captured using the <a class="glossary" title="Structured templates for capturing important project metadata, such as study design details, instruments used, or ethical approvals, ensuring consistency and transparency.">Forms</a> feature, which provides structured templates tailored to research needs. Completion of metadata can be assigned to contributors via <a class="glossary" title="A discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress.">Task</a>s, making documentation part of the normal project workflow rather than an extra burden.</p>
+<p>By embedding metadata capture directly into everyday research activities, STAPLE makes it easier for scientists to document their work transparently, meet the expectations of journals and funders, and create records that future collaborators, or even their own future selves, can interpret and reuse. All metadata can be exported as machine-readable JSON for computational use and as human-readable interactive <a class="glossary" title="An automatically generated overview that consolidates key project information, including tasks, contributors, metadata, milestones, and outputs, into a shareable format.">Project Summary</a> reports for sharing and communication.</p>
+</section>
+<section id="definitions-of-terms" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="definitions-of-terms"><span class="header-section-number">3.3</span> Definitions of Terms</h2>
+<section id="user" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="user"><span class="header-section-number">3.3.1</span> User</h3>
+<p>A user in STAPLE is anyone with an account who has accepted the platform’s terms and conditions. Users can create projects and related elements within their own accounts, and they can also participate in projects owned by others. Users can log in and out, update their personal information (e.g., username, password, email, and profile details), and delete their account. They may add and manage contributors, organize teams within their projects, and assign tasks.</p>
+<p><em>Note</em>: Deleting your STAPLE account <em>does not</em> remove your past contributions to other projects. You will lose editing access, but only a project administrator can fully remove you from their project.</p>
+<section id="project-administrator" class="level4" data-number="3.3.1.1">
+<h4 data-number="3.3.1.1" class="anchored" data-anchor-id="project-administrator"><span class="header-section-number">3.3.1.1</span> Project Administrator</h4>
 <ul>
-<li>Documents:
-<ul>
-<li>Ethical approval documents</li>
-<li>Stimuli and materials</li>
-<li>Translations of stimuli</li>
-<li>Other documentation of the research project (notes, approvals, presentations)</li>
-<li>Manuscript or research report</li>
-</ul></li>
-<li>Data:
-<ul>
-<li>Primary: Comes in many forms but likely text, audio, video, or images, created during the project</li>
-<li>Secondary: information about using another data source</li>
-</ul></li>
-<li>Code:
-<ul>
-<li>Code for analysis, study creation, or study implementation</li>
-<li>Software code</li>
-</ul></li>
-</ul>
-<p>Additionally, metadata can be provided about the global project, the people involved in that project, and how the project was completed:</p>
-<ul>
-<li>Project information</li>
-<li>Author information
-<ul>
-<li>Organization/Institutions</li>
-<li>Funders</li>
-</ul></li>
-<li>Contributions: who did what on the project</li>
+<li>The user who creates a project is automatically assigned as its project administrator.</li>
+<li>Additional administrators can be added to a project as needed.</li>
+<li>Every project must have at least one administrator at all times.</li>
+<li>Administrators have the highest level of control, including managing contributors, editing project settings, and assigning roles.</li>
 </ul>
 </section>
-<section id="why-should-i-create-metadata" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="why-should-i-create-metadata"><span class="header-section-number">3.2</span> Why should I create metadata?</h2>
-<p>The purpose of metadata within the scientific community is multi-fold and often described with the acronym FAIR (Wilkinson et al., 2016):</p>
+<section id="contributor" class="level4" data-number="3.3.1.2">
+<h4 data-number="3.3.1.2" class="anchored" data-anchor-id="contributor"><span class="header-section-number">3.3.1.2</span> Contributor</h4>
 <ul>
-<li><em>Findable</em>: allowing resources to be findable via database, search engine, etc. Metadata is indexed by journals, libraries, databases, and search engines to assist in discovery.</li>
-<li><em>Accessible</em>: allowing resources to be accessible by providing information on how to download/use resources<br>
-</li>
-<li><em>Interoperable</em>: the ability to integrate resources with other resources</li>
-<li><em>Reusable</em>: enough information should be provided that resources can be reused by other individuals.</li>
-</ul>
-<p>Learn more about FAIR principles here: https://www.go-fair.org/fair-principles/</p>
-<p>Metadata can be time consuming, confusing, and hard to make. So, why should you create metadata that makes your work FAIR?</p>
-<ul>
-<li>It can be required:
-<ul>
-<li>Recent laws across the globe require at least open data to be provided with publications or research reports.</li>
-<li>Journals have begun to adopt the Transparency and Openness Guidelines (https://www.cos.io/initiatives/top-guidelines), which requires the sharing of resources for a project. For stricter TOP guidelines, metadata would be required to adhere to those standards.</li>
-</ul></li>
-<li>Reproducibility:
-<ul>
-<li>Researchers can independently verify your work and correct errors if found (Piwowar &amp; Vision, 2013).</li>
-</ul></li>
-<li>Extension/Generalization:
-<ul>
-<li>Researchers can extend your work by using resources in new projects, reanalyzing data in new ways, or combining resources for meta-analysis (Vadillo, Gold, &amp; Osman, 2018; the Human Connectome Project—Van Essen et al., 2013).</li>
-</ul></li>
-<li>Visibility and Metrics:
-<ul>
-<li>Publications with open resources have higher citation rates (McKiernan et al., 2016).s</li>
-</ul></li>
+<li>A contributor is a user added to a project by an administrator.</li>
+<li>Contributors generally have limited access: they can view project information and complete tasks assigned to them but cannot change project settings or manage other users.</li>
+<li>This role allows project teams to include collaborators without granting full administrative privileges.</li>
 </ul>
 </section>
-<section id="how-metadata-is-structured" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="how-metadata-is-structured"><span class="header-section-number">3.3</span> How metadata is structured</h2>
-<p>Metadata can fall into two categories:</p>
+<section id="teams" class="level4" data-number="3.3.1.3">
+<h4 data-number="3.3.1.3" class="anchored" data-anchor-id="teams"><span class="header-section-number">3.3.1.3</span> Teams</h4>
 <ul>
-<li>Human readable: human readable formats are structured as a report with titles of metadata information and the description for each provided.</li>
-<li>Examples of human-readable formats:
-<ul>
-<li>Descriptive reports</li>
-<li>Simple tables provided resources and their descriptions</li>
-</ul></li>
-<li>Machine readable: provides the same information as the human readable format, but in a structured/standardized format that can be integrated and read by computer systems.
-<ul>
-<li>Examples of machine-readable formats:
-<ul>
-<li>Bar codes</li>
-<li>eXtensible Markup Language (XML)</li>
-<li>JavaScript Object Notation (JSON)</li>
-<li>Resource Description Framework (RDF)</li>
-</ul></li>
-</ul></li>
+<li>Teams are a special type of contributor within a project.</li>
+<li>A user can belong to multiple teams in the same project.</li>
+<li>Teams are useful when a task requires collaboration by a group rather than an individual.</li>
 </ul>
-<p>In STAPLE, we allow you to create metadata through simple HTML forms that conforms to either our proposed minimum standard or your own uploaded standard. If you have never worked with metadata or created it before, you can use our templates to understand what needs to be provided and when. If your research field has existing standards, you can use STAPLE to ensure you include the required information.</p>
-<p>We will describe our minimum metadata standards below and provide examples <code>JSON</code> or <code>JSON-LD</code> format. JSON is one of most popular machine readable formats because it is “lightweight” as a simple text file of key-value pairs. It resembles a dictionary where each entry has a name and a description.</p>
-<p>For example, here’s how you might format author information:</p>
-<pre><code>{
-  "author":[
-    {"firstName":"Erin", "lastName":"Buchanan"},
-    {"firstName":"Marton", "lastName":"Kovacs"},
-    {"firstName":"Engerst", "lastName":"Yedra"}
-  ]
-}</code></pre>
-<p>The author metadata includes three entries, which have more metadata: first and last names. Generally, metadata is <em>hierarchical</em> or <em>nested</em> to show the relationship between items (i.e., authors have first and last names). We will create output from STAPLE in JSON-Linked Data (JSON-LD) format which was created by the Resource Descriptive Framework (RDF Core Working Group, 2004). The LD formatting adds special pieces of information <code>@context</code> and <code>@type</code> - denoting the specific metadata style you are using and typology of the information you are sharing. This standardization of metadata allows for indexing in databases and search engines (especially https://datasetsearch.research.google.com/).</p>
-<p>Here’s an example of the English Lexicon Project (Balota et al., 2007):</p>
-<pre><code>{
-  "@context": ["https://schema.org/"],
-  "@type": ["Dataset"],
-  "name": ["The English Lexicon Project"],
-  "fileFormat": [".csv"],
-  "contentUrl": ["https://elexicon.wustl.edu/index.html"]
-}</code></pre>
-<p>STAPLE generally uses schema.org naming conventions for our minimum metadata standards. Schema.org is a collaborative working group that has provided a standardization for metadata vocabulary. For example, the author of this documentation may be formatted as:</p>
-<pre><code>{ 
-  "author":[    
-    {
-      "@type":["Person"],
-      "identifier":["https://orcid.org/0000-0002-9689-4189"],
-      "givenName":["Erin"],
-      "familyName":["Buchanan"],
-      "email":["ebuchanan@harrisburgu.edu"],
-      "affiliation":["Harrisburg University of Science and Technology"]
-    }
-  ]
-}</code></pre>
-<p>Many communities use Schema.org and extend their formats for their own individual needs. See for example:</p>
+<p>For example, a data collection team working with human participants may need to complete an ethics application. Only one person needs to submit the form within STAPLE, but the entire team receives credit for completing the task. Similarly, a translation team might be responsible for converting study materials from French into Spanish. The collective goal is to provide the final Spanish materials, but all members of the team are credited for the work.</p>
+</section>
+</section>
+<section id="main-and-project-level-options" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="main-and-project-level-options"><span class="header-section-number">3.3.2</span> Main and Project Level Options</h3>
+<section id="dashboard" class="level4" data-number="3.3.2.1">
+<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="dashboard"><span class="header-section-number">3.3.2.1</span> Dashboard</h4>
+<p>The Dashboard is your personalized home page in STAPLE. It provides a high-level overview of all the projects you’re involved in, along with recent updates and tasks assigned to you. From here, you can quickly jump into active projects, track progress at a glance, and see what needs your attention today. Think of it as your command center for research project management.</p>
+<p>In addition to this main dashboard, each project also has its own Project Dashboard. While the main dashboard gives you a cross-project snapshot, the project dashboard focuses on the details of a single project, its contributors, tasks, metadata, milestones, and outputs. Together, the two levels of dashboards help you move easily between the big picture and the project-specific details.</p>
+</section>
+<section id="projects" class="level4" data-number="3.3.2.2">
+<h4 data-number="3.3.2.2" class="anchored" data-anchor-id="projects"><span class="header-section-number">3.3.2.2</span> Projects</h4>
+<p>Projects are the central containers for scientific work. Each project includes its own tasks, teams, metadata, and outputs. On the Projects page, you can:</p>
 <ul>
-<li>Bioschemas for the lifesciences (https://bioschemas.org/)</li>
-<li>Brain Imaging Data Structure (BIDS; Gorgolewski et al., 2016; https://bids-specification.readthedocs.io/en/stable/appendices/schema.html) for brain imaging data</li>
-<li>psych-DS (Kline, 2018) for the psychology community</li>
-<li>Finance and business (https://www.w3.org/community/fibo/)</li>
-<li>Automotive industry (http://www.automotive-ontology.org/)</li>
+<li>Create a new project.</li>
+<li>View and manage existing projects.</li>
+<li>Go into the project level dashboard.</li>
 </ul>
-<p>The advantage to using Schema.org is it’s popularity - many people use it and computers know how to read it. Further, it is considered <em>semantic</em> which details the connections between items (https://en.wikipedia.org/wiki/Semantic_Web).</p>
+<p>Projects provide the big-picture structure that keeps research activities organized and transparent.</p>
 </section>
-<section id="staple-metadata" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="staple-metadata"><span class="header-section-number">3.4</span> STAPLE Metadata</h2>
-<p>Below, we explore the types of metadata that are available in STAPLE and their minimum requirements. Each of these requirements can be extended (see building your own metadata [LINK]), developed from scratch, or other community requirements can be imported into STAPLE (see converting metadata into STAPLE format [LINK]).</p>
-<p>You can view our JSON validation schema by examining each file <a href="here">LINK</a>. JSON validation schema are used to create the forms you see in the app and to ensure that the output files are formatted correctly.</p>
-<p>You can view our JSON-LD examples of the output from each schema <a href="here">LINK</a>. These files would be downloaded from STAPLE to share in a repository like GitHub or the Open Science Framework.</p>
-<p>The image below shows how each type of metadata collected within STAPLE for our minimum standard is related to each other. Each piece is described below with the required components. Within the descriptions below, we denote the official <code>keyword</code> for a object and then the description of what that keyword indicates. These are taken from Schema.org. In the app, they are given more descriptive titles/names to know what to enter in the form.</p>
-<p>For example:</p>
+<section id="invitations" class="level4" data-number="3.3.2.3">
+<h4 data-number="3.3.2.3" class="anchored" data-anchor-id="invitations"><span class="header-section-number">3.3.2.3</span> Invitations</h4>
+<p>Invitations are how collaborators join projects in STAPLE. Project administrators send invitations that specify the role a user will have once they accept.</p>
 <ul>
-<li><code>identifier</code> –&gt; “Funding number or other identifier:”</li>
-<li><code>addressLocality</code> –&gt; “City name of the Organization’s Location:”</li>
+<li>On the main dashboard, you can view all of your pending invitations across projects and choose to accept or decline them.</li>
+<li>On a project dashboard, only project administrators can see the invitations they have sent for that specific project.</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"pics/metadata.jpg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="pics/metadata.jpg" class="img-fluid figure-img" width="446"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="project" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="project"><span class="header-section-number">3.4.1</span> Project</h3>
-<p>Projects are separate research endeavors that you want to create information for and track using STAPLE’s features. Projects can be as simple as a manuscript/report/document you want to share, grant applications, data collection, stimuli and translations, etc. Generally, we think of projects as work that will eventually be published, but this is not a necessary requirement.</p>
-<p>Required elements of project-level metadata (you enter this information):</p>
+<p>A contributor cannot be assigned tasks or added to teams until they have accepted their invitation. This system ensures that every collaborator’s involvement is explicit, documented, and consented to before work begins.</p>
+</section>
+<section id="tasks" class="level4" data-number="3.3.2.4">
+<h4 data-number="3.3.2.4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">3.3.2.4</span> Tasks</h4>
+<p>Tasks break a project down into actionable steps and are the backbone of daily research activity in STAPLE.</p>
 <ul>
-<li><code>name</code>: Name of the project</li>
-<li><code>description</code>: Project description</li>
-<li><code>keywords</code>: Keywords</li>
-<li><code>citation</code>: Citation (should probably break this down into parts)</li>
+<li>On the main dashboard, the Tasks page shows a consolidated view of all tasks assigned to you across every project, so nothing slips through the cracks.</li>
+<li>On a project dashboard, project administrators can view and manage all tasks within that project, while contributors see only the tasks assigned to them.</li>
 </ul>
-<p>Suggested elements of project-level metadata (you enter this information):</p>
+<p>Within a project, you can:</p>
 <ul>
-<li><code>abstract</code>: Abstract of the project, generally from the paper or more formal than the required description</li>
-<li><code>identifier</code>: Persistent identifier (DOI, ISSN, etc.)</li>
-<li><code>publisher</code>: Publisher (should this be under citation)</li>
+<li>Create new tasks for yourself or others.</li>
+<li>Assign tasks to contributors or teams.</li>
+<li>Update task status (to-do, in progress, complete).</li>
+<li>Add labels, metadata, and logs to track progress.</li>
 </ul>
-<p>Other elements of project-level metadata (that are added automatically):</p>
+<p>This two-level view ensures that contributors can stay focused on their own responsibilities while project managers maintain oversight of the entire project’s workflow.</p>
+</section>
+<section id="notifications" class="level4" data-number="3.3.2.5">
+<h4 data-number="3.3.2.5" class="anchored" data-anchor-id="notifications"><span class="header-section-number">3.3.2.5</span> Notifications</h4>
+<p>Notifications keep you informed about project activity without needing to check each page manually. These alerts let you know when:</p>
 <ul>
-<li>Contributors</li>
-<li>Corresponding Author</li>
-<li>Funders</li>
-<li>Date</li>
+<li>You’ve been assigned a new task.</li>
+<li>A task you’re involved in has been updated, completed, or approved.</li>
+<li>You’ve received a project invitation.</li>
 </ul>
+<p>On the main dashboard, notifications show updates from all of your projects in one place. On a project dashboard, notifications are filtered to that project only, helping you focus on what matters most in the current context. The Notifications page ensures you never miss important updates in collaborative projects.</p>
 </section>
-<section id="action" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="action"><span class="header-section-number">3.4.2</span> Action</h3>
-<p>Action describes all of the tasks completed within STAPLE. This metadata is collected for you by using the app. The following information is collected:</p>
+<section id="forms" class="level4" data-number="3.3.2.6">
+<h4 data-number="3.3.2.6" class="anchored" data-anchor-id="forms"><span class="header-section-number">3.3.2.6</span> Forms</h4>
+<p>Forms are structured templates for collecting metadata at the project or task level. They make sure essential details, such as ethics approvals, instrument calibration, dataset versions, or preregistration links, are captured consistently.</p>
+<p>STAPLE includes a library of form templates, giving you a starting point if you’re not sure what metadata to collect. You can also design your own forms tailored to your project’s needs. Forms must be created before they can be used in a project, ensuring that the structure is in place before contributors start filling them out.</p>
+<p>Once in use, forms become a powerful way to collect metadata directly within your workflow. You can:</p>
 <ul>
-<li><code>startTime</code>: The date-time of when the action was assigned if it was a task</li>
-<li><code>endTime</code>: The date-time of when the action was completed</li>
-<li><code>agent</code>: The person who assigned the task</li>
-<li><code>participant</code>: The person who completed the task</li>
-<li><code>result</code>:
-<ul>
-<li><code>name</code>: The name of the task</li>
-<li><code>description</code>: The description of the task</li>
-<li><code>subjectOf</code>: The project title from staple, linked to the project metadata</li>
-</ul></li>
+<li>Fill out forms as part of project tasks.</li>
+<li>Assign forms to contributors or teams to ensure documentation responsibilities are shared.</li>
+<li>Reuse templates across multiple projects for consistency.</li>
 </ul>
+<p>By embedding metadata capture directly into the research process, forms help projects meet transparency and reproducibility standards while reducing the burden of after-the-fact documentation.</p>
 </section>
-<section id="data" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="data"><span class="header-section-number">3.4.3</span> Data</h3>
-<p>Data gets a special type of schema, etc.</p>
-<p>https://schema.org/Dataset</p>
-<section id="primary-data" class="level4" data-number="3.4.3.1">
-<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="primary-data"><span class="header-section-number">3.4.3.1</span> Primary Data</h4>
-</section>
-<section id="secondary-data" class="level4" data-number="3.4.3.2">
-<h4 data-number="3.4.3.2" class="anchored" data-anchor-id="secondary-data"><span class="header-section-number">3.4.3.2</span> Secondary Data</h4>
-</section>
-</section>
-<section id="project-outputs" class="level3" data-number="3.4.4">
-<h3 data-number="3.4.4" class="anchored" data-anchor-id="project-outputs"><span class="header-section-number">3.4.4</span> Project Outputs</h3>
-<p>Note that data can be text, but this is the spot we classify other objects you may output.</p>
-<section id="text" class="level4" data-number="3.4.4.1">
-<h4 data-number="3.4.4.1" class="anchored" data-anchor-id="text"><span class="header-section-number">3.4.4.1</span> Text</h4>
-<p>https://schema.org/TextObject</p>
-</section>
-<section id="audio" class="level4" data-number="3.4.4.2">
-<h4 data-number="3.4.4.2" class="anchored" data-anchor-id="audio"><span class="header-section-number">3.4.4.2</span> Audio</h4>
-<p>https://schema.org/AudioObject</p>
-</section>
-<section id="video" class="level4" data-number="3.4.4.3">
-<h4 data-number="3.4.4.3" class="anchored" data-anchor-id="video"><span class="header-section-number">3.4.4.3</span> Video</h4>
-<p>https://schema.org/VideoObject</p>
+<section id="roles" class="level4" data-number="3.3.2.7">
+<h4 data-number="3.3.2.7" class="anchored" data-anchor-id="roles"><span class="header-section-number">3.3.2.7</span> Roles</h4>
+<p>Roles in STAPLE describe the kinds of contributions people make within a project. While they draw inspiration from frameworks like the CRediT taxonomy, they are not limited to authorship or publication contexts. Instead, roles provide a flexible way to document responsibilities and ensure that contributions are visible across the lifespan of a project.</p>
+<p>In STAPLE, roles can be:</p>
+<ul>
+<li>Assigned to people → to show what responsibilities each contributor holds in a project.</li>
+<li>Assigned to tasks → to clarify what kind of contribution a task represents and how it fits into the project.</li>
+</ul>
+<p>Roles provide a flexible system for understanding who did what and for standardizing contributions across projects. Role templates are avaliable to add to your account, which you can use across all projects. They must be created on the main dashboard before you can use them.</p>
 </section>
 </section>
-<section id="image" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="image"><span class="header-section-number">3.4.5</span> Image</h3>
-<p>https://schema.org/ImageObject</p>
+<section id="project-level-options" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="project-level-options"><span class="header-section-number">3.3.3</span> Project Level Options</h3>
+<section id="tags" class="level4" data-number="3.3.3.1">
+<h4 data-number="3.3.3.1" class="anchored" data-anchor-id="tags"><span class="header-section-number">3.3.3.1</span> Tags</h4>
+<p>Tags are flexible labels that help organize and filter milestones, tasks, and contributors. Tags make it easier to search and group related work across large projects. You can view customized tracking by using tags across these parts of the project.</p>
 </section>
-<section id="author" class="level3" data-number="3.4.6">
-<h3 data-number="3.4.6" class="anchored" data-anchor-id="author"><span class="header-section-number">3.4.6</span> Author</h3>
-<p>https://schema.org/Person</p>
+<section id="milestones" class="level4" data-number="3.3.3.2">
+<h4 data-number="3.3.3.2" class="anchored" data-anchor-id="milestones"><span class="header-section-number">3.3.3.2</span> Milestones</h4>
+<p>Milestones mark major points of progress within a project and help teams track deadlines and achievements. In STAPLE, milestones can also group related tasks together, providing a clear structure for managing phases of a project. Each milestone is tied to a timeline, and STAPLE automatically visualizes them in a Gantt chart, making it easier to see how tasks and deadlines align. This helps teams monitor progress, anticipate bottlenecks, and keep projects moving forward on schedule.</p>
 </section>
-<section id="organization" class="level3" data-number="3.4.7">
-<h3 data-number="3.4.7" class="anchored" data-anchor-id="organization"><span class="header-section-number">3.4.7</span> Organization</h3>
+<section id="notes" class="level4" data-number="3.3.3.3">
+<h4 data-number="3.3.3.3" class="anchored" data-anchor-id="notes"><span class="header-section-number">3.3.3.3</span> Notes</h4>
+<p>Notes provide a space for free-text documentation within a project. Unlike structured metadata captured through Forms, Notes allow contributors to record context, reminders, or reflections in their own words.</p>
+<p>Notes can be:</p>
+<ul>
+<li>Private – visible only to the author.</li>
+<li>Shared with contributors – if shared by a project administrator, contributors can view them.</li>
+<li>Restricted to administrators – for communication only among project managers.</li>
+</ul>
+<p>This flexibility makes Notes useful for everything from personal reminders to collaborative discussions among administrators.</p>
 </section>
-<section id="funder" class="level3" data-number="3.4.8">
-<h3 data-number="3.4.8" class="anchored" data-anchor-id="funder"><span class="header-section-number">3.4.8</span> Funder</h3>
+<section id="form-data" class="level4" data-number="3.3.3.4">
+<h4 data-number="3.3.3.4" class="anchored" data-anchor-id="form-data"><span class="header-section-number">3.3.3.4</span> Form Data</h4>
+<p>Form Data is the collected information from metadata Forms within a project. It provides a centralized view of all structured metadata entries—such as instrument details, ethics protocols, or dataset versions—that have been completed by contributors. Form Data can be reviewed, exported, and updated if errors have occurred.</p>
 </section>
-<section id="credit" class="level3" data-number="3.4.9">
-<h3 data-number="3.4.9" class="anchored" data-anchor-id="credit"><span class="header-section-number">3.4.9</span> CRediT</h3>
+<section id="summary" class="level4" data-number="3.3.3.5">
+<h4 data-number="3.3.3.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.3.3.5</span> Summary</h4>
+<p>The Summary page generates a shareable overview of the project. It consolidates contributors, tasks, roles, metadata, milestones, and outputs into one report. Project Summaries can be exported in both machine-readable formats (JSON) and human-readable interactive reports, making them useful for collaboration, archiving, and compliance with funder or journal requirements.</p>
 </section>
-</section>
-<section id="add-your-specific-requirements" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="add-your-specific-requirements"><span class="header-section-number">3.5</span> Add your specific requirements</h2>
-<p>json format</p>
-<p>metadata builder?</p>
+<section id="settings" class="level4" data-number="3.3.3.6">
+<h4 data-number="3.3.3.6" class="anchored" data-anchor-id="settings"><span class="header-section-number">3.3.3.6</span> Settings</h4>
+<p>The Settings page allows administrators to configure project-level metadata. This includes details such as the project title, description, timeline, and high-level information about the project’s scope.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -923,8 +767,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./staple-elements.html" class="pagination-link" aria-label="Overview of STAPLE">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Overview of STAPLE</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./glossary.html" class="pagination-link" aria-label="Glossary">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Glossary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -145,20 +165,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./updates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">STAPLE — Upgrade Guide</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./terminology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Terminology</span></span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
@@ -192,18 +218,57 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The STAPLE mission: <em>Project Management</em> software that allows you to <em>document</em> your research project to improve <em>transparency</em>.</p>
-<p>As researchers, we need to focus on the big picture - the overarching goals of a project, timelines, theory, hypotheses, and more. We then need to understand the smaller goals and tasks necessary to achieve the big picture. Researchers are often taught how to run projects, collect data, analyze that data, and write a paper summary. Training in project management is learned by example through the research lab, depending on the supervisor, and often not directly taught. Each project often involves special needs and circumstances, and the addition of even one more local collaborator can create complexity with multiple moving parts.</p>
-<p>Research shows that the number of co-authors and collaborators on research projects is increasing over time. The globalization of research, the Internet, and software tools for collaboration (Zoom, GitHub, Google, etc.) has improved our ability to work together on new ideas. Large-scale collaboration has been encouraged to improve the diversity of participants, researchers, and cultures represented in data. Once we add other people (with different lab cultures and expectations!), institutions, geopolitical regions, and languages - the complexity of a research project also increases.</p>
+<p>As researchers, we must balance attention to the big picture: the overarching goals, timelines, theories, and hypotheses of a project, with the smaller goals and tasks required to realize those ambitions. While most researchers receive training in designing studies, collecting and analyzing data, and publishing findings, formal instruction in project management is rare. Instead, these skills are often acquired informally, modeled within the research lab environment and shaped by a supervisor’s style. Each project also introduces unique needs and circumstances, and even the addition of a single collaborator can generate new layers of coordination and complexity.</p>
+<p>Evidence indicates that the number of co-authors and collaborators on research projects has increased steadily over time <span class="citation" data-cites="wuchty2007">(<a href="references.html#ref-wuchty2007" role="doc-biblioref">Wuchty et al., 2007</a>)</span>. Advances in digital communication and collaboration tools such as Zoom, GitHub, and Google Workspace, combined with the globalization of research, have enabled teams to work together across great distances and disciplinary boundaries <span class="citation" data-cites="cummings2005 cummings2007">(<a href="references.html#ref-cummings2005" role="doc-biblioref">Cummings &amp; Kiesler, 2005</a>, <a href="references.html#ref-cummings2007" role="doc-biblioref">2007</a>)</span>. Large-scale collaborations are increasingly encouraged, not only to tackle ambitious scientific questions, but also to enhance the diversity of participants, researchers, and cultures represented in data <span class="citation" data-cites="moshontz2018 swartz2019 adan2023">(<a href="references.html#ref-adan2023" role="doc-biblioref">Adan, 2023</a>; <a href="references.html#ref-moshontz2018" role="doc-biblioref">Moshontz et al., 2018</a>; <a href="references.html#ref-swartz2019" role="doc-biblioref">Swartz et al., 2019</a>)</span>. The inclusion of multiple collaborators, each embedded in different lab cultures, institutions, geopolitical contexts, and languages, increases the complexity of managing research projects.</p>
 <p><em>So why do we need software</em>?</p>
-<p>Project management software exists: Asana, Monday, Clickup, and Trello for example. These products were designs based on project management templates that are often business focuses. Research projects have their own unique and special needs that do not fit neatly into business models. Large-scale teams have found success treating a research project with many smaller teams as a classroom - but software designed for educational purposes is also not completely compatible with research project goals and management. STAPLE is designed for scientists by scientists with input from important stakeholders including funders, librarians, journals, and more.</p>
+<p>General project management platforms, such as Asana, Monday, ClickUp, and Trello, are widely used in business settings, but they were designed around business-oriented workflows and templates. Research projects, however, present unique challenges that do not map neatly onto these models. Scientific projects often require coordination of specialized tasks such as research design, ethical approval, data collection across multiple sites, <a class="glossary" title="Metadata is information that describes other data. It helps explain what a dataset or research output is, how it was created, who created it, and how it can be used. Metadata makes data easier to find, understand, and reuse.">metadata</a> documentation, open data sharing, and publication requirements <span class="citation" data-cites="borghi2021 fecher2014">(<a href="references.html#ref-borghi2021" role="doc-biblioref">Borghi &amp; Gulick, 2021</a>; <a href="references.html#ref-fecher2014" role="doc-biblioref">Fecher &amp; Friesike, 2014</a>)</span>.</p>
+<p>Large-scale collaborations have experimented with adapting existing structures, sometimes treating multi-team projects like classrooms or leveraging educational technologies, but these solutions are partial fits at best. What researchers need is a system that recognizes the scientific lifecycle: from ideas and preregistration, to data collection, to analysis, dissemination, and long-term archiving. STAPLE is designed for scientists, by scientists. It was built with input not only from researchers but also from key stakeholders in the broader research ecosystem, including funders, librarians, and journals, ensuring that the software supports transparency, reproducibility, and effective project management across diverse scientific contexts.</p>
 <p><em>So what’s the deal with documentation</em>?</p>
-<p>In tandem with the encouragement for interdisciplinary, diverse teams, researchers have begun to focus on the improvement of science through transparency and sharing. The Transparency and Openness guidelines (https://www.cos.io/initiatives/top-guidelines) establish ideals for projects to be reproducible, open, and transparency through data sharing, code/analysis sharing, materials sharing, pre-registration, and replication. Journals require different levels of sharing for publication, which has pushed researchers to begin to implement these practices. However, the simple sharing of data, code, and materials does not make them FAIR: Findable, Accessible, Interoperable, and Reusable. Simple sharing of data does not necessarily allow someone to find that data in relation to the research project, or allow a researcher to know what <code>V1</code> means in the data, or even reuse part of the data.</p>
+<p>In tandem with the encouragement for interdisciplinary, diverse teams, researchers have begun to focus on the improvement of science through transparency and sharing. The <a class="glossary" title="A set of community-developed standards created to improve the transparency, accessibility, and reproducibility of research. The TOP Guidelines outline eight modular standards (e.g., data citation, data sharing, analytic methods, preregistration, replication) with different levels of stringency that journals, funders, and institutions can adopt to encourage open scientific practices.">Transparency and Openness</a> guidelines establish ideals for projects to be reproducible, open, and transparency through data sharing, code/analysis sharing, materials sharing, pre-registration, and replication <span class="citation" data-cites="grant">(<a href="references.html#ref-grant" role="doc-biblioref">Grant et al., 2025</a>)</span>. Journals require different levels of sharing for publication, which has pushed researchers to begin to implement these practices. However, the simple sharing of data, code, and materials does not make them <a class="glossary" title="FAIR stands for Findable, Accessible, Interoperable, and Reusable, a set of guiding principles that aim to improve the management and stewardship of scientific data, metadata, and other research outputs. Originally proposed by Wilkinson et al. (2016), the FAIR principles emphasize that data should be findable through rich metadata and persistent identifiers; accessible using standardized protocols, even when access is restricted; interoperable via the use of shared formats, vocabularies, and ontologies; and reusable by ensuring clear licensing, documentation, and provenance. FAIR is not a strict standard but a framework to guide the development of research practices and infrastructure that support transparency, reproducibility, and long-term reuse by both humans and machines.">FAIR</a>: Findable, Accessible, Interoperable, and Reusable <span class="citation" data-cites="wilkinson2016">(<a href="references.html#ref-wilkinson2016" role="doc-biblioref">Wilkinson et al., 2016</a>)</span>. Simple sharing of data does not necessarily allow someone to find that data in relation to the research project, or allow a researcher to know what <code>V1</code> means in the data, or even reuse part of the data.</p>
 <p>Creating adequate documentation for the reuse of any output from a project can be difficult. There are often no clear standards, the work can be time consuming, and is often left to the end of a project when important details may have been forgotten. STAPLE is designed to encourage you to document information along the way and to provide guidance with what you should include with each document. As you complete specific task, such as create your materials for a study, you will be able to link your project to those materials and include information to interpret and understand those documents. We provide a set of minimum documentation standards for multiple types of documents - and the ability for you to include extra information if your field has set standards.</p>
 <p><em>Ok, so that’s transparent</em>?</p>
-<p>STAPLE allows you to track and run your project - and then include research outputs from that project. Each step of the way, STAPLE collects data about who did what and when. If you are the only person working on a project, it’s simple: you will export a final project timeline that includes information about each step of the project, each output, and the documentation needed to make those outputs useful. If you work with other people, STAPLE will allow you to assign tasks to those individuals (or teams of individuals!) to complete as part of the project management functionality. At the same time, STAPLE tracks their work and creates a project timeline that shows that they completed a task for the project.</p>
-<p>This component of the software was designed to align with contributorship models of research - instead of “authorship”, each person receives credit for the components they contributed to the project. Each field has different standards for authorship, and many individual’s work may be unacknowledge due to those cultures. Using STAPLE, their work would be credited, even if they did not earn final “authorship” on a publication. This output is also useful for defining contributions into systems such as CRediT (https://credit.niso.org/) - where each person’s role is binned into categories. By linking each role to specific tasks, we can transparently show what each role means to a specific project.</p>
+<p>STAPLE allows you to track and run your project - and then include research outputs from that project. Each step of the way, STAPLE collects data about who did what and when. If you are the only person working on a project, it’s simple: you will export a final project timeline that includes information about each step of the project, each output, and the documentation needed to make those outputs useful. If you work with other people, STAPLE will allow you to assign tasks to those individuals (or teams of individuals) to complete as part of the project management functionality. At the same time, STAPLE tracks their work and creates a project timeline that shows that they completed a task for the project.</p>
+<p>This component of the software was designed to align with <a class="glossary" title="An alternative to traditional authorship that provides a more transparent account of each person’s role in a research project. Instead of assigning credit through a fixed order of authors’ names, contributorship models (such as the CRediT taxonomy) specify the specific tasks and responsibilities undertaken by each contributor—for example, conceptualization, data curation, analysis, project administration, or writing. This approach aims to recognize diverse forms of scholarly labor, reduce disputes over author order, and promote accountability.">contributorship</a> models of research - instead of “authorship”, each person receives credit for the components they contributed to the project <span class="citation" data-cites="allen2014 allen2019">(<a href="references.html#ref-allen2014" role="doc-biblioref">Allen et al., 2014</a>, <a href="references.html#ref-allen2019" role="doc-biblioref">2019</a>)</span>. Each field has different standards for authorship, and many individual’s work may not be acknowledged due to those cultures. Using STAPLE, their work would be credited, even if they did not earn final “<a class="glossary" title="Being listed as an author on a research paper, usually to recognize someone’s contribution and responsibility for the work. Author order often signals who did the most work or led the project.">authorship</a>” on a publication. This output is also useful for defining contributions into systems such as <a class="glossary" title="A standardized system for describing the specific roles individuals play in research projects. CRediT defines 14 contributor roles—such as conceptualization, methodology, data curation, writing (original draft), and project administration—to provide a transparent account of who did what. Rather than replacing authorship, CRediT works alongside it to make contributions more visible and accountable, helping to reduce disputes and ensure proper recognition.">CRediT</a> - where each person’s role is binned into categories. By linking each role to specific tasks, we can transparently show what each role means to a specific project.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-adan2023" class="csl-entry" role="listitem">
+Adan, C. (2023). The importance of diversity in clinical research. <em>British Journal of Nursing (Mark Allen Publishing)</em>, <em>32</em>(18), 898–901. <a href="https://doi.org/10.12968/bjon.2023.32.18.898">https://doi.org/10.12968/bjon.2023.32.18.898</a>
+</div>
+<div id="ref-allen2019" class="csl-entry" role="listitem">
+Allen, L., O’Connell, A., &amp; Kiermer, V. (2019). How can we ensure visibility and diversity in research contributions? How the Contributor Role Taxonomy (CRediT) is helping the shift from authorship to contributorship. <em>Learned Publishing</em>, <em>32</em>(1), 71–74. <a href="https://doi.org/10.1002/leap.1210">https://doi.org/10.1002/leap.1210</a>
+</div>
+<div id="ref-allen2014" class="csl-entry" role="listitem">
+Allen, L., Scott, J., Brand, A., Hlava, M., &amp; Altman, M. (2014). Publishing: Credit where credit is due. <em>Nature</em>, <em>508</em>(7496), 312–313. <a href="https://doi.org/10.1038/508312a">https://doi.org/10.1038/508312a</a>
+</div>
+<div id="ref-borghi2021" class="csl-entry" role="listitem">
+Borghi, J. A., &amp; Gulick, A. E. V. (2021). Data management and sharing: Practices and perceptions of psychology researchers. <em>PLOS ONE</em>, <em>16</em>(5), e0252047. <a href="https://doi.org/10.1371/journal.pone.0252047">https://doi.org/10.1371/journal.pone.0252047</a>
+</div>
+<div id="ref-cummings2005" class="csl-entry" role="listitem">
+Cummings, J. N., &amp; Kiesler, S. (2005). Collaborative Research Across Disciplinary and Organizational Boundaries. <em>Social Studies of Science</em>, <em>35</em>(5), 703–722. <a href="https://doi.org/10.1177/0306312705055535">https://doi.org/10.1177/0306312705055535</a>
+</div>
+<div id="ref-cummings2007" class="csl-entry" role="listitem">
+Cummings, J. N., &amp; Kiesler, S. (2007). Coordination costs and project outcomes in multi-university collaborations. <em>Research Policy</em>, <em>36</em>(10), 1620–1634. <a href="https://doi.org/10.1016/j.respol.2007.09.001">https://doi.org/10.1016/j.respol.2007.09.001</a>
+</div>
+<div id="ref-fecher2014" class="csl-entry" role="listitem">
+Fecher, B., &amp; Friesike, S. (2014). <em>Open Science: One Term, Five Schools of Thought</em> (S. Bartling &amp; S. Friesike, Eds.; pp. 17–47). Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-00026-8_2">https://doi.org/10.1007/978-3-319-00026-8_2</a>
+</div>
+<div id="ref-grant" class="csl-entry" role="listitem">
+Grant, S., Corker, K., Mellor, D., Stewart, S., Cashin, A., Lagisz, M., Mayo-Wilson, E., Moher, D., Umpierre, D., Barbour, V., Buck, S., Collins, G., Hazlett, H., Hrynaszkiewicz, I., Lee, C., Parker, T., Rethlefsen, M., Toomey, E., &amp; Nosek, B. (2025). <em>TOP 2025: An update to the transparency and openness promotion guidelines</em>. <a href="https://doi.org/10.31222/osf.io/nmfs6_v2">https://doi.org/10.31222/osf.io/nmfs6_v2</a>
+</div>
+<div id="ref-moshontz2018" class="csl-entry" role="listitem">
+Moshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L., Forscher, P. S., Grahe, J. E., McCarthy, R. J., Musser, E. D., Antfolk, J., Castille, C. M., Evans, T. R., Fiedler, S., Flake, J. K., Forero, D. A., Janssen, S. M. J., Keene, J. R., Protzko, J., Aczel, B., … Chartier, C. R. (2018). The Psychological Science Accelerator: Advancing Psychology Through a Distributed Collaborative Network. <em>Advances in Methods and Practices in Psychological Science</em>, <em>1</em>(4), 501–515. <a href="https://doi.org/10.1177/2515245918797607">https://doi.org/10.1177/2515245918797607</a>
+</div>
+<div id="ref-swartz2019" class="csl-entry" role="listitem">
+Swartz, T. H., Palermo, A.-G. S., Masur, S. K., &amp; Aberg, J. A. (2019). The Science and Value of Diversity: Closing the Gaps in Our Understanding of Inclusion and Diversity. <em>The Journal of Infectious Diseases</em>, <em>220</em>(220 Suppl 2), S33–S41. <a href="https://doi.org/10.1093/infdis/jiz174">https://doi.org/10.1093/infdis/jiz174</a>
+</div>
+<div id="ref-wilkinson2016" class="csl-entry" role="listitem">
+Wilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., Silva Santos, L. B. da, Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <em>Scientific Data</em>, <em>3</em>(1), 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a>
+</div>
+<div id="ref-wuchty2007" class="csl-entry" role="listitem">
+Wuchty, S., Jones, B. F., &amp; Uzzi, B. (2007). The Increasing Dominance of Teams in Production of Knowledge. <em>Science</em>, <em>316</em>(5827), 1036–1039. <a href="https://doi.org/10.1126/science.1136099">https://doi.org/10.1126/science.1136099</a>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

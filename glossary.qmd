@@ -1,0 +1,11 @@
+# Glossary
+
+```{r echo = F}
+library(glossary) 
+glossary_persistent(path = "glossary/glossary-persistant.yml")
+glossary_popup("hover")
+```
+
+```{r echo = F}
+glossary_table()
+```

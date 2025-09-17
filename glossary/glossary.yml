@@ -2,3 +2,48 @@ FAIR: |
   FAIR stands for Findable, Accessible, Interoperable, and Reusable, a set of guiding principles that aim to improve the management and stewardship of scientific data, metadata, and other research outputs. Originally proposed by Wilkinson et al. (2016), the FAIR principles emphasize that data should be findable through rich metadata and persistent identifiers; accessible using standardized protocols, even when access is restricted; interoperable via the use of shared formats, vocabularies, and ontologies; and reusable by ensuring clear licensing, documentation, and provenance. FAIR is not a strict standard but a framework to guide the development of research practices and infrastructure that support transparency, reproducibility, and long-term reuse by both humans and machines.
 metadata: |
   Metadata is information that describes other data. It helps explain what a dataset or research output is, how it was created, who created it, and how it can be used. Metadata makes data easier to find, understand, and reuse.
+  
+Transparency and Openness: |
+  A set of community-developed standards created to improve the transparency, accessibility, and reproducibility of research. The TOP Guidelines outline eight modular standards (e.g., data citation, data sharing, analytic methods, preregistration, replication) with different levels of stringency that journals, funders, and institutions can adopt to encourage open scientific practices.
+  
+contributorship: |
+  An alternative to traditional authorship that provides a more transparent account of each person’s role in a research project. Instead of assigning credit through a fixed order of authors’ names, contributorship models (such as the CRediT taxonomy) specify the specific tasks and responsibilities undertaken by each contributor—for example, conceptualization, data curation, analysis, project administration, or writing. This approach aims to recognize diverse forms of scholarly labor, reduce disputes over author order, and promote accountability.
+  
+CRediT: |
+  A standardized system for describing the specific roles individuals play in research projects. CRediT defines 14 contributor roles—such as conceptualization, methodology, data curation, writing (original draft), and project administration—to provide a transparent account of who did what. Rather than replacing authorship, CRediT works alongside it to make contributions more visible and accountable, helping to reduce disputes and ensure proper recognition.
+  
+authorship: |
+  Being listed as an author on a research paper, usually to recognize someone’s contribution and responsibility for the work. Author order often signals who did the most work or led the project.
+  
+Project: |
+  A container for a scientific effort, capturing the overall scope, goals, timeline, and team. All other elements: tasks, contributors, metadata, and outputs are organized within a project.
+  
+Task: |
+  A discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress.
+  
+Team: |
+  The group of contributors working together on a project. Teams may span labs, institutions, or disciplines, and are defined by shared access to project tasks and resources.
+  
+User: |
+  Any person with access to STAPLE. A user may belong to multiple projects and teams, with different roles in each.
+  
+Roles: |
+  Defined levels of access and responsibility within a project (e.g., project manager, editor, viewer). Roles help manage permissions and clarify responsibilities.
+  
+Forms: |
+  Structured templates for capturing important project metadata, such as study design details, instruments used, or ethical approvals, ensuring consistency and transparency.
+  
+Tags: |
+  Flexible labels used to categorize and filter tasks or projects. Tags help organize work by theme, method, priority, or custom criteria.
+  
+Milestones: |
+  Markers of significant progress within a project, such as completing data collection or submitting a manuscript. Milestones help track timelines and achievements.
+  
+Project Summary: |
+  An automatically generated overview that consolidates key project information, including tasks, contributors, metadata, milestones, and outputs, into a shareable format.
+  
+Task Logs: |
+  A chronological record of all activity on a task, including assignments, updates, completions, and notes. Task logs create a transparent history of project work, making it easier to track progress, maintain accountability, and reconstruct decisions.
+  
+Contributor/Member: |
+  An individual who actively participates in a project. Contributors may take on different roles, responsibilities, and levels of access within STAPLE.
