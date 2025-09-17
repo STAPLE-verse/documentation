@@ -20,316 +20,6 @@
     ]
   },
   {
-    "objectID": "metadata.html",
-    "href": "metadata.html",
-    "title": "3  Documentation: Metadata",
-    "section": "",
-    "text": "3.1 What is metadata?\nMetadata is data or information about a resource. Here, we use the term resource to denote anything you want to share with the larger community. Most obvious resources from scientific projects include datasets from which analyses and research reports are derived. However, there are many types of resources that can be shared from a project. For example, we have identified some of the following resources (not an exhaustive list):\nAdditionally, metadata can be provided about the global project, the people involved in that project, and how the project was completed:",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documentation: Metadata</span>"
-    ]
-  },
-  {
-    "objectID": "metadata.html#what-is-metadata",
-    "href": "metadata.html#what-is-metadata",
-    "title": "3  Documentation: Metadata",
-    "section": "",
-    "text": "Documents:\n\nEthical approval documents\nStimuli and materials\nTranslations of stimuli\nOther documentation of the research project (notes, approvals, presentations)\nManuscript or research report\n\nData:\n\nPrimary: Comes in many forms but likely text, audio, video, or images, created during the project\nSecondary: information about using another data source\n\nCode:\n\nCode for analysis, study creation, or study implementation\nSoftware code\n\n\n\n\nProject information\nAuthor information\n\nOrganization/Institutions\nFunders\n\nContributions: who did what on the project",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documentation: Metadata</span>"
-    ]
-  },
-  {
-    "objectID": "metadata.html#why-should-i-create-metadata",
-    "href": "metadata.html#why-should-i-create-metadata",
-    "title": "3  Documentation: Metadata",
-    "section": "3.2 Why should I create metadata?",
-    "text": "3.2 Why should I create metadata?\nThe purpose of metadata within the scientific community is multi-fold and often described with the acronym FAIR (Wilkinson et al., 2016):\n\nFindable: allowing resources to be findable via database, search engine, etc. Metadata is indexed by journals, libraries, databases, and search engines to assist in discovery.\nAccessible: allowing resources to be accessible by providing information on how to download/use resources\n\nInteroperable: the ability to integrate resources with other resources\nReusable: enough information should be provided that resources can be reused by other individuals.\n\nLearn more about FAIR principles here: https://www.go-fair.org/fair-principles/\nMetadata can be time consuming, confusing, and hard to make. So, why should you create metadata that makes your work FAIR?\n\nIt can be required:\n\nRecent laws across the globe require at least open data to be provided with publications or research reports.\nJournals have begun to adopt the Transparency and Openness Guidelines (https://www.cos.io/initiatives/top-guidelines), which requires the sharing of resources for a project. For stricter TOP guidelines, metadata would be required to adhere to those standards.\n\nReproducibility:\n\nResearchers can independently verify your work and correct errors if found (Piwowar & Vision, 2013).\n\nExtension/Generalization:\n\nResearchers can extend your work by using resources in new projects, reanalyzing data in new ways, or combining resources for meta-analysis (Vadillo, Gold, & Osman, 2018; the Human Connectome Project—Van Essen et al., 2013).\n\nVisibility and Metrics:\n\nPublications with open resources have higher citation rates (McKiernan et al., 2016).s",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documentation: Metadata</span>"
-    ]
-  },
-  {
-    "objectID": "metadata.html#how-metadata-is-structured",
-    "href": "metadata.html#how-metadata-is-structured",
-    "title": "3  Documentation: Metadata",
-    "section": "3.3 How metadata is structured",
-    "text": "3.3 How metadata is structured\nMetadata can fall into two categories:\n\nHuman readable: human readable formats are structured as a report with titles of metadata information and the description for each provided.\nExamples of human-readable formats:\n\nDescriptive reports\nSimple tables provided resources and their descriptions\n\nMachine readable: provides the same information as the human readable format, but in a structured/standardized format that can be integrated and read by computer systems.\n\nExamples of machine-readable formats:\n\nBar codes\neXtensible Markup Language (XML)\nJavaScript Object Notation (JSON)\nResource Description Framework (RDF)\n\n\n\nIn STAPLE, we allow you to create metadata through simple HTML forms that conforms to either our proposed minimum standard or your own uploaded standard. If you have never worked with metadata or created it before, you can use our templates to understand what needs to be provided and when. If your research field has existing standards, you can use STAPLE to ensure you include the required information.\nWe will describe our minimum metadata standards below and provide examples JSON or JSON-LD format. JSON is one of most popular machine readable formats because it is “lightweight” as a simple text file of key-value pairs. It resembles a dictionary where each entry has a name and a description.\nFor example, here’s how you might format author information:\n{\n  \"author\":[\n    {\"firstName\":\"Erin\", \"lastName\":\"Buchanan\"},\n    {\"firstName\":\"Marton\", \"lastName\":\"Kovacs\"},\n    {\"firstName\":\"Engerst\", \"lastName\":\"Yedra\"}\n  ]\n}\nThe author metadata includes three entries, which have more metadata: first and last names. Generally, metadata is hierarchical or nested to show the relationship between items (i.e., authors have first and last names). We will create output from STAPLE in JSON-Linked Data (JSON-LD) format which was created by the Resource Descriptive Framework (RDF Core Working Group, 2004). The LD formatting adds special pieces of information @context and @type - denoting the specific metadata style you are using and typology of the information you are sharing. This standardization of metadata allows for indexing in databases and search engines (especially https://datasetsearch.research.google.com/).\nHere’s an example of the English Lexicon Project (Balota et al., 2007):\n{\n  \"@context\": [\"https://schema.org/\"],\n  \"@type\": [\"Dataset\"],\n  \"name\": [\"The English Lexicon Project\"],\n  \"fileFormat\": [\".csv\"],\n  \"contentUrl\": [\"https://elexicon.wustl.edu/index.html\"]\n}\nSTAPLE generally uses schema.org naming conventions for our minimum metadata standards. Schema.org is a collaborative working group that has provided a standardization for metadata vocabulary. For example, the author of this documentation may be formatted as:\n{ \n  \"author\":[    \n    {\n      \"@type\":[\"Person\"],\n      \"identifier\":[\"https://orcid.org/0000-0002-9689-4189\"],\n      \"givenName\":[\"Erin\"],\n      \"familyName\":[\"Buchanan\"],\n      \"email\":[\"ebuchanan@harrisburgu.edu\"],\n      \"affiliation\":[\"Harrisburg University of Science and Technology\"]\n    }\n  ]\n}\nMany communities use Schema.org and extend their formats for their own individual needs. See for example:\n\nBioschemas for the lifesciences (https://bioschemas.org/)\nBrain Imaging Data Structure (BIDS; Gorgolewski et al., 2016; https://bids-specification.readthedocs.io/en/stable/appendices/schema.html) for brain imaging data\npsych-DS (Kline, 2018) for the psychology community\nFinance and business (https://www.w3.org/community/fibo/)\nAutomotive industry (http://www.automotive-ontology.org/)\n\nThe advantage to using Schema.org is it’s popularity - many people use it and computers know how to read it. Further, it is considered semantic which details the connections between items (https://en.wikipedia.org/wiki/Semantic_Web).",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documentation: Metadata</span>"
-    ]
-  },
-  {
-    "objectID": "metadata.html#staple-metadata",
-    "href": "metadata.html#staple-metadata",
-    "title": "3  Documentation: Metadata",
-    "section": "3.4 STAPLE Metadata",
-    "text": "3.4 STAPLE Metadata\nBelow, we explore the types of metadata that are available in STAPLE and their minimum requirements. Each of these requirements can be extended (see building your own metadata [LINK]), developed from scratch, or other community requirements can be imported into STAPLE (see converting metadata into STAPLE format [LINK]).\nYou can view our JSON validation schema by examining each file LINK. JSON validation schema are used to create the forms you see in the app and to ensure that the output files are formatted correctly.\nYou can view our JSON-LD examples of the output from each schema LINK. These files would be downloaded from STAPLE to share in a repository like GitHub or the Open Science Framework.\nThe image below shows how each type of metadata collected within STAPLE for our minimum standard is related to each other. Each piece is described below with the required components. Within the descriptions below, we denote the official keyword for a object and then the description of what that keyword indicates. These are taken from Schema.org. In the app, they are given more descriptive titles/names to know what to enter in the form.\nFor example:\n\nidentifier –&gt; “Funding number or other identifier:”\naddressLocality –&gt; “City name of the Organization’s Location:”\n\n\nknitr::include_graphics(\"pics/metadata.jpg\")\n\n\n\n\n\n\n\n\n\n3.4.1 Project\nProjects are separate research endeavors that you want to create information for and track using STAPLE’s features. Projects can be as simple as a manuscript/report/document you want to share, grant applications, data collection, stimuli and translations, etc. Generally, we think of projects as work that will eventually be published, but this is not a necessary requirement.\nRequired elements of project-level metadata (you enter this information):\n\nname: Name of the project\ndescription: Project description\nkeywords: Keywords\ncitation: Citation (should probably break this down into parts)\n\nSuggested elements of project-level metadata (you enter this information):\n\nabstract: Abstract of the project, generally from the paper or more formal than the required description\nidentifier: Persistent identifier (DOI, ISSN, etc.)\npublisher: Publisher (should this be under citation)\n\nOther elements of project-level metadata (that are added automatically):\n\nContributors\nCorresponding Author\nFunders\nDate\n\n\n\n3.4.2 Action\nAction describes all of the tasks completed within STAPLE. This metadata is collected for you by using the app. The following information is collected:\n\nstartTime: The date-time of when the action was assigned if it was a task\nendTime: The date-time of when the action was completed\nagent: The person who assigned the task\nparticipant: The person who completed the task\nresult:\n\nname: The name of the task\ndescription: The description of the task\nsubjectOf: The project title from staple, linked to the project metadata\n\n\n\n\n3.4.3 Data\nData gets a special type of schema, etc.\nhttps://schema.org/Dataset\n\n3.4.3.1 Primary Data\n\n\n3.4.3.2 Secondary Data\n\n\n\n3.4.4 Project Outputs\nNote that data can be text, but this is the spot we classify other objects you may output.\n\n3.4.4.1 Text\nhttps://schema.org/TextObject\n\n\n3.4.4.2 Audio\nhttps://schema.org/AudioObject\n\n\n3.4.4.3 Video\nhttps://schema.org/VideoObject\n\n\n\n3.4.5 Image\nhttps://schema.org/ImageObject\n\n\n3.4.6 Author\nhttps://schema.org/Person\n\n\n3.4.7 Organization\n\n\n3.4.8 Funder\n\n\n3.4.9 CRediT",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documentation: Metadata</span>"
-    ]
-  },
-  {
-    "objectID": "metadata.html#add-your-specific-requirements",
-    "href": "metadata.html#add-your-specific-requirements",
-    "title": "3  Documentation: Metadata",
-    "section": "3.5 Add your specific requirements",
-    "text": "3.5 Add your specific requirements\njson format\nmetadata builder?",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documentation: Metadata</span>"
-    ]
-  },
-  {
-    "objectID": "staple-elements.html",
-    "href": "staple-elements.html",
-    "title": "4  Overview of STAPLE",
-    "section": "",
-    "text": "4.1 Definitions of Terms",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Overview of STAPLE</span>"
-    ]
-  },
-  {
-    "objectID": "staple-elements.html#definitions-of-terms",
-    "href": "staple-elements.html#definitions-of-terms",
-    "title": "4  Overview of STAPLE",
-    "section": "",
-    "text": "4.1.1 User\nA user in STAPLE is a person who has an account and agreed to terms and conditions. Users can create all the elements described below on their own accounts and complete tasks as part of projects that were created an another person’s account.\nUsers have the ability to log in/log out, update their personal information (username, password, email, and profile information), and delete their account. Users also have the ability to add and manage contributors who are part of their projects. They can create teams for individual projects.\nNote: Deleting your account does not delete you from contributions tied to other projects. You will lose the ability to edit those contributions but you must have the administrator of that project delete you from that project if you wish.\n\n4.1.1.1 Project Admin\nA use can be a project administrator:\n\nBy default, those who “create” a project are a project administrator on that project. See the permissions section below for an explanation of what that means.\nAdditional project administrators can be added to individual projects.\n\n\n\n4.1.1.2 Contributor\n\nA user can also be added as a contributor on a project. Contributors have limited access to other projects, generally only able to complete tasks that have been assigned to them.\n\n\n\n4.1.1.3 Teams\n\nTeams are a special type of contributor for projects. Each user can be part of multiple teams within a project. Teams are used for tasks that involve a group of people who need to complete a goal. For example, a data collection team for a project with human subjects will need to complete an ethics application to cover their team for data collection. Therefore, each person gets credit for completing the ethics review, but only one person on the team needs to complete the “task” within STAPLE. Another example could be a team of translators who work on converting materials into Spanish from French. The goal is to provide the final Spanish materials, but the entire team gets credit for completing this task.\n\n\n\n\n4.1.2 Permissions\n\nProject administrators have permissions to edit everything within a project (people, structure [see below], tasks, documentation, and more). They can add, edit, delete, and update all information within a project.\nContributors only have permission to view and edit tasks that are assigned to them, along with the global project information on a project to which they have been added.\n\n\n\n4.1.3 Projects\n\n\nProjects are the main organizational structure within STAPLE. Projects are defined by the user but can be thought of as: a research paper, a thesis, a grant application, a meta-analysis, a team report, and more.\nUsers will be able to create, read, update, and delete projects. They can define project roles by adding contributors (and contributor teams) and defining additional project administrators. They can create, update, and delete all the possible options described below (elements, tasks, metadata).\n\n\n\n4.1.4 Tasks\n\nTasks are the “to-do” list within a project. Tasks must be assigned to a project. Each task must have a contributor and/or team assigned to them (and the default is the person who creates the task). Additionally, tasks can include a requirement for documentation. These documentation standards can be selected from our minimum requirement list or can your own options can be uploaded.\nThe documentation will appear as a “form” online for a person to fill out. They will fill in the required information for that type of task (defined by the creator, please see metadata section for types). These form outputs can be updated by the project administrator at any time or can be updated as part of the review process.\nOnce a task has been assigned to a user, the user will get an email to complete the task. At this point, once the user has “completed” the task, the project administrator will receive an email that the task has been completed. They can review the task to ensure it has been completed correctly. If not, they can send the task back to the original user who can then update the task information. This structure is designed in a similar way to GitHub - once a person completes as task, it is reviewed. If ok, the task is marked done, and if not, it requires the original contributor to update and resubmit.\n\n\n\n4.1.5 Elements\n\nElements are a special placeholder within a project. You can create projects entirely without elements. However, many people like to group tasks into larger categories. Elements are storage boxes for groups of tasks or outputs that fit together. For example, you may create an element for a project that contains all the stimuli materials. This element could be assigned tasks such as “upload the stimuli online”, “translate the stimuli into French”, “translate the stimuli in Arabic”, and so on.\nYou can also use elements to label specific sections of a project. For example, you can use elements to hold materials, data, analyses, and the final manuscript, which will put these outputs into labeled sections on the final documentation.\nTasks can be assigned to elements. By assigning a task to an element, you are grouping them together on STAPLE and the final output documentation provided for transparency purposes.\n\n\n\n4.1.6 Dashboard\n\nThe project dashboard allows you to review the elements, tasks, contributors, and documentation available for the project.\nAdditionally, you can view and export a human and machine readable timeline for the project. This documentation will include the project documentation collected from contributors, the element structure of the project, and what each contributor did for the project (and a timestamp of when they did it).",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Overview of STAPLE</span>"
-    ]
-  },
-  {
-    "objectID": "walkthrough.html",
-    "href": "walkthrough.html",
-    "title": "5  Example Walkthroughs",
-    "section": "",
-    "text": "5.1 Example 1: One Principal Investigator, Multiple Data Sources\nThe first example study covers a computational linguistics project in which a researcher collects primary data and uses a secondary data source. In this project, the researcher collects data on semantic priming to show that people read faster when the words are related to each other like cat-dog rather than unrelated like spoon-dog. Researchers can define similarity - how related words are - in multiple ways, so the researcher wishes to clearly document how they calculated similarity using an secondary data source. Further, the researcher used other psycholinguistic databases to see if they could predict the amount of semantic priming in their study based on the characteristics of the words in the study.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Example Walkthroughs</span>"
-    ]
-  },
-  {
-    "objectID": "walkthrough.html#example-1-one-principal-investigator-multiple-data-sources",
-    "href": "walkthrough.html#example-1-one-principal-investigator-multiple-data-sources",
-    "title": "5  Example Walkthroughs",
-    "section": "",
-    "text": "5.1.1 Add a Project\nFirst, you will go to the project page by using the top navigation bar. To add a new project, click “CREATE PROJECT”.\nEnter your project name and description.\nTo do: add all project level metadata.\nOnce the project page is created, you will be brought to the overview page for the project.\nTo do: the data dashboard is temporary, ideas welcome.\nEach component of the project dashboard is explained more on STAPLE Elements section. In short:\n\nTasks: a place to create to-dos, track contributions, and add reminders to get things done. Tasks are always tied to projects and a specific user or team.\nElements: elements are storage boxes for specific project steps. You can think of them as ways to organize your tasks or project. For example, you may use Ethics, Data, Analysis and Results, and Manuscript as ways to group tasks, contributions, and outputs together. Tasks can be tied to a specific element.\nContributors: people involved in the project. This part does not necessarily mean authorship, it simply means someone who did something for the project.\nSettings: the place to update the project level metadata.\n\nTo do: figure out how to add users and teams for different levels of project tasks.\n\n\n5.1.2 Add Elements\nI would then add the different elements to my project. I click on elements to get the elements page and create element for adding new areas of organization. There are lots of ways to organize these. I could have created “data” and put both primary and secondary data within that element. I also could add separate elements for the pre-registration (if applicable) or potentially separate materials and translation into two elements.\nTo do: figure out a view and updating for these.\n\n\n5.1.3 Add Contributors\nFrom the project dashboard, you can click on contributors to add a new person to the project. Note: this process adds them only to that project.\nYou would be able to add contributors by email on this page. It will notify them that you have added them to the project. Once a contributor has been added to a project, you can begin to assign them tasks.\nTo do:\n\nAllow adding by email.\nCreate teams and add contributors to them.\n\n\n\n5.1.4 Add Tasks\nIn theory, you could create and run a project with no elements. You would use the task tab for all functionality. To create a task, click on tasks. Note that a lot of task functionality is not available yet, but we will pretend it is.\nWhen creating a task, you will define:\n\nThe task name\nThe task description or a how-to complete the task\nThe element a task should be assigned to (or none)\nThe person or team associated with the task\nIf the task needs an “output” (something that needs metadata)\nIf so, what type of metadata should the task include?\n\nOnce you create a task, the information on what needs to be done will be emailed to the user or team with the task information. They (or you) will be able to complete the task, and information about when the task was assigned and completed will be stored.\nIf the task has been tagged with needing an output - you will then need to enter the metadata for the requested output. For example, I created a task called “upload IRB documents”. In this case, the required output would be ethics approval for the study. I would store that document in my favorite repository (OSF, GitHub, FigShare, etc.) and create a permanent link for the document. Then I would enter the required metadata for that document. In this case, it would be a simple explanation of what the text document contains.\nTo do:\n\nAllow tasks to be tagged within element.\nView tasks within elements pages.\nAllow tasks to be tagged with a person or team.\nAllow tasks to be tagged with “needs metadata” or not.\nProvide example of difference in metadata for primary and secondary data.\n\n\n\n5.1.5 Project Outputs\nTo do: Add examples for each type of metadata here. Please see the Metadata section at the moment.\n\n\n5.1.6 Project Completion\nWhen all tasks are complete and all metadata is entered for the project outputs, you can build a project timeline from the dashboard page. This information will present:\n\nWhat was done on a project with a timestamp (example)\n\nWho/When a task was assigned\nWho/When a task was completed\nWho/When metadata was added\nWho/When elements were created\nAnd so on\n\nA machine readable format of all the metadata for the study\nA contributorship output matching the model you wish to use\n\nFor example, tagged CRediT categories\n\n\nTo do: update dashboard to include this option.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Example Walkthroughs</span>"
-    ]
-  },
-  {
-    "objectID": "walkthrough.html#example-2-big-team-project-multiple-data-collection-sites",
-    "href": "walkthrough.html#example-2-big-team-project-multiple-data-collection-sites",
-    "title": "5  Example Walkthroughs",
-    "section": "5.2 Example 2: Big-Team Project, Multiple Data Collection Sites",
-    "text": "5.2 Example 2: Big-Team Project, Multiple Data Collection Sites",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Example Walkthroughs</span>"
-    ]
-  },
-  {
-    "objectID": "installation.html",
-    "href": "installation.html",
-    "title": "4  Installation Guide",
-    "section": "",
-    "text": "4.1 Assumptions\nThis guide assumes you meet the following prerequisites:",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installation Guide</span>"
-    ]
-  },
-  {
-    "objectID": "installation.html#assumptions",
-    "href": "installation.html#assumptions",
-    "title": "4  Installation Guide",
-    "section": "",
-    "text": "You are working on a Linux server. We use Ubuntu 20.04 in this guide, but the steps should be consistent for most Linux distributions.\nYou have shell/terminal access to the server.\nYou have worked with the command line before.\nYou have sudo privileges to install packages and manage services.\nYou understand what hidden files are (and how to view them).\nYou have a basic understanding of SQL and databases (familiarity with PostgreSQL is not required).\nYou know what Apache and/or Nginx servers are and how to edit their configuration files.\nYou can imagine yourself using git (even if you’re new to it).",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installation Guide</span>"
-    ]
-  },
-  {
-    "objectID": "installation.html#installation-on-a-server",
-    "href": "installation.html#installation-on-a-server",
-    "title": "6  Installation Guide",
-    "section": "6.2 Installation on a Server",
-    "text": "6.2 Installation on a Server\n\n6.2.1 Web Server Installation\n\nApache - Installation Instructions\nNginx - Installation Instructions\nThey really aren’t big fans of each other, only install one. We are using nginx on our server.\n\n\n\n6.2.2 Blitz/JS Installation\n\nInstall node.js and npm - Installation Instructions\n\nOther downloads\nYou should have at least node v18+ and npm v9+.\nYou can check your versions by using node -v and npm -v in a terminal or command window.\nYou may also use yarn, but this guide uses npm.\n\nInstall blitzjs: npm install -g blitz in a terminal/command window. Check your version is at least v2+ by using blitz -v in a command window.\n\nERIN UPDATE THIS BECAUSE BLAH\n\nDepending on server setup, you may need sudo privileges.\n\n\n\n6.2.3 Clone This Repository\n\nClone or copy this github repository to the server.\n\nInstall git on the machine using: sudo apt-get update sudo apt-get install git\nNavigate to /var/www/html/ or /var/www/ on the Linux machine.\nClone the repository by using this guide - Installation Instructions. git clone https://github.com/STAPLE-verse/STAPLE.git\nThis will make a folder called STAPLE with all the files you need.\n\nNavigate to that folder by using cd STAPLE.\n\n\n\n6.2.4 Database Installation\n\nEnsure that you have a local postgres service running on your computer.\nTo install see: Installation Instructions.\n\nBe sure to write down the superuser information as you are installing the setup for non-Linux machines.\nYou may use other databases, but will need to modify the provided code for their implementation.\n\nCreate the databases for STAPLE. Go to terminal and use:\n\nNote that all lines that start with # are comments for explanation.\n\n\n# get into postgres on linux\nsudo -u postgres psql \n# enter your password for superuser when prompted\nCREATE DATABASE staple;\nCREATE DATABASE staple_test;\nCHANGE THE USER TO A DIFFERENT NAME BECAUSE STAPLE CONFUSING\n\nCreate a user with appropriate privileges after postgres installation. While in the terminal and postgres, create a new user:\nChange out username and password (be sure to leave the quotes!) for your desired user.\n\nCREATE USER username WITH PASSWORD 'password';\n\nGet into the STAPLE database. You can use \\l and should see something like this:\n\npostgres=# \\l\n                                     List of databases\n    Name     |  Owner   | Encoding |   Collate   |    Ctype    |     Access privileges     \n-------------+----------+----------+-------------+-------------+---------------------------\n postgres    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | \n staple      | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =Tc/postgres             +\n             |          |          |             |             | postgres=CTc/postgres    +\n             |          |          |             |             | staple=CTc/postgres      +\n             |          |          |             |             | staple_admin=CTc/postgres\n staple_test | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | \n template0   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres              +\n             |          |          |             |             | postgres=CTc/postgres\n template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres              +\n             |          |          |             |             | postgres=CTc/postgres\n(5 rows)\n\nUse the following to get into the STAPLE database.\n\npostgres=# \\c staple\nYou are now connected to database \"staple\" as user \"postgres\".\nstaple=# \n\nYou can check that schema exist using \\dn:\n\nstaple=# \\dn\n List of schemas\n  Name  | Owner  \n--------+--------\n public | staple\n(1 row)\n\nstaple=# \n\nGive your user the appropriate permissions to write to the database. Change out username for the user you created a minute ago.\n\nGRANT ALL ON SCHEMA public TO username;\n\nUse quit; to exit out of postgres.\n\nALTER ROLE your_username CREATEDB; be sure to add this\n\n\n6.2.5 Connect Database to STAPLE App\n\nMake sure you are in the folder that you copied the github repository into.\nYou can use ls -al to view all files in that folder.\n\n# for example on my server \nerin@staple:~$ cd /var/www/html/STAPLE\nerin@staple:/var/www/html/STAPLE$ ls -al\ntotal 764\ndrwxr-xr-x  13 root root   4096 Oct 24 06:17 .\ndrwxr-xr-x   6 root root   4096 Oct 24 05:02 ..\ndrwxr-xr-x   3 root root   4096 Oct 24 04:27 db\n-rw-r--r--   1 root root    175 Oct 24 04:27 .editorconfig\n-rw-r--r--   1 root root    494 Oct 24 06:17 .env\n# more truncated # \n\nCopy the .env file and rename it .env.local.\n\nYou may need to turn on settings to see these hidden files on your machine.\nYou can create and edit this file at once with nano .env.local or vim if you want.\n\nEnsure the .env.local file has required environment variables.\n\nAfter the commented lines, add the DATABASE_URL line and change &lt;YOUR_DB_USERNAME&gt; to username:password (no &lt;&gt; these are here to show you what to change).\n\n\nDID NOT RENDER CORRECTLY\n-   Create and add a `SESSION_SECRET_KEY`.\n    -   In the command line prompt, use `openssl rand -hex 16` and copy this long letter/number combination instead of &lt;SESSIONKEY&gt;.\n# This env file should be checked into source control\n# This is the place for default values for all environments\n# Values in `.env.local` and `.env.production` will override these values\nDATABASE_URL=postgresql://&lt;YOUR_DB_USERNAME&gt;@localhost:5432/staple\nSESSION_SECRET_KEY=&lt;SESSIONKEY&gt;\n\nCopy the .env.test file and rename .env.test.local.\nEnsure the .env.test.local file has required environment variables in the same way you did above.\n\nDATABASE_URL=postgresql://&lt;YOUR_DB_USERNAME&gt;@localhost:5432/staple_test\n\n\n6.2.6 Install STAPLE Requirements\n\nMake sure you are in the STAPLE main folder. Use the following (not the # line, these are notes) to install packages, tailwind, and daisyui.\n\n# to install all packages for staple\nnpm install\n# install tailwind css\nblitz install tailwind\n# install daisyui\nnpm i -D daisyui@latest\n\nNext, use the following line to create the database structure/schema for STAPLE to run.\n\n# to create database with the right set up\nblitz prisma generate\nblitz prisma migrate dev\n\n\n6.2.7 Starting the App - Local Testing\n\nIn a terminal window, go to the folder you cloned this repository and type:\n\nblitz dev\n\nOpen (usually) http://localhost:3000 (or whatever it says for localhost in the terminal) with your browser to see the result.\nThis step works great on a “regular” computer, but may not be useful for a server. Instead run the service “in production” to view on your website.\n\n\n\n6.2.8 Starting the App - Production\n\nIn a terminal window, go to the folder you cloned this repository and type:\n\nblitz build\n\nThis step may produce errors in the build. You will need to fix these errors before running the application. Check below for common issues.\n\n\n\n6.2.9 Keeping the App Going\n\nCreate a service.\nGenerally, you might consider putting it here: /etc/systemd/system/ on a linux machine.\nWe’ve named the file blitz.service as an example creating it using nano.\nTutorial for those who do not know how to do this - Installation Instructions\n\n# for example \nerin@staple:/var/www/html/STAPLE$ cd /etc/systemd/system/\nerin@staple:/etc/systemd/system$ nano blitz.service\n\nExample file structure:\nChange the WorkingDirectory to your folder.\n\n[Unit]\nDescription=Starts the Blitz service.\nAfter=network.target\n\n[Service]\nType=simple\nWorkingDirectory=/var/www/html/STAPLE\nExecStart=/usr/local/bin/blitz start\nRestart=always\n\n[Install]\nWantedBy=default.target\n\nCommands:\n\nstop: sudo systemctl stop blitz\nstart: sudo systemctl start blitz\nrestart: sudo systemctl restart blitz\nreload: sudo systemctl reload blitz\ndisable: sudo systemctl disable blitz\nre-enable: sudo systemctl enable blitz\nstatus: sudo systemctl status blitz\nreset: sudo systemctl reset-failed blitz\n\n\nMany thanks to Scott B. for setting this up and giving instructions.\n\nRun sudo systemctl start blitz.\nCheck the status using sudo systemctl status blitz. Type the letter q to exit.\nStatus can also help you troubleshoot when you have an error.\n\n\n\n6.2.10 Setting Up the Proxy\n\nUse the following to get to the nginx web server: cd /etc/nginx/sites-enabled\nCreate a file by using nano YOURWEBSITE … for example ours is nano app.staple.science because that is the website of our hosted version of STAPLE.\nCreate the server file setup:\n\n# Default server configuration\n#\nserver {\n    listen 80;\n    server_name app.staple.science;\n    error_log /var/www/html/YOURFOLDER/logs/web-server.log;\n    location / {\n        proxy_pass http://localhost:3000/;\n    }\n}\n\nFor https you need to set up a certificate and the easiest solution is through certbot. See Installation Instructions.\n\nsudo apt install python3-certbot-nginx",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Installation Guide</span>"
-    ]
-  },
-  {
-    "objectID": "installation.html#common-errors",
-    "href": "installation.html#common-errors",
-    "title": "6  Installation Guide",
-    "section": "6.3 Common Errors",
-    "text": "6.3 Common Errors",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Installation Guide</span>"
-    ]
-  },
-  {
-    "objectID": "installation.html#run-on-your-own-computer",
-    "href": "installation.html#run-on-your-own-computer",
-    "title": "6  Installation Guide",
-    "section": "6.4 Run on Your Own Computer",
-    "text": "6.4 Run on Your Own Computer\nYou can also run the software locally on your own computer with a few limitations. If you are using a Linux system, you can follow the instructions above from Blitz/JS Installation through Starting the App - Production. You will be the only user allowed to enter data if you use the software on your own computer, as you are not hosting it on the web for others to connect to. However, you can still use all the functionality of project management and metadata entry/output.\n\n6.4.1 Blitz/JS Installation\n\nInstall node.js and npm for - Installation Instructions\n\nThis installer includes both node.js and npm.\nYou should have at least node v18+ and npm v9+.\nYou can check your versions by using node -v and npm -v in a terminal or command window.\nYou may also use yarn, but this guide uses npm.\n\nInstall blitzjs: npm install -g blitz in a terminal/command window. Check your version is at least v2+ by using blitz -v in a command window.\nDepending on your computer setup, you may need sudo privileges.\n\n\n\n6.4.2 Clone This Repository\n\nClone or copy this github repository to your computer - Installation Instructions. git clone https://github.com/STAPLE-verse/STAPLE.git\nThis will make a folder called STAPLE with all the files you need.\nNavigate to that folder in your terminal window.\n\n\n\n6.4.3 Database Installation\n\nEnsure that you have a local postgres service running on your computer.\nTo install see: Installation Instructions.\n\nBe sure to write down the superuser information as you are installing the setup for non-Linux machines.\nYou may use other databases, but will need to modify the provided code for their implementation.\n\nCreate the databases for STAPLE. Go to terminal and use:\n\nNote that all lines that start with # are comments for explanation.\n\n\n# get into postgres on mac\npsql -U postgres\n# enter your password for superuser when prompted\nCREATE DATABASE staple;\nCREATE DATABASE staple_test;\n\nCreate a user with appropriate privileges after postgres installation. While in the terminal and postgres, create a new user:\nChange out username and password (be sure to leave the quotes!) for your desired user.\n\nCREATE USER username WITH PASSWORD 'password';\n\nGet into the STAPLE database. You can use \\l and should see something like this:\n\npostgres=# \\l\n                                     List of databases\n    Name     |  Owner   | Encoding |   Collate   |    Ctype    |     Access privileges     \n-------------+----------+----------+-------------+-------------+---------------------------\n postgres    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | \n staple      | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =Tc/postgres             +\n             |          |          |             |             | postgres=CTc/postgres    +\n             |          |          |             |             | staple=CTc/postgres      +\n             |          |          |             |             | staple_admin=CTc/postgres\n staple_test | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | \n template0   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres              +\n             |          |          |             |             | postgres=CTc/postgres\n template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres              +\n             |          |          |             |             | postgres=CTc/postgres\n(5 rows)\n\nUse the following to get into the STAPLE database.\n\npostgres=# \\c staple\nYou are now connected to database \"staple\" as user \"postgres\".\nstaple=# \n\nYou can check that schema exist using \\dn:\n\nstaple=# \\dn\n List of schemas\n  Name  | Owner  \n--------+--------\n public | staple\n(1 row)\n\nstaple=# \n\nGive your user the appropriate permissions to write to the database. Change out username for the user you created a minute ago.\n\nGRANT ALL ON SCHEMA public TO username;\n\nUse quit; to exit out of postgres.\n\n\n\n6.4.4 Connect Database to STAPLE App\n\nMake sure you are in the folder that you copied the github repository into.\nYou can use ls -al to view all files in that folder.\n\n# for example on my server \nerin@staple:~$ cd /var/www/html/STAPLE\nerin@staple:/var/www/html/STAPLE$ ls -al\ntotal 764\ndrwxr-xr-x  13 root root   4096 Oct 24 06:17 .\ndrwxr-xr-x   6 root root   4096 Oct 24 05:02 ..\ndrwxr-xr-x   3 root root   4096 Oct 24 04:27 db\n-rw-r--r--   1 root root    175 Oct 24 04:27 .editorconfig\n-rw-r--r--   1 root root    494 Oct 24 06:17 .env\n# more truncated # \n\nCopy the .env file and rename it .env.local.\n\nYou may need to turn on settings to see these hidden files on your machine.\nYou can create and edit this file at once with nano .env.local or vim if you want.\n\nEnsure the .env.local file has required environment variables.\n\nAfter the commented lines, add the DATABASE_URL line and change  to username:password (no &lt;&gt; these are here to show you what to change).\nCreate and add a SESSION_SECRET_KEY.\n\nIn the command line prompt, use openssl rand -hex 16 and copy this long letter/number combination instead of .\n\n\n\n# This env file should be checked into source control\n# This is the place for default values for all environments\n# Values in `.env.local` and `.env.production` will override these values\nDATABASE_URL=postgresql://&lt;YOUR_DB_USERNAME&gt;@localhost:5432/staple\nSESSION_SECRET_KEY=&lt;SESSIONKEY&gt;\n\nCopy the .env.test file and rename .env.test.local.\nEnsure the .env.test.local file has required environment variables in the same way you did above.\n\nDATABASE_URL=postgresql://&lt;YOUR_DB_USERNAME&gt;@localhost:5432/staple_test\n\n\n6.4.5 Install STAPLE Requirements\n\nMake sure you are in the STAPLE main folder. Use the following (not the # line, these are notes) to install packages, tailwind, and daisyui.\n\n# to install all packages for staple\nnpm install\n# install tailwind css\nblitz install tailwind\n# install daisyui\nnpm i -D daisyui@latest\n\nNext, use the following line to create the database structure/schema for STAPLE to run.\n\n# to create database with the right set up\nblitz prisma migrate dev\n\n\n6.4.6 Starting the App - Local Testing\n\nIn a terminal window, go to the folder you cloned this repository and type:\n\nblitz dev\n\nOpen (usually) http://localhost:3000 (or whatever it says for localhost in the terminal) with your browser to see the result.\nEverything you do will be saved this way, so closing the app would mean just closing the app.\n\n\n\n6.4.7 Starting the App - Production\n\nIn a terminal window, go to the folder you cloned this repository and type:\n\nblitz build\n\nThis step may produce errors in the build. You will need to fix these errors before running the application. Check below for common issues.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Installation Guide</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "7  Summary",
-    "section": "",
-    "text": "This section will summarize the main points.",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "terminology.html",
-    "href": "terminology.html",
-    "title": "9  Terminology",
-    "section": "",
-    "text": "TBD when glossary is fixed.",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Terminology</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "6  References",
-    "section": "",
-    "text": "Adan, C. (2023). The importance of diversity in clinical research.\nBritish Journal of Nursing (Mark Allen Publishing),\n32(18), 898–901. https://doi.org/10.12968/bjon.2023.32.18.898\n\n\nAllen, L., O’Connell, A., & Kiermer, V. (2019). How can we ensure\nvisibility and diversity in research contributions? How the Contributor\nRole Taxonomy (CRediT) is helping the shift from authorship to\ncontributorship. Learned Publishing, 32(1), 71–74. https://doi.org/10.1002/leap.1210\n\n\nAllen, L., Scott, J., Brand, A., Hlava, M., & Altman, M. (2014).\nPublishing: Credit where credit is due. Nature,\n508(7496), 312–313. https://doi.org/10.1038/508312a\n\n\nBorghi, J. A., & Gulick, A. E. V. (2021). Data management and\nsharing: Practices and perceptions of psychology researchers. PLOS\nONE, 16(5), e0252047. https://doi.org/10.1371/journal.pone.0252047\n\n\nCummings, J. N., & Kiesler, S. (2005). Collaborative Research Across\nDisciplinary and Organizational Boundaries. Social Studies of\nScience, 35(5), 703–722. https://doi.org/10.1177/0306312705055535\n\n\nCummings, J. N., & Kiesler, S. (2007). Coordination costs and\nproject outcomes in multi-university collaborations. Research\nPolicy, 36(10), 1620–1634. https://doi.org/10.1016/j.respol.2007.09.001\n\n\nFecher, B., & Friesike, S. (2014). Open Science: One Term, Five\nSchools of Thought (S. Bartling & S. Friesike, Eds.; pp.\n17–47). Springer International Publishing. https://doi.org/10.1007/978-3-319-00026-8_2\n\n\nGrant, S., Corker, K., Mellor, D., Stewart, S., Cashin, A., Lagisz, M.,\nMayo-Wilson, E., Moher, D., Umpierre, D., Barbour, V., Buck, S.,\nCollins, G., Hazlett, H., Hrynaszkiewicz, I., Lee, C., Parker, T.,\nRethlefsen, M., Toomey, E., & Nosek, B. (2025). TOP 2025: An\nupdate to the transparency and openness promotion guidelines. https://doi.org/10.31222/osf.io/nmfs6_v2\n\n\nMoshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L.,\nForscher, P. S., Grahe, J. E., McCarthy, R. J., Musser, E. D., Antfolk,\nJ., Castille, C. M., Evans, T. R., Fiedler, S., Flake, J. K., Forero, D.\nA., Janssen, S. M. J., Keene, J. R., Protzko, J., Aczel, B., … Chartier,\nC. R. (2018). The Psychological Science Accelerator: Advancing\nPsychology Through a Distributed Collaborative Network. Advances in\nMethods and Practices in Psychological Science, 1(4),\n501–515. https://doi.org/10.1177/2515245918797607\n\n\nRep. Foxx, V. [R.-N. (2019). H.R.150 - 116th Congress (2019-2020):\nGREAT Act. https://www.congress.gov/bill/116th-congress/house-bill/150\n\n\nRep. Ryan, P. D. [R.-W. (2019). H.R.4174 - 115th Congress\n(2017-2018): Foundations for Evidence-Based Policymaking Act of\n2018. https://www.congress.gov/bill/115th-congress/house-bill/4174\n\n\nSwartz, T. H., Palermo, A.-G. S., Masur, S. K., & Aberg, J. A.\n(2019). The Science and Value of Diversity: Closing the Gaps in Our\nUnderstanding of Inclusion and Diversity. The Journal of Infectious\nDiseases, 220(220 Suppl 2), S33–S41. https://doi.org/10.1093/infdis/jiz174\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G.,\nAxton, M., Baak, A., Blomberg, N., Boiten, J.-W., Silva Santos, L. B.\nda, Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M.,\nDillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B.\n(2016). The FAIR Guiding Principles for scientific data management and\nstewardship. Scientific Data, 3(1), 160018. https://doi.org/10.1038/sdata.2016.18\n\n\nWuchty, S., Jones, B. F., & Uzzi, B. (2007). The Increasing\nDominance of Teams in Production of Knowledge. Science,\n316(5827), 1036–1039. https://doi.org/10.1126/science.1136099",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>References</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html",
-    "href": "updates.html",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "",
-    "text": "7.1 ✅ Quick Checklist",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#quick-checklist",
-    "href": "updates.html#quick-checklist",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "",
-    "text": "Announce maintenance window\n\nBack up your database\n\nEnsure .env is up to date (check release notes for new variables)",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#navigate-to-your-staple-app",
-    "href": "updates.html#navigate-to-your-staple-app",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.2 1) Navigate to your STAPLE app",
-    "text": "7.2 1) Navigate to your STAPLE app\ncd /path/to/staple",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#pull-the-latest-code",
-    "href": "updates.html#pull-the-latest-code",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.3 2) Pull the latest code",
-    "text": "7.3 2) Pull the latest code\ngit fetch origin\ngit checkout main\ngit pull --ff-only origin main",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#reinstall-dependencies",
-    "href": "updates.html#reinstall-dependencies",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.4 3) Reinstall dependencies",
-    "text": "7.4 3) Reinstall dependencies\nnpm install",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#run-database-migrations",
-    "href": "updates.html#run-database-migrations",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.5 4) Run database migrations",
-    "text": "7.5 4) Run database migrations\nRun migrations manually on the server:\nblitz prisma migrate dev\nIf this release includes a migration, you must run it here before rebuilding.",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#rebuild-the-app",
-    "href": "updates.html#rebuild-the-app",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.6 5) Rebuild the app",
-    "text": "7.6 5) Rebuild the app\nblitz build",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#restart-the-service",
-    "href": "updates.html#restart-the-service",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.7 6) Restart the service",
-    "text": "7.7 6) Restart the service\nsudo systemctl restart blitz.service",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#verify",
-    "href": "updates.html#verify",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.8 7) Verify",
-    "text": "7.8 7) Verify\nsudo systemctl status blitz.service\njournalctl -u blitz.service -n 200 --no-pager\nThen open your site and sanity-check core functionality (login, create/edit tasks, dashboards, etc).",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#database-migration-notes",
-    "href": "updates.html#database-migration-notes",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.9 Database Migration Notes",
-    "text": "7.9 Database Migration Notes\n\nIf a release ships schema changes, the migration step must be run on the server before restarting.\nIf something fails:\n\nRead the error output (often flags column/index conflicts).\n\nCheck the generated SQL in prisma/migrations/*/migration.sql.\nRestore from your backup and retry if needed.",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "updates.html#section",
-    "href": "updates.html#section",
-    "title": "7  STAPLE — Upgrade Guide",
-    "section": "7.10 ",
-    "text": "7.10 \nCreating a Super User (ADMIN)\nYou can make any account an admin by setting user.role = ‘ADMIN’.\nOption A: SQL directly on the server\nPostgreSQL example\nUPDATE “User” SET role = ‘ADMIN’ WHERE email = ‘someone@example.com’;\nMySQL/MariaDB example\nUPDATE User SET role = ‘ADMIN’ WHERE email = ‘someone@example.com’;\nOption B: Use an admin UI • pgAdmin (Postgres) or phpMyAdmin (MySQL/MariaDB) • Connect to your DB, open the User table, and set the role field to ADMIN.\n⸻\n⚠️ Security Note: Prisma Studio • Do not expose Prisma Studio publicly. By default it binds to a port that is accessible to anyone. • If you must use it: • Bind to localhost and tunnel over SSH, or • Put it behind a protected VPN/reverse proxy with authentication.\n⸻\nTroubleshooting\nService won’t start after upgrade\njournalctl -u blitz.service -n 200 –no-pager\n•   Check .env for new variables.\n•   Try a clean rebuild:\nrm -rf node_modules .next npm install blitz build sudo systemctl restart blitz.service\nMigration failed • Review the error and the specific migration folder under prisma/migrations. • Restore from backup if needed, fix data issues, and re-run.\nStatic files/styles look stale • Ensure blitz build completed without errors. • Clear CDN or proxy caches if applicable.\n⸻\nRollback (Quick Outline) 1. Checkout the previous commit or tag:\ngit checkout  npm install blitz build\n2.  Restore the DB from backup if schema/data changed.\n3.  Restart:\nsudo systemctl restart blitz.service\n⸻\nAppendix — Common Commands",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>STAPLE — Upgrade Guide</span>"
-    ]
-  },
-  {
-    "objectID": "glossary.html",
-    "href": "glossary.html",
-    "title": "5  Glossary",
-    "section": "",
-    "text": "term\ndefinition\n\n\n\n\nauthorship\nBeing listed as an author on a research paper, usually to recognize someone’s contribution and responsibility for the work. Author order often signals who did the most work or led the project.\n\n\nContributor/Member\nAn individual who actively participates in a project. Contributors may take on different roles, responsibilities, and levels of access within STAPLE.\n\n\ncontributorship\nAn alternative to traditional authorship that provides a more transparent account of each person’s role in a research project. Instead of assigning credit through a fixed order of authors’ names, contributorship models (such as the CRediT taxonomy) specify the specific tasks and responsibilities undertaken by each contributor—for example, conceptualization, data curation, analysis, project administration, or writing. This approach aims to recognize diverse forms of scholarly labor, reduce disputes over author order, and promote accountability.\n\n\nCRediT\nA standardized system for describing the specific roles individuals play in research projects. CRediT defines 14 contributor roles—such as conceptualization, methodology, data curation, writing (original draft), and project administration—to provide a transparent account of who did what. Rather than replacing authorship, CRediT works alongside it to make contributions more visible and accountable, helping to reduce disputes and ensure proper recognition.\n\n\nFAIR\nFAIR stands for Findable, Accessible, Interoperable, and Reusable, a set of guiding principles that aim to improve the management and stewardship of scientific data, metadata, and other research outputs. Originally proposed by Wilkinson et al. (2016), the FAIR principles emphasize that data should be findable through rich metadata and persistent identifiers; accessible using standardized protocols, even when access is restricted; interoperable via the use of shared formats, vocabularies, and ontologies; and reusable by ensuring clear licensing, documentation, and provenance. FAIR is not a strict standard but a framework to guide the development of research practices and infrastructure that support transparency, reproducibility, and long-term reuse by both humans and machines.\n\n\nForms\nStructured templates for capturing important project metadata, such as study design details, instruments used, or ethical approvals, ensuring consistency and transparency.\n\n\nmetadata\nMetadata is information that describes other data. It helps explain what a dataset or research output is, how it was created, who created it, and how it can be used. Metadata makes data easier to find, understand, and reuse.\n\n\nMilestones\nMarkers of significant progress within a project, such as completing data collection or submitting a manuscript. Milestones help track timelines and achievements.\n\n\nProject\nA container for a scientific effort, capturing the overall scope, goals, timeline, and team. All other elements: tasks, contributors, metadata, and outputs are organized within a project.\n\n\nProject Summary\nAn automatically generated overview that consolidates key project information, including tasks, contributors, metadata, milestones, and outputs, into a shareable format.\n\n\nRoles\nDefined levels of access and responsibility within a project (e.g., project manager, editor, viewer). Roles help manage permissions and clarify responsibilities.\n\n\nTags\nFlexible labels used to categorize and filter tasks or projects. Tags help organize work by theme, method, priority, or custom criteria.\n\n\nTask\nA discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress.\n\n\nTask Logs\nA chronological record of all activity on a task, including assignments, updates, completions, and notes. Task logs create a transparent history of project work, making it easier to track progress, maintain accountability, and reconstruct decisions.\n\n\nTeam\nThe group of contributors working together on a project. Teams may span labs, institutions, or disciplines, and are defined by shared access to project tasks and resources.\n\n\nTransparency and Openness\nA set of community-developed standards created to improve the transparency, accessibility, and reproducibility of research. The TOP Guidelines outline eight modular standards (e.g., data citation, data sharing, analytic methods, preregistration, replication) with different levels of stringency that journals, funders, and institutions can adopt to encourage open scientific practices.\n\n\nUser\nAny person with access to STAPLE. A user may belong to multiple projects and teams, with different roles in each.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Glossary</span>"
-    ]
-  },
-  {
     "objectID": "core-concepts.html",
     "href": "core-concepts.html",
     "title": "3  Core Concepts",
@@ -360,6 +50,26 @@
     ]
   },
   {
+    "objectID": "installation.html",
+    "href": "installation.html",
+    "title": "4  Installation Guide",
+    "section": "",
+    "text": "4.1 Assumptions\nThis guide assumes you meet the following prerequisites:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installation Guide</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html#assumptions",
+    "href": "installation.html#assumptions",
+    "title": "4  Installation Guide",
+    "section": "",
+    "text": "You are working on a Linux server. We use Ubuntu 20.04 in this guide, but the steps should be consistent for most Linux distributions.\nYou have shell/terminal access to the server.\nYou have worked with the command line before.\nYou have sudo privileges to install packages and manage services.\nYou understand what hidden files are (and how to view them).\nYou have a basic understanding of SQL and databases (familiarity with PostgreSQL is not required).\nYou know what Apache and/or Nginx servers are and how to edit their configuration files.\nYou can imagine yourself using git (even if you’re new to it).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installation Guide</span>"
+    ]
+  },
+  {
     "objectID": "installation.html#local-development-or-hosting",
     "href": "installation.html#local-development-or-hosting",
     "title": "4  Installation Guide",
@@ -387,6 +97,26 @@
     "text": "4.4 Common Issues & Fixes\n\n4.4.1 Prisma / Database Errors\n\nError: Error: P1000: Authentication failed against database server\n\nFix: Double-check your DATABASE_URL in .env.local. Make sure the username/password match the Postgres user you created.\n\nError: Error: P3014: The underlying table does not exist\n\nFix: Run migrations again:\n\n\nblitz prisma migrate dev\n\nPermission denied when running migrations\n\nFix: Ensure the Postgres user has privileges:\n\n\nALTER ROLE your_username CREATEDB;\nGRANT ALL ON SCHEMA public TO your_username;\n\n\n4.4.2 Build Errors\n\nError: blitz build fails with missing dependencies\n\nFix: Run npm install again to ensure all dependencies are installed.\n\nPrisma client mismatch\n\nFix: Run:\n\n\nblitz prisma generate\n\n\n4.4.3 Email Issues\n\nNo emails are being sent\n\nFix: Check that you kept only one mailer provider in mailer.ts.\nEnsure the correct environment variables (EMAIL_PASS, ACCESS_KEY, SECRET_ACCESS_KEY, or RESEND_API_KEY) are set in .env.local.\nFor Amazon SES, make sure your MAIL_FROM address is verified.\nFor Gmail, use an App Password, not your regular password.\n\n\n\n\n4.4.4 Nginx / Proxy Issues\n\nNginx won’t start\n\nFix: Run sudo nginx -t to test configuration. Correct any syntax errors before restarting.\n\nSite loads, but app doesn’t respond\n\nFix: Make sure blitz is running (check with sudo systemctl status blitz).\nCheck that the proxy_pass in your Nginx config matches the Blitz port (localhost:3000 by default).\n\nSSL certificate not working\n\nFix: Ensure port 80/443 are open on your firewall.\nRe-run certbot:\n\n\nsudo certbot --nginx -d yourdomain.com\n\n\n4.4.5 Service Issues\n\nBlitz doesn’t restart after reboot\n\nFix: Make sure the service is enabled:\n\n\nsudo systemctl enable blitz\n\nService crashes with permission errors\n\nFix: Ensure the User in blitz.service has read/write access to the STAPLE folder.\n\n\n\n\n4.4.6 General Tips\n\nAfter editing .env.local, .env.test.local, or blitz.service, restart the app:\n\nsudo systemctl restart blitz\n\nCheck logs:\n\njournalctl -u blitz -f\nGet help: contact staple.helpdesk at gmail.com.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installation Guide</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html",
+    "href": "glossary.html",
+    "title": "5  Glossary",
+    "section": "",
+    "text": "term\ndefinition\n\n\n\n\nauthorship\nBeing listed as an author on a research paper, usually to recognize someone’s contribution and responsibility for the work. Author order often signals who did the most work or led the project.\n\n\nContributor/Member\nAn individual who actively participates in a project. Contributors may take on different roles, responsibilities, and levels of access within STAPLE.\n\n\ncontributorship\nAn alternative to traditional authorship that provides a more transparent account of each person’s role in a research project. Instead of assigning credit through a fixed order of authors’ names, contributorship models (such as the CRediT taxonomy) specify the specific tasks and responsibilities undertaken by each contributor—for example, conceptualization, data curation, analysis, project administration, or writing. This approach aims to recognize diverse forms of scholarly labor, reduce disputes over author order, and promote accountability.\n\n\nCRediT\nA standardized system for describing the specific roles individuals play in research projects. CRediT defines 14 contributor roles—such as conceptualization, methodology, data curation, writing (original draft), and project administration—to provide a transparent account of who did what. Rather than replacing authorship, CRediT works alongside it to make contributions more visible and accountable, helping to reduce disputes and ensure proper recognition.\n\n\nFAIR\nFAIR stands for Findable, Accessible, Interoperable, and Reusable, a set of guiding principles that aim to improve the management and stewardship of scientific data, metadata, and other research outputs. Originally proposed by Wilkinson et al. (2016), the FAIR principles emphasize that data should be findable through rich metadata and persistent identifiers; accessible using standardized protocols, even when access is restricted; interoperable via the use of shared formats, vocabularies, and ontologies; and reusable by ensuring clear licensing, documentation, and provenance. FAIR is not a strict standard but a framework to guide the development of research practices and infrastructure that support transparency, reproducibility, and long-term reuse by both humans and machines.\n\n\nForms\nStructured templates for capturing important project metadata, such as study design details, instruments used, or ethical approvals, ensuring consistency and transparency.\n\n\nmetadata\nMetadata is information that describes other data. It helps explain what a dataset or research output is, how it was created, who created it, and how it can be used. Metadata makes data easier to find, understand, and reuse.\n\n\nMilestones\nMarkers of significant progress within a project, such as completing data collection or submitting a manuscript. Milestones help track timelines and achievements.\n\n\nProject\nA container for a scientific effort, capturing the overall scope, goals, timeline, and team. All other elements: tasks, contributors, metadata, and outputs are organized within a project.\n\n\nProject Summary\nAn automatically generated overview that consolidates key project information, including tasks, contributors, metadata, milestones, and outputs, into a shareable format.\n\n\nRoles\nDefined levels of access and responsibility within a project (e.g., project manager, editor, viewer). Roles help manage permissions and clarify responsibilities.\n\n\nTags\nFlexible labels used to categorize and filter tasks or projects. Tags help organize work by theme, method, priority, or custom criteria.\n\n\nTask\nA discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress.\n\n\nTask Logs\nA chronological record of all activity on a task, including assignments, updates, completions, and notes. Task logs create a transparent history of project work, making it easier to track progress, maintain accountability, and reconstruct decisions.\n\n\nTeam\nThe group of contributors working together on a project. Teams may span labs, institutions, or disciplines, and are defined by shared access to project tasks and resources.\n\n\nTransparency and Openness\nA set of community-developed standards created to improve the transparency, accessibility, and reproducibility of research. The TOP Guidelines outline eight modular standards (e.g., data citation, data sharing, analytic methods, preregistration, replication) with different levels of stringency that journals, funders, and institutions can adopt to encourage open scientific practices.\n\n\nUser\nAny person with access to STAPLE. A user may belong to multiple projects and teams, with different roles in each.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "6  References",
+    "section": "",
+    "text": "Adan, C. (2023). The importance of diversity in clinical research.\nBritish Journal of Nursing (Mark Allen Publishing),\n32(18), 898–901. https://doi.org/10.12968/bjon.2023.32.18.898\n\n\nAllen, L., O’Connell, A., & Kiermer, V. (2019). How can we ensure\nvisibility and diversity in research contributions? How the Contributor\nRole Taxonomy (CRediT) is helping the shift from authorship to\ncontributorship. Learned Publishing, 32(1), 71–74. https://doi.org/10.1002/leap.1210\n\n\nAllen, L., Scott, J., Brand, A., Hlava, M., & Altman, M. (2014).\nPublishing: Credit where credit is due. Nature,\n508(7496), 312–313. https://doi.org/10.1038/508312a\n\n\nBorghi, J. A., & Gulick, A. E. V. (2021). Data management and\nsharing: Practices and perceptions of psychology researchers. PLOS\nONE, 16(5), e0252047. https://doi.org/10.1371/journal.pone.0252047\n\n\nCummings, J. N., & Kiesler, S. (2005). Collaborative Research Across\nDisciplinary and Organizational Boundaries. Social Studies of\nScience, 35(5), 703–722. https://doi.org/10.1177/0306312705055535\n\n\nCummings, J. N., & Kiesler, S. (2007). Coordination costs and\nproject outcomes in multi-university collaborations. Research\nPolicy, 36(10), 1620–1634. https://doi.org/10.1016/j.respol.2007.09.001\n\n\nFecher, B., & Friesike, S. (2014). Open Science: One Term, Five\nSchools of Thought (S. Bartling & S. Friesike, Eds.; pp.\n17–47). Springer International Publishing. https://doi.org/10.1007/978-3-319-00026-8_2\n\n\nGrant, S., Corker, K., Mellor, D., Stewart, S., Cashin, A., Lagisz, M.,\nMayo-Wilson, E., Moher, D., Umpierre, D., Barbour, V., Buck, S.,\nCollins, G., Hazlett, H., Hrynaszkiewicz, I., Lee, C., Parker, T.,\nRethlefsen, M., Toomey, E., & Nosek, B. (2025). TOP 2025: An\nupdate to the transparency and openness promotion guidelines. https://doi.org/10.31222/osf.io/nmfs6_v2\n\n\nMoshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L.,\nForscher, P. S., Grahe, J. E., McCarthy, R. J., Musser, E. D., Antfolk,\nJ., Castille, C. M., Evans, T. R., Fiedler, S., Flake, J. K., Forero, D.\nA., Janssen, S. M. J., Keene, J. R., Protzko, J., Aczel, B., … Chartier,\nC. R. (2018). The Psychological Science Accelerator: Advancing\nPsychology Through a Distributed Collaborative Network. Advances in\nMethods and Practices in Psychological Science, 1(4),\n501–515. https://doi.org/10.1177/2515245918797607\n\n\nRep. Foxx, V. [R.-N. (2019). H.R.150 - 116th Congress (2019-2020):\nGREAT Act. https://www.congress.gov/bill/116th-congress/house-bill/150\n\n\nRep. Ryan, P. D. [R.-W. (2019). H.R.4174 - 115th Congress\n(2017-2018): Foundations for Evidence-Based Policymaking Act of\n2018. https://www.congress.gov/bill/115th-congress/house-bill/4174\n\n\nSwartz, T. H., Palermo, A.-G. S., Masur, S. K., & Aberg, J. A.\n(2019). The Science and Value of Diversity: Closing the Gaps in Our\nUnderstanding of Inclusion and Diversity. The Journal of Infectious\nDiseases, 220(220 Suppl 2), S33–S41. https://doi.org/10.1093/infdis/jiz174\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G.,\nAxton, M., Baak, A., Blomberg, N., Boiten, J.-W., Silva Santos, L. B.\nda, Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M.,\nDillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B.\n(2016). The FAIR Guiding Principles for scientific data management and\nstewardship. Scientific Data, 3(1), 160018. https://doi.org/10.1038/sdata.2016.18\n\n\nWuchty, S., Jones, B. F., & Uzzi, B. (2007). The Increasing\nDominance of Teams in Production of Knowledge. Science,\n316(5827), 1036–1039. https://doi.org/10.1126/science.1136099",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>References</span>"
     ]
   }
 ]
