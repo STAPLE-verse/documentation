@@ -78,7 +78,7 @@ Invitations are how collaborators join projects in STAPLE. Project administrator
 -   On the main dashboard, you can view all of your pending invitations across projects and choose to accept or decline them.
 -   On a project dashboard, only project administrators can see the invitations they have sent for that specific project.
 
-A contributor cannot be assigned tasks or added to teams until they have accepted their invitation. This system ensures that every collaborator's involvement is explicit, documented, and consented to before work begins. Each person will receive an email from app\@staple.science. The email may go to spam and may need to be marked as safe to ensure all invitation and notification emails are received.
+A contributor cannot be assigned tasks or added to teams until they have accepted their invitation. This system ensures that every collaborator's involvement is explicit, documented, and consented to before work begins. Each person will receive an email from app\@staple.science. The email may go to spam and may need to be marked as safe to ensure all invitation and notification emails are received. We also have emails that can be sent from app@staplescience.com to alleviate issues with universities blocking `.science` addresses. 
 
 #### Tasks
 
