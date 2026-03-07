@@ -1,6 +1,6 @@
 # Installation Guide
 
-STAPLE is available as a hosted service at https://app.staple.science, which is the simplest way to get started. You can also go to https://staplescience.com if your internet provider blocks `.science` addresses. 
+STAPLE is available as a hosted service at https://app.staple.science, which is the simplest way to get started. You can also go to https://app.staplescience.com if your internet provider blocks `.science` addresses.
 
 This guide is for individuals or organizations who would like to host their own instance of STAPLE. Running your own version gives you full control over your data, configuration, and integration with your existing infrastructure.
 
