@@ -6,7 +6,7 @@ glossary_persistent(path = "glossary/glossary-persistant.yml")
 glossary_popup("hover")
 ```
 
-In this section, we introduce the core terminology for STAPLE elements to help users understand their purpose and function. The following section will demonstrate how these elements appear in practice, with screenshots and step-by-step guides for using them within STAPLE. 
+In this section, we introduce the core terminology for STAPLE elements to help users understand their purpose and function. The following section will demonstrate how these elements appear in practice, with screenshots and step-by-step guides for using them within STAPLE.
 
 ## STAPLE Elements
 
@@ -20,7 +20,7 @@ Together, these elements form the backbone of STAPLE, giving research teams a cl
 
 In scientific research, data alone is never enough, what makes data meaningful is the `r glossary("metadata")` that describes it. Metadata captures the critical context behind research activities: the methods used, the instruments applied, the variables measured, and the conditions under which data were collected. Without metadata, results can be difficult to reproduce, interpret, or build upon.
 
-STAPLE treats metadata as a first-class feature, not an afterthought. The software also automatically records who did what, and when, embedding provenance metadata directly within projects. Project information, such as data, materials, and analysis code, can be linked within STAPLE and enriched with metadata. These details are captured using the `r glossary("Forms")` feature, which provides structured templates tailored to research needs. Completion of metadata can be assigned to contributors via `r glossary("Task")`s, making documentation part of the normal project workflow rather than an extra burden. 
+STAPLE treats metadata as a first-class feature, not an afterthought. The software also automatically records who did what, and when, embedding provenance metadata directly within projects. Project information, such as data, materials, and analysis code, can be linked within STAPLE and enriched with metadata. These details are captured using the `r glossary("Forms")` feature, which provides structured templates tailored to research needs. Completion of metadata can be assigned to contributors via `r glossary("Task")`s, making documentation part of the normal project workflow rather than an extra burden.
 
 By embedding metadata capture directly into everyday research activities, STAPLE makes it easier for scientists to document their work transparently, meet the expectations of journals and funders, and create records that future collaborators, or even their own future selves, can interpret and reuse. All metadata can be exported as machine-readable JSON for computational use and as human-readable interactive `r glossary("Project Summary")` reports for sharing and communication.
 
@@ -34,22 +34,22 @@ A user in STAPLE is anyone with an account who has accepted the platform's terms
 
 #### Project Administrator
 
-- The user who creates a project is automatically assigned as its project administrator.
-- Additional administrators can be added to a project as needed.
-- Every project must have at least one administrator at all times.
-- Administrators have the highest level of control, including managing contributors, editing project settings, and assigning roles.
+-   The user who creates a project is automatically assigned as its project administrator.
+-   Additional administrators can be added to a project as needed.
+-   Every project must have at least one administrator at all times.
+-   Administrators have the highest level of control, including managing contributors, editing project settings, and assigning roles.
 
 #### Contributor
 
-- A contributor is a user added to a project by an administrator.
-- Contributors generally have limited access: they can view project information and complete tasks assigned to them but cannot change project settings or manage other users.
-- This role allows project teams to include collaborators without granting full administrative privileges.
+-   A contributor is a user added to a project by an administrator.
+-   Contributors generally have limited access: they can view project information and complete tasks assigned to them but cannot change project settings or manage other users.
+-   This role allows project teams to include collaborators without granting full administrative privileges.
 
 #### Teams
 
-- Teams are a special type of contributor within a project.
-- A user can belong to multiple teams in the same project.
-- Teams are useful when a task requires collaboration by a group rather than an individual.
+-   Teams are a special type of contributor within a project.
+-   A user can belong to multiple teams in the same project.
+-   Teams are useful when a task requires collaboration by a group rather than an individual.
 
 For example, a data collection team working with human participants may need to complete an ethics application. Only one person needs to submit the form within STAPLE, but the entire team receives credit for completing the task. Similarly, a translation team might be responsible for converting study materials from French into Spanish. The collective goal is to provide the final Spanish materials, but all members of the team are credited for the work.
 
@@ -65,9 +65,9 @@ In addition to this main dashboard, each project also has its own Project Dashbo
 
 Projects are the central containers for scientific work. Each project includes its own tasks, teams, metadata, and outputs. On the Projects page, you can:
 
-- Create a new project.
-- View and manage existing projects.
-- Go into the project level dashboard. 
+-   Create a new project.
+-   View and manage existing projects.
+-   Go into the project level dashboard.
 
 Projects provide the big-picture structure that keeps research activities organized and transparent.
 
@@ -75,24 +75,24 @@ Projects provide the big-picture structure that keeps research activities organi
 
 Invitations are how collaborators join projects in STAPLE. Project administrators send invitations that specify the role a user will have once they accept.
 
-- On the main dashboard, you can view all of your pending invitations across projects and choose to accept or decline them.
-- On a project dashboard, only project administrators can see the invitations they have sent for that specific project.
+-   On the main dashboard, you can view all of your pending invitations across projects and choose to accept or decline them.
+-   On a project dashboard, only project administrators can see the invitations they have sent for that specific project.
 
-A contributor cannot be assigned tasks or added to teams until they have accepted their invitation. This system ensures that every collaborator's involvement is explicit, documented, and consented to before work begins.
+A contributor cannot be assigned tasks or added to teams until they have accepted their invitation. This system ensures that every collaborator's involvement is explicit, documented, and consented to before work begins. Each person will receive an email from app\@staple.science. The email may go to spam and may need to be marked as safe to ensure all invitation and notification emails are received.
 
 #### Tasks
 
 Tasks break a project down into actionable steps and are the backbone of daily research activity in STAPLE.
 
-- On the main dashboard, the Tasks page shows a consolidated view of all tasks assigned to you across every project, so nothing slips through the cracks.
-- On a project dashboard, project administrators can view and manage all tasks within that project, while contributors see only the tasks assigned to them.
+-   On the main dashboard, the Tasks page shows a consolidated view of all tasks assigned to you across every project, so nothing slips through the cracks.
+-   On a project dashboard, project administrators can view and manage all tasks within that project, while contributors see only the tasks assigned to them.
 
 Within a project, you can:
 
-- Create new tasks for yourself or others.
-- Assign tasks to contributors or teams.
-- Update task status (to-do, in progress, complete).
-- Add labels, metadata, and logs to track progress.
+-   Create new tasks for yourself or others.
+-   Assign tasks to contributors or teams.
+-   Update task status (to-do, in progress, complete).
+-   Add labels, metadata, and logs to track progress.
 
 This two-level view ensures that contributors can stay focused on their own responsibilities while project managers maintain oversight of the entire project's workflow.
 
@@ -100,11 +100,12 @@ This two-level view ensures that contributors can stay focused on their own resp
 
 Notifications keep you informed about project activity without needing to check each page manually. These alerts let you know when:
 
-- You've been assigned a new task.
-- A task you're involved in has been updated, completed, or approved.
-- You've received a project invitation.
-	
-On the main dashboard, notifications show updates from all of your projects in one place. On a project dashboard, notifications are filtered to that project only, helping you focus on what matters most in the current context. The Notifications page ensures you never miss important updates in collaborative projects.
+-   You've been assigned a new task.
+-   A task you're involved in has been updated, completed, or approved.
+-   You've received a project invitation.
+-   You've been added to a team.
+
+On the main dashboard, notifications show updates from all of your projects in one place. On a project dashboard, notifications are filtered to that project only, helping you focus on what matters most in the current context. The Notifications page ensures you never miss important updates in collaborative projects. Each day you will receive a summary email of your notifications from app\@staple.science. The email may go to spam and may need to be marked as safe to ensure all notification emails are received. We also have emails that can be sent from app@staplescience.com to alleviate issues with universities blocking `.science` addresses. 
 
 #### Forms
 
@@ -114,9 +115,9 @@ STAPLE includes a library of form templates, giving you a starting point if you'
 
 Once in use, forms become a powerful way to collect metadata directly within your workflow. You can:
 
-- Fill out forms as part of project tasks.
-- Assign forms to contributors or teams to ensure documentation responsibilities are shared.
-- Reuse templates across multiple projects for consistency.
+-   Fill out forms as part of project tasks.
+-   Assign forms to contributors or teams to ensure documentation responsibilities are shared.
+-   Reuse templates across multiple projects for consistency.
 
 By embedding metadata capture directly into the research process, forms help projects meet transparency and reproducibility standards while reducing the burden of after-the-fact documentation.
 
@@ -126,16 +127,16 @@ Roles in STAPLE describe the kinds of contributions people make within a project
 
 In STAPLE, roles can be:
 
-- Assigned to people → to show what responsibilities each contributor holds in a project.
-- Assigned to tasks → to clarify what kind of contribution a task represents and how it fits into the project.
+-   Assigned to people → to show what responsibilities each contributor holds in a project.
+-   Assigned to tasks → to clarify what kind of contribution a task represents and how it fits into the project.
 
-Roles provide a flexible system for understanding who did what and for standardizing contributions across projects. Role templates are avaliable to add to your account, which you can use across all projects. They must be created on the main dashboard before you can use them. 
+Roles provide a flexible system for understanding who did what and for standardizing contributions across projects. Role templates are avaliable to add to your account, which you can use across all projects. They must be created on the main dashboard before you can use them.
 
-### Project Level Options 
+### Project Level Options
 
 #### Tags
 
-Tags are flexible labels that help organize and filter milestones, tasks, and contributors. Tags make it easier to search and group related work across large projects. You can view customized tracking by using tags across these parts of the project. 
+Tags are flexible labels that help organize and filter milestones, tasks, and contributors. Tags make it easier to search and group related work across large projects. You can view customized tracking by using tags across these parts of the project.
 
 #### Milestones
 
@@ -147,15 +148,15 @@ Notes provide a space for free-text documentation within a project. Unlike struc
 
 Notes can be:
 
-- Private – visible only to the author.
-- Shared with contributors – if shared by a project administrator, contributors can view them.
-- Restricted to administrators – for communication only among project managers.
+-   Private – visible only to the author.
+-   Shared with contributors – if shared by a project administrator, contributors can view them.
+-   Restricted to administrators – for communication only among project managers.
 
 This flexibility makes Notes useful for everything from personal reminders to collaborative discussions among administrators.
 
 #### Form Data
 
-Form Data is the collected information from metadata Forms within a project. It provides a centralized view of all structured metadata entries—such as instrument details, ethics protocols, or dataset versions—that have been completed by contributors. Form Data can be reviewed, exported, and updated if errors have occurred. 
+Form Data is the collected information from metadata Forms within a project. It provides a centralized view of all structured metadata entries—such as instrument details, ethics protocols, or dataset versions—that have been completed by contributors. Form Data can be reviewed, exported, and updated if errors have occurred.
 
 #### Summary
 
@@ -163,4 +164,4 @@ The Summary page generates a shareable overview of the project. It consolidates 
 
 #### Settings
 
-The Settings page allows administrators to configure project-level metadata. This includes details such as the project title, description, timeline, and high-level information about the project's scope. 
+The Settings page allows administrators to configure project-level metadata. This includes details such as the project title, description, timeline, and high-level information about the project's scope.
