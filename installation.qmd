@@ -1,6 +1,6 @@
 # Installation Guide
 
-STAPLE is available as a hosted service at https://app.staple.science, which is the simplest way to get started. You can also go to https://app.staplescience.com if your internet provider blocks `.science` addresses.
+STAPLE is available as a hosted service at https://app.staplescience.com, which is the simplest way to get started. You can also go to https://app.staplescience.com if your internet provider blocks `.science` addresses.
 
 This guide is for individuals or organizations who would like to host their own instance of STAPLE. Running your own version gives you full control over your data, configuration, and integration with your existing infrastructure.
 
@@ -578,16 +578,16 @@ cd /etc/nginx/sites-enabled
     -   Name it after your site, e.g.:
 
 ```         
-sudo nano app.staple.science
+sudo nano app.staplescience.com
 ```
 
 -   Add the server configuration
-    -   Replace app.staple.science with your domain and update the log path if needed:
+    -   Replace app.staplescience.com with your domain and update the log path if needed:
 
 ```         
 server {
     listen 80;
-    server_name app.staple.science;
+    server_name app.staplescience.com;
 
     error_log /var/www/html/YOURFOLDER/logs/web-server.log;
 
@@ -622,7 +622,7 @@ sudo systemctl reload nginx
 
 ```         
 sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d app.staple.science
+sudo certbot --nginx -d app.staplescience.com
 ```
 
 -   This will automatically configure HTTPS and renew your certificate.

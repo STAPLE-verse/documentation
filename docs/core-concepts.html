@@ -1,769 +1,1443 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="quarto-1.8.26" />
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>3&nbsp; Core Concepts – STAPLE Documentation</title>
+    <style>
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      ul.task-list {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
+        vertical-align: middle;
+      }
+    </style>
 
+    <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+    <script src="site_libs/quarto-nav/headroom.min.js"></script>
+    <script src="site_libs/clipboard/clipboard.min.js"></script>
+    <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+    <script src="site_libs/quarto-search/fuse.min.js"></script>
+    <script src="site_libs/quarto-search/quarto-search.js"></script>
+    <meta name="quarto:offset" content="./" />
+    <link href="./installation.html" rel="next" />
+    <link href="./intro.html" rel="prev" />
+    <script src="site_libs/quarto-html/quarto.js" type="module"></script>
+    <script
+      src="site_libs/quarto-html/tabsets/tabsets.js"
+      type="module"
+    ></script>
+    <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+    <script src="site_libs/quarto-html/popper.min.js"></script>
+    <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+    <script src="site_libs/quarto-html/anchor.min.js"></script>
+    <link href="site_libs/quarto-html/tippy.css" rel="stylesheet" />
+    <link
+      href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css"
+      rel="stylesheet"
+      id="quarto-text-highlighting-styles"
+    />
+    <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+    <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css"
+      rel="stylesheet"
+      append-hash="true"
+      id="quarto-bootstrap"
+      data-mode="light"
+    />
+    <script id="quarto-search-options" type="application/json">
+      {
+        "location": "sidebar",
+        "copy-button": false,
+        "collapse-after": 3,
+        "panel-placement": "start",
+        "type": "textbox",
+        "limit": 50,
+        "keyboard-shortcut": ["f", "/", "s"],
+        "show-item-context": false,
+        "language": {
+          "search-no-results-text": "No results",
+          "search-matching-documents-text": "matching documents",
+          "search-copy-link-title": "Copy link to search",
+          "search-hide-matches-text": "Hide additional matches",
+          "search-more-match-text": "more match in this document",
+          "search-more-matches-text": "more matches in this document",
+          "search-clear-button-title": "Clear",
+          "search-text-placeholder": "",
+          "search-detached-cancel-button-title": "Cancel",
+          "search-submit-button-title": "Submit",
+          "search-label": "Search"
+        }
+      }
+    </script>
 
-<title>3&nbsp; Core Concepts – STAPLE Documentation</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
+    <link rel="stylesheet" href="glossary/glossary.css" />
+  </head>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./installation.html" rel="next">
-<link href="./intro.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-
-
-<link rel="stylesheet" href="glossary/glossary.css">
-</head>
-
-<body class="nav-sidebar floating quarto-light">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./core-concepts.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Core Concepts</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">STAPLE Documentation</a> 
-    </div>
-      </div>
+  <body class="nav-sidebar floating quarto-light">
+    <div id="quarto-search-results"></div>
+    <header id="quarto-header" class="headroom fixed-top">
+      <nav class="quarto-secondary-nav">
+        <div class="container-fluid d-flex">
+          <button
+            type="button"
+            class="quarto-btn-toggle btn"
+            data-bs-toggle="collapse"
+            role="button"
+            data-bs-target=".quarto-sidebar-collapse-item"
+            aria-controls="quarto-sidebar"
+            aria-expanded="false"
+            aria-label="Toggle sidebar navigation"
+            onclick="
+              if (window.quartoToggleHeadroom) {
+                window.quartoToggleHeadroom();
+              }
+            "
+          >
+            <i class="bi bi-layout-text-sidebar-reverse"></i>
+          </button>
+          <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="./core-concepts.html"
+                  ><span class="chapter-number">3</span>&nbsp;
+                  <span class="chapter-title">Core Concepts</span></a
+                >
+              </li>
+            </ol>
+          </nav>
+          <a
+            class="flex-grow-1"
+            role="navigation"
+            data-bs-toggle="collapse"
+            data-bs-target=".quarto-sidebar-collapse-item"
+            aria-controls="quarto-sidebar"
+            aria-expanded="false"
+            aria-label="Toggle sidebar navigation"
+            onclick="
+              if (window.quartoToggleHeadroom) {
+                window.quartoToggleHeadroom();
+              }
+            "
+          >
+          </a>
+          <button
+            type="button"
+            class="btn quarto-search-button"
+            aria-label="Search"
+            onclick="window.quartoOpenSearch()"
+          >
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- content -->
+    <div
+      id="quarto-content"
+      class="quarto-container page-columns page-rows-contents page-layout-article"
+    >
+      <!-- sidebar -->
+      <nav
+        id="quarto-sidebar"
+        class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"
+      >
+        <div class="pt-lg-2 mt-2 text-left sidebar-header">
+          <div class="sidebar-title mb-0 py-0">
+            <a href="./">STAPLE Documentation</a>
+          </div>
+        </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+          <div class="sidebar-search">
+            <div id="quarto-search" class="" title="Search"></div>
+          </div>
         </div>
+        <div class="sidebar-menu-container">
+          <ul class="list-unstyled mt-1">
+            <li class="sidebar-item">
+              <div class="sidebar-item-container">
+                <a href="./index.html" class="sidebar-item-text sidebar-link">
+                  <span class="menu-text"
+                    ><span class="chapter-number">1</span>&nbsp;
+                    <span class="chapter-title">Preface</span></span
+                  ></a
+                >
+              </div>
+            </li>
+            <li class="sidebar-item">
+              <div class="sidebar-item-container">
+                <a href="./intro.html" class="sidebar-item-text sidebar-link">
+                  <span class="menu-text"
+                    ><span class="chapter-number">2</span>&nbsp;
+                    <span class="chapter-title">Introduction</span></span
+                  ></a
+                >
+              </div>
+            </li>
+            <li class="sidebar-item">
+              <div class="sidebar-item-container">
+                <a
+                  href="./core-concepts.html"
+                  class="sidebar-item-text sidebar-link active"
+                >
+                  <span class="menu-text"
+                    ><span class="chapter-number">3</span>&nbsp;
+                    <span class="chapter-title">Core Concepts</span></span
+                  ></a
+                >
+              </div>
+            </li>
+            <li class="sidebar-item">
+              <div class="sidebar-item-container">
+                <a
+                  href="./installation.html"
+                  class="sidebar-item-text sidebar-link"
+                >
+                  <span class="menu-text"
+                    ><span class="chapter-number">4</span>&nbsp;
+                    <span class="chapter-title">Installation Guide</span></span
+                  ></a
+                >
+              </div>
+            </li>
+            <li class="sidebar-item">
+              <div class="sidebar-item-container">
+                <a
+                  href="./glossary.html"
+                  class="sidebar-item-text sidebar-link"
+                >
+                  <span class="menu-text"
+                    ><span class="chapter-number">5</span>&nbsp;
+                    <span class="chapter-title">Glossary</span></span
+                  ></a
+                >
+              </div>
+            </li>
+            <li class="sidebar-item">
+              <div class="sidebar-item-container">
+                <a
+                  href="./references.html"
+                  class="sidebar-item-text sidebar-link"
+                >
+                  <span class="menu-text"
+                    ><span class="chapter-number">6</span>&nbsp;
+                    <span class="chapter-title">References</span></span
+                  ></a
+                >
+              </div>
+            </li>
+          </ul>
         </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./core-concepts.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Core Concepts</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation Guide</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">References</span></span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+      </nav>
+      <div
+        id="quarto-sidebar-glass"
+        class="quarto-sidebar-collapse-item"
+        data-bs-toggle="collapse"
+        data-bs-target=".quarto-sidebar-collapse-item"
+      ></div>
+      <!-- margin-sidebar -->
+      <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#staple-elements" id="toc-staple-elements" class="nav-link active" data-scroll-target="#staple-elements"><span class="header-section-number">3.1</span> STAPLE Elements</a></li>
-  <li><a href="#metadata" id="toc-metadata" class="nav-link" data-scroll-target="#metadata"><span class="header-section-number">3.2</span> Metadata</a></li>
-  <li><a href="#definitions-of-terms" id="toc-definitions-of-terms" class="nav-link" data-scroll-target="#definitions-of-terms"><span class="header-section-number">3.3</span> Definitions of Terms</a>
-  <ul class="collapse">
-  <li><a href="#user" id="toc-user" class="nav-link" data-scroll-target="#user"><span class="header-section-number">3.3.1</span> User</a></li>
-  <li><a href="#main-and-project-level-options" id="toc-main-and-project-level-options" class="nav-link" data-scroll-target="#main-and-project-level-options"><span class="header-section-number">3.3.2</span> Main and Project Level Options</a></li>
-  <li><a href="#project-level-options" id="toc-project-level-options" class="nav-link" data-scroll-target="#project-level-options"><span class="header-section-number">3.3.3</span> Project Level Options</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
+          <h2 id="toc-title">Table of contents</h2>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Core Concepts</span></h1>
-</div>
+          <ul>
+            <li>
+              <a
+                href="#staple-elements"
+                id="toc-staple-elements"
+                class="nav-link active"
+                data-scroll-target="#staple-elements"
+                ><span class="header-section-number">3.1</span> STAPLE
+                Elements</a
+              >
+            </li>
+            <li>
+              <a
+                href="#metadata"
+                id="toc-metadata"
+                class="nav-link"
+                data-scroll-target="#metadata"
+                ><span class="header-section-number">3.2</span> Metadata</a
+              >
+            </li>
+            <li>
+              <a
+                href="#definitions-of-terms"
+                id="toc-definitions-of-terms"
+                class="nav-link"
+                data-scroll-target="#definitions-of-terms"
+                ><span class="header-section-number">3.3</span> Definitions of
+                Terms</a
+              >
+              <ul class="collapse">
+                <li>
+                  <a
+                    href="#user"
+                    id="toc-user"
+                    class="nav-link"
+                    data-scroll-target="#user"
+                    ><span class="header-section-number">3.3.1</span> User</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#main-and-project-level-options"
+                    id="toc-main-and-project-level-options"
+                    class="nav-link"
+                    data-scroll-target="#main-and-project-level-options"
+                    ><span class="header-section-number">3.3.2</span> Main and
+                    Project Level Options</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#project-level-options"
+                    id="toc-project-level-options"
+                    class="nav-link"
+                    data-scroll-target="#project-level-options"
+                    ><span class="header-section-number">3.3.3</span> Project
+                    Level Options</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- main -->
+      <main class="content" id="quarto-document-content">
+        <header id="title-block-header" class="quarto-title-block default">
+          <div class="quarto-title">
+            <h1 class="title">
+              <span class="chapter-number">3</span>&nbsp;
+              <span class="chapter-title">Core Concepts</span>
+            </h1>
+          </div>
 
+          <div class="quarto-title-meta"></div>
+        </header>
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>In this section, we introduce the core terminology for STAPLE elements to help users understand their purpose and function. The following section will demonstrate how these elements appear in practice, with screenshots and step-by-step guides for using them within STAPLE.</p>
-<section id="staple-elements" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="staple-elements"><span class="header-section-number">3.1</span> STAPLE Elements</h2>
-<p>Research projects are made up of many moving parts: overarching goals, specific hypotheses, tasks to carry out, and the people who contribute along the way. To manage this complexity, STAPLE organizes projects into a small set of core elements. These elements provide a shared structure that scientists and collaborators can understand quickly, regardless of discipline.</p>
-<p>At the highest level, a <a class="glossary" title="A container for a scientific effort, capturing the overall scope, goals, timeline, and team. All other elements: tasks, contributors, metadata, and outputs are organized within a project.">Project</a> represents the scientific effort being undertaken: its aims, scope, and timeline. Within each project, researchers define <a class="glossary" title="A discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress.">Task</a>s, which capture the individual units of work needed to achieve those aims. <a class="glossary" title="The group of contributors working together on a project. Teams may span labs, institutions, or disciplines, and are defined by shared access to project tasks and resources.">Team</a>s and <a class="glossary" title="An individual who actively participates in a project. Contributors may take on different roles, responsibilities, and levels of access within STAPLE.">Contributor/Member</a>s provide the human side of the system, reflecting roles, privileges, and collaborations across labs and institutions. Every action taken on a task, whether assigning it, updating its status, or marking it as complete, is recorded in <a class="glossary" title="A chronological record of all activity on a task, including assignments, updates, completions, and notes. Task logs create a transparent history of project work, making it easier to track progress, maintain accountability, and reconstruct decisions.">Task Logs</a>, creating a transparent history of progress. Finally, <a class="glossary" title="Flexible labels used to categorize and filter tasks or projects. Tags help organize work by theme, method, priority, or custom criteria.">Tags</a> allow projects to be categorized, searched, and documented in ways that make sense for science.</p>
-<p>Together, these elements form the backbone of STAPLE, giving research teams a clear, consistent framework for planning and documenting their work.</p>
-</section>
-<section id="metadata" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="metadata"><span class="header-section-number">3.2</span> Metadata</h2>
-<p>In scientific research, data alone is never enough, what makes data meaningful is the <a class="glossary" title="Metadata is information that describes other data. It helps explain what a dataset or research output is, how it was created, who created it, and how it can be used. Metadata makes data easier to find, understand, and reuse.">metadata</a> that describes it. Metadata captures the critical context behind research activities: the methods used, the instruments applied, the variables measured, and the conditions under which data were collected. Without metadata, results can be difficult to reproduce, interpret, or build upon.</p>
-<p>STAPLE treats metadata as a first-class feature, not an afterthought. The software also automatically records who did what, and when, embedding provenance metadata directly within projects. Project information, such as data, materials, and analysis code, can be linked within STAPLE and enriched with metadata. These details are captured using the <a class="glossary" title="Structured templates for capturing important project metadata, such as study design details, instruments used, or ethical approvals, ensuring consistency and transparency.">Forms</a> feature, which provides structured templates tailored to research needs. Completion of metadata can be assigned to contributors via <a class="glossary" title="A discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress.">Task</a>s, making documentation part of the normal project workflow rather than an extra burden.</p>
-<p>By embedding metadata capture directly into everyday research activities, STAPLE makes it easier for scientists to document their work transparently, meet the expectations of journals and funders, and create records that future collaborators, or even their own future selves, can interpret and reuse. All metadata can be exported as machine-readable JSON for computational use and as human-readable interactive <a class="glossary" title="An automatically generated overview that consolidates key project information, including tasks, contributors, metadata, milestones, and outputs, into a shareable format.">Project Summary</a> reports for sharing and communication.</p>
-</section>
-<section id="definitions-of-terms" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="definitions-of-terms"><span class="header-section-number">3.3</span> Definitions of Terms</h2>
-<section id="user" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="user"><span class="header-section-number">3.3.1</span> User</h3>
-<p>A user in STAPLE is anyone with an account who has accepted the platform’s terms and conditions. Users can create projects and related elements within their own accounts, and they can also participate in projects owned by others. Users can log in and out, update their personal information (e.g., username, password, email, and profile details), and delete their account. They may add and manage contributors, organize teams within their projects, and assign tasks.</p>
-<p><em>Note</em>: Deleting your STAPLE account <em>does not</em> remove your past contributions to other projects. You will lose editing access, but only a project administrator can fully remove you from their project.</p>
-<section id="project-administrator" class="level4" data-number="3.3.1.1">
-<h4 data-number="3.3.1.1" class="anchored" data-anchor-id="project-administrator"><span class="header-section-number">3.3.1.1</span> Project Administrator</h4>
-<ul>
-<li>The user who creates a project is automatically assigned as its project administrator.</li>
-<li>Additional administrators can be added to a project as needed.</li>
-<li>Every project must have at least one administrator at all times.</li>
-<li>Administrators have the highest level of control, including managing contributors, editing project settings, and assigning roles.</li>
-</ul>
-</section>
-<section id="contributor" class="level4" data-number="3.3.1.2">
-<h4 data-number="3.3.1.2" class="anchored" data-anchor-id="contributor"><span class="header-section-number">3.3.1.2</span> Contributor</h4>
-<ul>
-<li>A contributor is a user added to a project by an administrator.</li>
-<li>Contributors generally have limited access: they can view project information and complete tasks assigned to them but cannot change project settings or manage other users.</li>
-<li>This role allows project teams to include collaborators without granting full administrative privileges.</li>
-</ul>
-</section>
-<section id="teams" class="level4" data-number="3.3.1.3">
-<h4 data-number="3.3.1.3" class="anchored" data-anchor-id="teams"><span class="header-section-number">3.3.1.3</span> Teams</h4>
-<ul>
-<li>Teams are a special type of contributor within a project.</li>
-<li>A user can belong to multiple teams in the same project.</li>
-<li>Teams are useful when a task requires collaboration by a group rather than an individual.</li>
-</ul>
-<p>For example, a data collection team working with human participants may need to complete an ethics application. Only one person needs to submit the form within STAPLE, but the entire team receives credit for completing the task. Similarly, a translation team might be responsible for converting study materials from French into Spanish. The collective goal is to provide the final Spanish materials, but all members of the team are credited for the work.</p>
-</section>
-</section>
-<section id="main-and-project-level-options" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="main-and-project-level-options"><span class="header-section-number">3.3.2</span> Main and Project Level Options</h3>
-<section id="dashboard" class="level4" data-number="3.3.2.1">
-<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="dashboard"><span class="header-section-number">3.3.2.1</span> Dashboard</h4>
-<p>The Dashboard is your personalized home page in STAPLE. It provides a high-level overview of all the projects you’re involved in, along with recent updates and tasks assigned to you. From here, you can quickly jump into active projects, track progress at a glance, and see what needs your attention today. Think of it as your command center for research project management.</p>
-<p>In addition to this main dashboard, each project also has its own Project Dashboard. While the main dashboard gives you a cross-project snapshot, the project dashboard focuses on the details of a single project, its contributors, tasks, metadata, milestones, and outputs. Together, the two levels of dashboards help you move easily between the big picture and the project-specific details.</p>
-</section>
-<section id="projects" class="level4" data-number="3.3.2.2">
-<h4 data-number="3.3.2.2" class="anchored" data-anchor-id="projects"><span class="header-section-number">3.3.2.2</span> Projects</h4>
-<p>Projects are the central containers for scientific work. Each project includes its own tasks, teams, metadata, and outputs. On the Projects page, you can:</p>
-<ul>
-<li>Create a new project.</li>
-<li>View and manage existing projects.</li>
-<li>Go into the project level dashboard.</li>
-</ul>
-<p>Projects provide the big-picture structure that keeps research activities organized and transparent.</p>
-</section>
-<section id="invitations" class="level4" data-number="3.3.2.3">
-<h4 data-number="3.3.2.3" class="anchored" data-anchor-id="invitations"><span class="header-section-number">3.3.2.3</span> Invitations</h4>
-<p>Invitations are how collaborators join projects in STAPLE. Project administrators send invitations that specify the role a user will have once they accept.</p>
-<ul>
-<li>On the main dashboard, you can view all of your pending invitations across projects and choose to accept or decline them.</li>
-<li>On a project dashboard, only project administrators can see the invitations they have sent for that specific project.</li>
-</ul>
-<p>A contributor cannot be assigned tasks or added to teams until they have accepted their invitation. This system ensures that every collaborator’s involvement is explicit, documented, and consented to before work begins. Each person will receive an email from app@staple.science. The email may go to spam and may need to be marked as safe to ensure all invitation and notification emails are received. We also have emails that can be sent from app@staplescience.com to alleviate issues with universities blocking <code>.science</code> addresses.</p>
-</section>
-<section id="tasks" class="level4" data-number="3.3.2.4">
-<h4 data-number="3.3.2.4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">3.3.2.4</span> Tasks</h4>
-<p>Tasks break a project down into actionable steps and are the backbone of daily research activity in STAPLE.</p>
-<ul>
-<li>On the main dashboard, the Tasks page shows a consolidated view of all tasks assigned to you across every project, so nothing slips through the cracks.</li>
-<li>On a project dashboard, project administrators can view and manage all tasks within that project, while contributors see only the tasks assigned to them.</li>
-</ul>
-<p>Within a project, you can:</p>
-<ul>
-<li>Create new tasks for yourself or others.</li>
-<li>Assign tasks to contributors or teams.</li>
-<li>Update task status (to-do, in progress, complete).</li>
-<li>Add labels, metadata, and logs to track progress.</li>
-</ul>
-<p>This two-level view ensures that contributors can stay focused on their own responsibilities while project managers maintain oversight of the entire project’s workflow.</p>
-</section>
-<section id="notifications" class="level4" data-number="3.3.2.5">
-<h4 data-number="3.3.2.5" class="anchored" data-anchor-id="notifications"><span class="header-section-number">3.3.2.5</span> Notifications</h4>
-<p>Notifications keep you informed about project activity without needing to check each page manually. These alerts let you know when:</p>
-<ul>
-<li>You’ve been assigned a new task.</li>
-<li>A task you’re involved in has been updated, completed, or approved.</li>
-<li>You’ve received a project invitation.</li>
-<li>You’ve been added to a team.</li>
-</ul>
-<p>On the main dashboard, notifications show updates from all of your projects in one place. On a project dashboard, notifications are filtered to that project only, helping you focus on what matters most in the current context. The Notifications page ensures you never miss important updates in collaborative projects. Each day you will receive a summary email of your notifications from app@staple.science. The email may go to spam and may need to be marked as safe to ensure all notification emails are received. We also have emails that can be sent from app@staplescience.com to alleviate issues with universities blocking <code>.science</code> addresses.</p>
-</section>
-<section id="forms" class="level4" data-number="3.3.2.6">
-<h4 data-number="3.3.2.6" class="anchored" data-anchor-id="forms"><span class="header-section-number">3.3.2.6</span> Forms</h4>
-<p>Forms are structured templates for collecting metadata at the project or task level. They make sure essential details, such as ethics approvals, instrument calibration, dataset versions, or preregistration links, are captured consistently.</p>
-<p>STAPLE includes a library of form templates, giving you a starting point if you’re not sure what metadata to collect. You can also design your own forms tailored to your project’s needs. Forms must be created before they can be used in a project, ensuring that the structure is in place before contributors start filling them out.</p>
-<p>Once in use, forms become a powerful way to collect metadata directly within your workflow. You can:</p>
-<ul>
-<li>Fill out forms as part of project tasks.</li>
-<li>Assign forms to contributors or teams to ensure documentation responsibilities are shared.</li>
-<li>Reuse templates across multiple projects for consistency.</li>
-</ul>
-<p>By embedding metadata capture directly into the research process, forms help projects meet transparency and reproducibility standards while reducing the burden of after-the-fact documentation.</p>
-</section>
-<section id="roles" class="level4" data-number="3.3.2.7">
-<h4 data-number="3.3.2.7" class="anchored" data-anchor-id="roles"><span class="header-section-number">3.3.2.7</span> Roles</h4>
-<p>Roles in STAPLE describe the kinds of contributions people make within a project. While they draw inspiration from frameworks like the CRediT taxonomy, they are not limited to authorship or publication contexts. Instead, roles provide a flexible way to document responsibilities and ensure that contributions are visible across the lifespan of a project.</p>
-<p>In STAPLE, roles can be:</p>
-<ul>
-<li>Assigned to people → to show what responsibilities each contributor holds in a project.</li>
-<li>Assigned to tasks → to clarify what kind of contribution a task represents and how it fits into the project.</li>
-</ul>
-<p>Roles provide a flexible system for understanding who did what and for standardizing contributions across projects. Role templates are avaliable to add to your account, which you can use across all projects. They must be created on the main dashboard before you can use them.</p>
-</section>
-</section>
-<section id="project-level-options" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="project-level-options"><span class="header-section-number">3.3.3</span> Project Level Options</h3>
-<section id="tags" class="level4" data-number="3.3.3.1">
-<h4 data-number="3.3.3.1" class="anchored" data-anchor-id="tags"><span class="header-section-number">3.3.3.1</span> Tags</h4>
-<p>Tags are flexible labels that help organize and filter milestones, tasks, and contributors. Tags make it easier to search and group related work across large projects. You can view customized tracking by using tags across these parts of the project.</p>
-</section>
-<section id="milestones" class="level4" data-number="3.3.3.2">
-<h4 data-number="3.3.3.2" class="anchored" data-anchor-id="milestones"><span class="header-section-number">3.3.3.2</span> Milestones</h4>
-<p>Milestones mark major points of progress within a project and help teams track deadlines and achievements. In STAPLE, milestones can also group related tasks together, providing a clear structure for managing phases of a project. Each milestone is tied to a timeline, and STAPLE automatically visualizes them in a Gantt chart, making it easier to see how tasks and deadlines align. This helps teams monitor progress, anticipate bottlenecks, and keep projects moving forward on schedule.</p>
-</section>
-<section id="notes" class="level4" data-number="3.3.3.3">
-<h4 data-number="3.3.3.3" class="anchored" data-anchor-id="notes"><span class="header-section-number">3.3.3.3</span> Notes</h4>
-<p>Notes provide a space for free-text documentation within a project. Unlike structured metadata captured through Forms, Notes allow contributors to record context, reminders, or reflections in their own words.</p>
-<p>Notes can be:</p>
-<ul>
-<li>Private – visible only to the author.</li>
-<li>Shared with contributors – if shared by a project administrator, contributors can view them.</li>
-<li>Restricted to administrators – for communication only among project managers.</li>
-</ul>
-<p>This flexibility makes Notes useful for everything from personal reminders to collaborative discussions among administrators.</p>
-</section>
-<section id="form-data" class="level4" data-number="3.3.3.4">
-<h4 data-number="3.3.3.4" class="anchored" data-anchor-id="form-data"><span class="header-section-number">3.3.3.4</span> Form Data</h4>
-<p>Form Data is the collected information from metadata Forms within a project. It provides a centralized view of all structured metadata entries—such as instrument details, ethics protocols, or dataset versions—that have been completed by contributors. Form Data can be reviewed, exported, and updated if errors have occurred.</p>
-</section>
-<section id="summary" class="level4" data-number="3.3.3.5">
-<h4 data-number="3.3.3.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.3.3.5</span> Summary</h4>
-<p>The Summary page generates a shareable overview of the project. It consolidates contributors, tasks, roles, metadata, milestones, and outputs into one report. Project Summaries can be exported in both machine-readable formats (JSON) and human-readable interactive reports, making them useful for collaboration, archiving, and compliance with funder or journal requirements.</p>
-</section>
-<section id="settings" class="level4" data-number="3.3.3.6">
-<h4 data-number="3.3.3.6" class="anchored" data-anchor-id="settings"><span class="header-section-number">3.3.3.6</span> Settings</h4>
-<p>The Settings page allows administrators to configure project-level metadata. This includes details such as the project title, description, timeline, and high-level information about the project’s scope.</p>
-
-
-</section>
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
+        <p>
+          In this section, we introduce the core terminology for STAPLE elements
+          to help users understand their purpose and function. The following
+          section will demonstrate how these elements appear in practice, with
+          screenshots and step-by-step guides for using them within STAPLE.
+        </p>
+        <section id="staple-elements" class="level2" data-number="3.1">
+          <h2
+            data-number="3.1"
+            class="anchored"
+            data-anchor-id="staple-elements"
+          >
+            <span class="header-section-number">3.1</span> STAPLE Elements
+          </h2>
+          <p>
+            Research projects are made up of many moving parts: overarching
+            goals, specific hypotheses, tasks to carry out, and the people who
+            contribute along the way. To manage this complexity, STAPLE
+            organizes projects into a small set of core elements. These elements
+            provide a shared structure that scientists and collaborators can
+            understand quickly, regardless of discipline.
+          </p>
+          <p>
+            At the highest level, a
+            <a
+              class="glossary"
+              title="A container for a scientific effort, capturing the overall scope, goals, timeline, and team. All other elements: tasks, contributors, metadata, and outputs are organized within a project."
+              >Project</a
+            >
+            represents the scientific effort being undertaken: its aims, scope,
+            and timeline. Within each project, researchers define
+            <a
+              class="glossary"
+              title="A discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress."
+              >Task</a
+            >s, which capture the individual units of work needed to achieve
+            those aims.
+            <a
+              class="glossary"
+              title="The group of contributors working together on a project. Teams may span labs, institutions, or disciplines, and are defined by shared access to project tasks and resources."
+              >Team</a
+            >s and
+            <a
+              class="glossary"
+              title="An individual who actively participates in a project. Contributors may take on different roles, responsibilities, and levels of access within STAPLE."
+              >Contributor/Member</a
+            >s provide the human side of the system, reflecting roles,
+            privileges, and collaborations across labs and institutions. Every
+            action taken on a task, whether assigning it, updating its status,
+            or marking it as complete, is recorded in
+            <a
+              class="glossary"
+              title="A chronological record of all activity on a task, including assignments, updates, completions, and notes. Task logs create a transparent history of project work, making it easier to track progress, maintain accountability, and reconstruct decisions."
+              >Task Logs</a
+            >, creating a transparent history of progress. Finally,
+            <a
+              class="glossary"
+              title="Flexible labels used to categorize and filter tasks or projects. Tags help organize work by theme, method, priority, or custom criteria."
+              >Tags</a
+            >
+            allow projects to be categorized, searched, and documented in ways
+            that make sense for science.
+          </p>
+          <p>
+            Together, these elements form the backbone of STAPLE, giving
+            research teams a clear, consistent framework for planning and
+            documenting their work.
+          </p>
+        </section>
+        <section id="metadata" class="level2" data-number="3.2">
+          <h2 data-number="3.2" class="anchored" data-anchor-id="metadata">
+            <span class="header-section-number">3.2</span> Metadata
+          </h2>
+          <p>
+            In scientific research, data alone is never enough, what makes data
+            meaningful is the
+            <a
+              class="glossary"
+              title="Metadata is information that describes other data. It helps explain what a dataset or research output is, how it was created, who created it, and how it can be used. Metadata makes data easier to find, understand, and reuse."
+              >metadata</a
+            >
+            that describes it. Metadata captures the critical context behind
+            research activities: the methods used, the instruments applied, the
+            variables measured, and the conditions under which data were
+            collected. Without metadata, results can be difficult to reproduce,
+            interpret, or build upon.
+          </p>
+          <p>
+            STAPLE treats metadata as a first-class feature, not an
+            afterthought. The software also automatically records who did what,
+            and when, embedding provenance metadata directly within projects.
+            Project information, such as data, materials, and analysis code, can
+            be linked within STAPLE and enriched with metadata. These details
+            are captured using the
+            <a
+              class="glossary"
+              title="Structured templates for capturing important project metadata, such as study design details, instruments used, or ethical approvals, ensuring consistency and transparency."
+              >Forms</a
+            >
+            feature, which provides structured templates tailored to research
+            needs. Completion of metadata can be assigned to contributors via
+            <a
+              class="glossary"
+              title="A discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress."
+              >Task</a
+            >s, making documentation part of the normal project workflow rather
+            than an extra burden.
+          </p>
+          <p>
+            By embedding metadata capture directly into everyday research
+            activities, STAPLE makes it easier for scientists to document their
+            work transparently, meet the expectations of journals and funders,
+            and create records that future collaborators, or even their own
+            future selves, can interpret and reuse. All metadata can be exported
+            as machine-readable JSON for computational use and as human-readable
+            interactive
+            <a
+              class="glossary"
+              title="An automatically generated overview that consolidates key project information, including tasks, contributors, metadata, milestones, and outputs, into a shareable format."
+              >Project Summary</a
+            >
+            reports for sharing and communication.
+          </p>
+        </section>
+        <section id="definitions-of-terms" class="level2" data-number="3.3">
+          <h2
+            data-number="3.3"
+            class="anchored"
+            data-anchor-id="definitions-of-terms"
+          >
+            <span class="header-section-number">3.3</span> Definitions of Terms
+          </h2>
+          <section id="user" class="level3" data-number="3.3.1">
+            <h3 data-number="3.3.1" class="anchored" data-anchor-id="user">
+              <span class="header-section-number">3.3.1</span> User
+            </h3>
+            <p>
+              A user in STAPLE is anyone with an account who has accepted the
+              platform’s terms and conditions. Users can create projects and
+              related elements within their own accounts, and they can also
+              participate in projects owned by others. Users can log in and out,
+              update their personal information (e.g., username, password,
+              email, and profile details), and delete their account. They may
+              add and manage contributors, organize teams within their projects,
+              and assign tasks.
+            </p>
+            <p>
+              <em>Note</em>: Deleting your STAPLE account
+              <em>does not</em> remove your past contributions to other
+              projects. You will lose editing access, but only a project
+              administrator can fully remove you from their project.
+            </p>
+            <section
+              id="project-administrator"
+              class="level4"
+              data-number="3.3.1.1"
+            >
+              <h4
+                data-number="3.3.1.1"
+                class="anchored"
+                data-anchor-id="project-administrator"
+              >
+                <span class="header-section-number">3.3.1.1</span> Project
+                Administrator
+              </h4>
+              <ul>
+                <li>
+                  The user who creates a project is automatically assigned as
+                  its project administrator.
+                </li>
+                <li>
+                  Additional administrators can be added to a project as needed.
+                </li>
+                <li>
+                  Every project must have at least one administrator at all
+                  times.
+                </li>
+                <li>
+                  Administrators have the highest level of control, including
+                  managing contributors, editing project settings, and assigning
+                  roles.
+                </li>
+              </ul>
+            </section>
+            <section id="contributor" class="level4" data-number="3.3.1.2">
+              <h4
+                data-number="3.3.1.2"
+                class="anchored"
+                data-anchor-id="contributor"
+              >
+                <span class="header-section-number">3.3.1.2</span> Contributor
+              </h4>
+              <ul>
+                <li>
+                  A contributor is a user added to a project by an
+                  administrator.
+                </li>
+                <li>
+                  Contributors generally have limited access: they can view
+                  project information and complete tasks assigned to them but
+                  cannot change project settings or manage other users.
+                </li>
+                <li>
+                  This role allows project teams to include collaborators
+                  without granting full administrative privileges.
+                </li>
+              </ul>
+            </section>
+            <section id="teams" class="level4" data-number="3.3.1.3">
+              <h4 data-number="3.3.1.3" class="anchored" data-anchor-id="teams">
+                <span class="header-section-number">3.3.1.3</span> Teams
+              </h4>
+              <ul>
+                <li>
+                  Teams are a special type of contributor within a project.
+                </li>
+                <li>
+                  A user can belong to multiple teams in the same project.
+                </li>
+                <li>
+                  Teams are useful when a task requires collaboration by a group
+                  rather than an individual.
+                </li>
+              </ul>
+              <p>
+                For example, a data collection team working with human
+                participants may need to complete an ethics application. Only
+                one person needs to submit the form within STAPLE, but the
+                entire team receives credit for completing the task. Similarly,
+                a translation team might be responsible for converting study
+                materials from French into Spanish. The collective goal is to
+                provide the final Spanish materials, but all members of the team
+                are credited for the work.
+              </p>
+            </section>
+          </section>
+          <section
+            id="main-and-project-level-options"
+            class="level3"
+            data-number="3.3.2"
+          >
+            <h3
+              data-number="3.3.2"
+              class="anchored"
+              data-anchor-id="main-and-project-level-options"
+            >
+              <span class="header-section-number">3.3.2</span> Main and Project
+              Level Options
+            </h3>
+            <section id="dashboard" class="level4" data-number="3.3.2.1">
+              <h4
+                data-number="3.3.2.1"
+                class="anchored"
+                data-anchor-id="dashboard"
+              >
+                <span class="header-section-number">3.3.2.1</span> Dashboard
+              </h4>
+              <p>
+                The Dashboard is your personalized home page in STAPLE. It
+                provides a high-level overview of all the projects you’re
+                involved in, along with recent updates and tasks assigned to
+                you. From here, you can quickly jump into active projects, track
+                progress at a glance, and see what needs your attention today.
+                Think of it as your command center for research project
+                management.
+              </p>
+              <p>
+                In addition to this main dashboard, each project also has its
+                own Project Dashboard. While the main dashboard gives you a
+                cross-project snapshot, the project dashboard focuses on the
+                details of a single project, its contributors, tasks, metadata,
+                milestones, and outputs. Together, the two levels of dashboards
+                help you move easily between the big picture and the
+                project-specific details.
+              </p>
+            </section>
+            <section id="projects" class="level4" data-number="3.3.2.2">
+              <h4
+                data-number="3.3.2.2"
+                class="anchored"
+                data-anchor-id="projects"
+              >
+                <span class="header-section-number">3.3.2.2</span> Projects
+              </h4>
+              <p>
+                Projects are the central containers for scientific work. Each
+                project includes its own tasks, teams, metadata, and outputs. On
+                the Projects page, you can:
+              </p>
+              <ul>
+                <li>Create a new project.</li>
+                <li>View and manage existing projects.</li>
+                <li>Go into the project level dashboard.</li>
+              </ul>
+              <p>
+                Projects provide the big-picture structure that keeps research
+                activities organized and transparent.
+              </p>
+            </section>
+            <section id="invitations" class="level4" data-number="3.3.2.3">
+              <h4
+                data-number="3.3.2.3"
+                class="anchored"
+                data-anchor-id="invitations"
+              >
+                <span class="header-section-number">3.3.2.3</span> Invitations
+              </h4>
+              <p>
+                Invitations are how collaborators join projects in STAPLE.
+                Project administrators send invitations that specify the role a
+                user will have once they accept.
+              </p>
+              <ul>
+                <li>
+                  On the main dashboard, you can view all of your pending
+                  invitations across projects and choose to accept or decline
+                  them.
+                </li>
+                <li>
+                  On a project dashboard, only project administrators can see
+                  the invitations they have sent for that specific project.
+                </li>
+              </ul>
+              <p>
+                A contributor cannot be assigned tasks or added to teams until
+                they have accepted their invitation. This system ensures that
+                every collaborator’s involvement is explicit, documented, and
+                consented to before work begins. Each person will receive an
+                email from app@staplescience.com. The email may go to spam and
+                may need to be marked as safe to ensure all invitation and
+                notification emails are received. We also have emails that can
+                be sent from app@staplescience.com to alleviate issues with
+                universities blocking <code>.science</code> addresses.
+              </p>
+            </section>
+            <section id="tasks" class="level4" data-number="3.3.2.4">
+              <h4 data-number="3.3.2.4" class="anchored" data-anchor-id="tasks">
+                <span class="header-section-number">3.3.2.4</span> Tasks
+              </h4>
+              <p>
+                Tasks break a project down into actionable steps and are the
+                backbone of daily research activity in STAPLE.
+              </p>
+              <ul>
+                <li>
+                  On the main dashboard, the Tasks page shows a consolidated
+                  view of all tasks assigned to you across every project, so
+                  nothing slips through the cracks.
+                </li>
+                <li>
+                  On a project dashboard, project administrators can view and
+                  manage all tasks within that project, while contributors see
+                  only the tasks assigned to them.
+                </li>
+              </ul>
+              <p>Within a project, you can:</p>
+              <ul>
+                <li>Create new tasks for yourself or others.</li>
+                <li>Assign tasks to contributors or teams.</li>
+                <li>Update task status (to-do, in progress, complete).</li>
+                <li>Add labels, metadata, and logs to track progress.</li>
+              </ul>
+              <p>
+                This two-level view ensures that contributors can stay focused
+                on their own responsibilities while project managers maintain
+                oversight of the entire project’s workflow.
+              </p>
+            </section>
+            <section id="notifications" class="level4" data-number="3.3.2.5">
+              <h4
+                data-number="3.3.2.5"
+                class="anchored"
+                data-anchor-id="notifications"
+              >
+                <span class="header-section-number">3.3.2.5</span> Notifications
+              </h4>
+              <p>
+                Notifications keep you informed about project activity without
+                needing to check each page manually. These alerts let you know
+                when:
+              </p>
+              <ul>
+                <li>You’ve been assigned a new task.</li>
+                <li>
+                  A task you’re involved in has been updated, completed, or
+                  approved.
+                </li>
+                <li>You’ve received a project invitation.</li>
+                <li>You’ve been added to a team.</li>
+              </ul>
+              <p>
+                On the main dashboard, notifications show updates from all of
+                your projects in one place. On a project dashboard,
+                notifications are filtered to that project only, helping you
+                focus on what matters most in the current context. The
+                Notifications page ensures you never miss important updates in
+                collaborative projects. Each day you will receive a summary
+                email of your notifications from app@staplescience.com. The
+                email may go to spam and may need to be marked as safe to ensure
+                all notification emails are received. We also have emails that
+                can be sent from app@staplescience.com to alleviate issues with
+                universities blocking <code>.science</code> addresses.
+              </p>
+            </section>
+            <section id="forms" class="level4" data-number="3.3.2.6">
+              <h4 data-number="3.3.2.6" class="anchored" data-anchor-id="forms">
+                <span class="header-section-number">3.3.2.6</span> Forms
+              </h4>
+              <p>
+                Forms are structured templates for collecting metadata at the
+                project or task level. They make sure essential details, such as
+                ethics approvals, instrument calibration, dataset versions, or
+                preregistration links, are captured consistently.
+              </p>
+              <p>
+                STAPLE includes a library of form templates, giving you a
+                starting point if you’re not sure what metadata to collect. You
+                can also design your own forms tailored to your project’s needs.
+                Forms must be created before they can be used in a project,
+                ensuring that the structure is in place before contributors
+                start filling them out.
+              </p>
+              <p>
+                Once in use, forms become a powerful way to collect metadata
+                directly within your workflow. You can:
+              </p>
+              <ul>
+                <li>Fill out forms as part of project tasks.</li>
+                <li>
+                  Assign forms to contributors or teams to ensure documentation
+                  responsibilities are shared.
+                </li>
+                <li>
+                  Reuse templates across multiple projects for consistency.
+                </li>
+              </ul>
+              <p>
+                By embedding metadata capture directly into the research
+                process, forms help projects meet transparency and
+                reproducibility standards while reducing the burden of
+                after-the-fact documentation.
+              </p>
+            </section>
+            <section id="roles" class="level4" data-number="3.3.2.7">
+              <h4 data-number="3.3.2.7" class="anchored" data-anchor-id="roles">
+                <span class="header-section-number">3.3.2.7</span> Roles
+              </h4>
+              <p>
+                Roles in STAPLE describe the kinds of contributions people make
+                within a project. While they draw inspiration from frameworks
+                like the CRediT taxonomy, they are not limited to authorship or
+                publication contexts. Instead, roles provide a flexible way to
+                document responsibilities and ensure that contributions are
+                visible across the lifespan of a project.
+              </p>
+              <p>In STAPLE, roles can be:</p>
+              <ul>
+                <li>
+                  Assigned to people → to show what responsibilities each
+                  contributor holds in a project.
+                </li>
+                <li>
+                  Assigned to tasks → to clarify what kind of contribution a
+                  task represents and how it fits into the project.
+                </li>
+              </ul>
+              <p>
+                Roles provide a flexible system for understanding who did what
+                and for standardizing contributions across projects. Role
+                templates are avaliable to add to your account, which you can
+                use across all projects. They must be created on the main
+                dashboard before you can use them.
+              </p>
+            </section>
+          </section>
+          <section
+            id="project-level-options"
+            class="level3"
+            data-number="3.3.3"
+          >
+            <h3
+              data-number="3.3.3"
+              class="anchored"
+              data-anchor-id="project-level-options"
+            >
+              <span class="header-section-number">3.3.3</span> Project Level
+              Options
+            </h3>
+            <section id="tags" class="level4" data-number="3.3.3.1">
+              <h4 data-number="3.3.3.1" class="anchored" data-anchor-id="tags">
+                <span class="header-section-number">3.3.3.1</span> Tags
+              </h4>
+              <p>
+                Tags are flexible labels that help organize and filter
+                milestones, tasks, and contributors. Tags make it easier to
+                search and group related work across large projects. You can
+                view customized tracking by using tags across these parts of the
+                project.
+              </p>
+            </section>
+            <section id="milestones" class="level4" data-number="3.3.3.2">
+              <h4
+                data-number="3.3.3.2"
+                class="anchored"
+                data-anchor-id="milestones"
+              >
+                <span class="header-section-number">3.3.3.2</span> Milestones
+              </h4>
+              <p>
+                Milestones mark major points of progress within a project and
+                help teams track deadlines and achievements. In STAPLE,
+                milestones can also group related tasks together, providing a
+                clear structure for managing phases of a project. Each milestone
+                is tied to a timeline, and STAPLE automatically visualizes them
+                in a Gantt chart, making it easier to see how tasks and
+                deadlines align. This helps teams monitor progress, anticipate
+                bottlenecks, and keep projects moving forward on schedule.
+              </p>
+            </section>
+            <section id="notes" class="level4" data-number="3.3.3.3">
+              <h4 data-number="3.3.3.3" class="anchored" data-anchor-id="notes">
+                <span class="header-section-number">3.3.3.3</span> Notes
+              </h4>
+              <p>
+                Notes provide a space for free-text documentation within a
+                project. Unlike structured metadata captured through Forms,
+                Notes allow contributors to record context, reminders, or
+                reflections in their own words.
+              </p>
+              <p>Notes can be:</p>
+              <ul>
+                <li>Private – visible only to the author.</li>
+                <li>
+                  Shared with contributors – if shared by a project
+                  administrator, contributors can view them.
+                </li>
+                <li>
+                  Restricted to administrators – for communication only among
+                  project managers.
+                </li>
+              </ul>
+              <p>
+                This flexibility makes Notes useful for everything from personal
+                reminders to collaborative discussions among administrators.
+              </p>
+            </section>
+            <section id="form-data" class="level4" data-number="3.3.3.4">
+              <h4
+                data-number="3.3.3.4"
+                class="anchored"
+                data-anchor-id="form-data"
+              >
+                <span class="header-section-number">3.3.3.4</span> Form Data
+              </h4>
+              <p>
+                Form Data is the collected information from metadata Forms
+                within a project. It provides a centralized view of all
+                structured metadata entries—such as instrument details, ethics
+                protocols, or dataset versions—that have been completed by
+                contributors. Form Data can be reviewed, exported, and updated
+                if errors have occurred.
+              </p>
+            </section>
+            <section id="summary" class="level4" data-number="3.3.3.5">
+              <h4
+                data-number="3.3.3.5"
+                class="anchored"
+                data-anchor-id="summary"
+              >
+                <span class="header-section-number">3.3.3.5</span> Summary
+              </h4>
+              <p>
+                The Summary page generates a shareable overview of the project.
+                It consolidates contributors, tasks, roles, metadata,
+                milestones, and outputs into one report. Project Summaries can
+                be exported in both machine-readable formats (JSON) and
+                human-readable interactive reports, making them useful for
+                collaboration, archiving, and compliance with funder or journal
+                requirements.
+              </p>
+            </section>
+            <section id="settings" class="level4" data-number="3.3.3.6">
+              <h4
+                data-number="3.3.3.6"
+                class="anchored"
+                data-anchor-id="settings"
+              >
+                <span class="header-section-number">3.3.3.6</span> Settings
+              </h4>
+              <p>
+                The Settings page allows administrators to configure
+                project-level metadata. This includes details such as the
+                project title, description, timeline, and high-level information
+                about the project’s scope.
+              </p>
+            </section>
+          </section>
+        </section>
+      </main>
+      <!-- /main -->
+      <script id="quarto-html-after-body" type="application/javascript">
+        window.document.addEventListener("DOMContentLoaded", function (event) {
+          const icon = "";
+          const anchorJS = new window.AnchorJS();
+          anchorJS.options = {
+            placement: "right",
+            icon: icon,
+          };
+          anchorJS.add(".anchored");
+          const isCodeAnnotation = (el) => {
+            for (const clz of el.classList) {
+              if (clz.startsWith("code-annotation-")) {
+                return true;
+              }
+            }
+            return false;
+          };
+          const onCopySuccess = function (e) {
+            // button target
+            const button = e.trigger;
+            // don't keep focus
+            button.blur();
+            // flash "checked"
+            button.classList.add("code-copy-button-checked");
+            var currentTitle = button.getAttribute("title");
+            button.setAttribute("title", "Copied!");
+            let tooltip;
+            if (window.bootstrap) {
+              button.setAttribute("data-bs-toggle", "tooltip");
+              button.setAttribute("data-bs-placement", "left");
+              button.setAttribute("data-bs-title", "Copied!");
+              tooltip = new bootstrap.Tooltip(button, {
+                trigger: "manual",
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8],
+              });
+              tooltip.show();
+            }
+            setTimeout(function () {
+              if (tooltip) {
+                tooltip.hide();
+                button.removeAttribute("data-bs-title");
+                button.removeAttribute("data-bs-toggle");
+                button.removeAttribute("data-bs-placement");
+              }
+              button.setAttribute("title", currentTitle);
+              button.classList.remove("code-copy-button-checked");
+            }, 1000);
+            // clear code selection
+            e.clearSelection();
+          };
+          const getTextToCopy = function (trigger) {
+            const outerScaffold = trigger.parentElement.cloneNode(true);
+            const codeEl = outerScaffold.querySelector("code");
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+          };
+          const clipboard = new window.ClipboardJS(
+            ".code-copy-button:not([data-in-quarto-modal])",
+            {
+              text: getTextToCopy,
+            },
+          );
+          clipboard.on("success", onCopySuccess);
+          if (
+            window.document.getElementById("quarto-embedded-source-code-modal")
+          ) {
+            const clipboardModal = new window.ClipboardJS(
+              ".code-copy-button[data-in-quarto-modal]",
+              {
+                text: getTextToCopy,
+                container: window.document.getElementById(
+                  "quarto-embedded-source-code-modal",
+                ),
+              },
+            );
+            clipboardModal.on("success", onCopySuccess);
           }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+          var localhostRegex = new RegExp(
+            /^(?:http|https):\/\/localhost\:?[0-9]*\//,
+          );
+          var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("/" + window.location.host + "/");
+          var isInternal = (href) => {
+            return (
+              filterRegex.test(href) ||
+              localhostRegex.test(href) ||
+              mailtoRegex.test(href)
+            );
+          };
+          // Inspect non-navigation links and adorn them if external
+          var links = window.document.querySelectorAll(
+            "a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)",
+          );
+          for (var i = 0; i < links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
+          function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+            const config = {
+              allowHTML: true,
+              maxWidth: 500,
+              delay: 100,
+              arrow: false,
+              appendTo: function (el) {
+                return el.parentElement;
+              },
+              interactive: true,
+              interactiveBorder: 10,
+              theme: "quarto",
+              placement: "bottom-start",
+            };
+            if (contentFn) {
+              config.content = contentFn;
             }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
+            if (onTriggerFn) {
+              config.onTrigger = onTriggerFn;
+            }
+            if (onUntriggerFn) {
+              config.onUntrigger = onUntriggerFn;
+            }
+            window.tippy(el, config);
+          }
+          const noterefs = window.document.querySelectorAll(
+            'a[role="doc-noteref"]',
+          );
+          for (var i = 0; i < noterefs.length; i++) {
+            const ref = noterefs[i];
+            tippyHover(ref, function () {
+              // use id or data attribute instead here
+              let href =
+                ref.getAttribute("data-footnote-href") ||
+                ref.getAttribute("href");
+              try {
+                href = new URL(href).hash;
+              } catch {}
+              const id = href.replace(/^#\/?/, "");
+              const note = window.document.getElementById(id);
+              if (note) {
+                return note.innerHTML;
+              } else {
+                return "";
+              }
             });
           }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
+          const xrefs = window.document.querySelectorAll("a.quarto-xref");
+          const processXRef = (id, note) => {
+            // Strip column container classes
+            const stripColumnClz = (el) => {
+              el.classList.remove("page-full", "page-columns");
+              if (el.children) {
+                for (const child of el.children) {
+                  stripColumnClz(child);
+                }
               }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
+            };
+            stripColumnClz(note);
+            if (id === null || id.startsWith("sec-")) {
+              // Special case sections, only their first couple elements
+              const container = document.createElement("div");
+              if (note.children && note.children.length > 2) {
+                container.appendChild(note.children[0].cloneNode(true));
+                for (let i = 1; i < note.children.length; i++) {
+                  const child = note.children[i];
+                  if (child.tagName === "P" && child.innerText === "") {
+                    continue;
+                  } else {
+                    container.appendChild(child.cloneNode(true));
+                    break;
+                  }
+                }
+                if (window.Quarto?.typesetMath) {
+                  window.Quarto.typesetMath(container);
+                }
+                return container.innerHTML;
+              } else {
+                if (window.Quarto?.typesetMath) {
+                  window.Quarto.typesetMath(note);
+                }
+                return note.innerHTML;
+              }
+            } else {
+              // Remove any anchor links if they are present
+              const anchorLink = note.querySelector("a.anchorjs-link");
+              if (anchorLink) {
+                anchorLink.remove();
+              }
+              if (window.Quarto?.typesetMath) {
+                window.Quarto.typesetMath(note);
+              }
+              if (note.classList.contains("callout")) {
+                return note.outerHTML;
+              } else {
+                return note.innerHTML;
+              }
+            }
+          };
+          for (var i = 0; i < xrefs.length; i++) {
+            const xref = xrefs[i];
+            tippyHover(
+              xref,
+              undefined,
+              function (instance) {
+                instance.disable();
+                let url = xref.getAttribute("href");
+                let hash = undefined;
+                if (url.startsWith("#")) {
+                  hash = url;
+                } else {
+                  try {
+                    hash = new URL(url).hash;
+                  } catch {}
+                }
+                if (hash) {
+                  const id = hash.replace(/^#\/?/, "");
+                  const note = window.document.getElementById(id);
+                  if (note !== null) {
+                    try {
+                      const html = processXRef(id, note.cloneNode(true));
+                      instance.setContent(html);
+                    } finally {
+                      instance.enable();
+                      instance.show();
+                    }
+                  } else {
+                    // See if we can fetch this
+                    fetch(url.split("#")[0])
+                      .then((res) => res.text())
+                      .then((html) => {
+                        const parser = new DOMParser();
+                        const htmlDoc = parser.parseFromString(
+                          html,
+                          "text/html",
+                        );
+                        const note = htmlDoc.getElementById(id);
+                        if (note !== null) {
+                          const html = processXRef(id, note);
+                          instance.setContent(html);
+                        }
+                      })
+                      .finally(() => {
+                        instance.enable();
+                        instance.show();
+                      });
+                  }
+                } else {
+                  // See if we can fetch a full url (with no hash to target)
+                  // This is a special case and we should probably do some content thinning / targeting
+                  fetch(url)
+                    .then((res) => res.text())
+                    .then((html) => {
+                      const parser = new DOMParser();
+                      const htmlDoc = parser.parseFromString(html, "text/html");
+                      const note = htmlDoc.querySelector("main.content");
+                      if (note !== null) {
+                        // This should only happen for chapter cross references
+                        // (since there is no id in the URL)
+                        // remove the first header
+                        if (
+                          note.children.length > 0 &&
+                          note.children[0].tagName === "HEADER"
+                        ) {
+                          note.children[0].remove();
+                        }
+                        const html = processXRef(null, note);
+                        instance.setContent(html);
+                      }
+                    })
+                    .finally(() => {
+                      instance.enable();
+                      instance.show();
+                    });
+                }
+              },
+              function (instance) {},
+            );
+          }
+          let selectedAnnoteEl;
+          const selectorForAnnotation = (cell, annotation) => {
+            let cellAttr = 'data-code-cell="' + cell + '"';
+            let lineAttr = 'data-code-annotation="' + annotation + '"';
+            const selector = "span[" + cellAttr + "][" + lineAttr + "]";
+            return selector;
+          };
+          const selectCodeLines = (annoteEl) => {
+            const doc = window.document;
+            const targetCell = annoteEl.getAttribute("data-target-cell");
+            const targetAnnotation = annoteEl.getAttribute(
+              "data-target-annotation",
+            );
+            const annoteSpan = window.document.querySelector(
+              selectorForAnnotation(targetCell, targetAnnotation),
+            );
+            const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+            const lineIds = lines.map((line) => {
+              return targetCell + "-" + line;
+            });
+            let top = null;
+            let height = null;
+            let parent = null;
+            if (lineIds.length > 0) {
               //compute the position of the single el (top and bottom and make a div)
               const el = window.document.getElementById(lineIds[0]);
               top = el.offsetTop;
               height = el.offsetHeight;
               parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
+              if (lineIds.length > 1) {
+                const lastEl = window.document.getElementById(
+                  lineIds[lineIds.length - 1],
+                );
+                const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                height = bottom - top;
               }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
+              if (top !== null && height !== null && parent !== null) {
+                // cook up a div (if necessary) and position it
+                let div = window.document.getElementById(
+                  "code-annotation-line-highlight",
+                );
+                if (div === null) {
+                  div = window.document.createElement("div");
+                  div.setAttribute("id", "code-annotation-line-highlight");
+                  div.style.position = "absolute";
+                  parent.appendChild(div);
+                }
+                div.style.top = top - 2 + "px";
+                div.style.height = height + 4 + "px";
+                div.style.left = 0;
+                let gutterDiv = window.document.getElementById(
+                  "code-annotation-line-highlight-gutter",
+                );
+                if (gutterDiv === null) {
+                  gutterDiv = window.document.createElement("div");
+                  gutterDiv.setAttribute(
+                    "id",
+                    "code-annotation-line-highlight-gutter",
+                  );
+                  gutterDiv.style.position = "absolute";
+                  const codeCell = window.document.getElementById(targetCell);
+                  const gutter = codeCell.querySelector(
+                    ".code-annotation-gutter",
+                  );
+                  gutter.appendChild(gutterDiv);
+                }
+                gutterDiv.style.top = top - 2 + "px";
+                gutterDiv.style.height = height + 4 + "px";
               }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+              selectedAnnoteEl = annoteEl;
             }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
           };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+          const unselectCodeLines = () => {
+            const elementsIds = [
+              "code-annotation-line-highlight",
+              "code-annotation-line-highlight-gutter",
+            ];
+            elementsIds.forEach((elId) => {
+              const div = window.document.getElementById(elId);
+              if (div) {
+                div.remove();
+              }
+            });
+            selectedAnnoteEl = undefined;
+          };
+          // Handle positioning of the toggle
+          window.addEventListener(
+            "resize",
+            throttle(() => {
+              elRect = undefined;
+              if (selectedAnnoteEl) {
+                selectCodeLines(selectedAnnoteEl);
+              }
+            }, 10),
+          );
+          function throttle(fn, ms) {
+            let throttle = false;
+            let timer;
+            return (...args) => {
+              if (!throttle) {
+                // first call gets through
+                fn.apply(this, args);
+                throttle = true;
+              } else {
+                // all the others get throttled
+                if (timer) clearTimeout(timer); // cancel #2
+                timer = setTimeout(() => {
+                  fn.apply(this, args);
+                  timer = throttle = false;
+                }, ms);
+              }
+            };
+          }
+          // Attach click handler to the DT
+          const annoteDls = window.document.querySelectorAll(
+            "dt[data-target-cell]",
+          );
+          for (const annoteDlNode of annoteDls) {
+            annoteDlNode.addEventListener("click", (event) => {
+              const clickedEl = event.target;
+              if (clickedEl !== selectedAnnoteEl) {
+                unselectCodeLines();
+                const activeEl = window.document.querySelector(
+                  "dt[data-target-cell].code-annotation-active",
+                );
+                if (activeEl) {
+                  activeEl.classList.remove("code-annotation-active");
+                }
+                selectCodeLines(clickedEl);
+                clickedEl.classList.add("code-annotation-active");
+              } else {
+                // Unselect the line
+                unselectCodeLines();
+                clickedEl.classList.remove("code-annotation-active");
+              }
+            });
+          }
+          const findCites = (el) => {
+            const parentEl = el.parentElement;
+            if (parentEl) {
+              const cites = parentEl.dataset.cites;
+              if (cites) {
+                return {
+                  el,
+                  cites: cites.split(" "),
+                };
+              } else {
+                return findCites(el.parentElement);
+              }
+            } else {
+              return undefined;
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+          };
+          var bibliorefs = window.document.querySelectorAll(
+            'a[role="doc-biblioref"]',
+          );
+          for (var i = 0; i < bibliorefs.length; i++) {
+            const ref = bibliorefs[i];
+            const citeInfo = findCites(ref);
+            if (citeInfo) {
+              tippyHover(citeInfo.el, function () {
+                var popup = window.document.createElement("div");
+                citeInfo.cites.forEach(function (cite) {
+                  var citeDiv = window.document.createElement("div");
+                  citeDiv.classList.add("hanging-indent");
+                  citeDiv.classList.add("csl-entry");
+                  var biblioDiv = window.document.getElementById("ref-" + cite);
+                  if (biblioDiv) {
+                    citeDiv.innerHTML = biblioDiv.innerHTML;
+                  }
+                  popup.appendChild(citeDiv);
+                });
+                return popup.innerHTML;
+              });
+            }
+          }
         });
-      }
-    }
-  });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./installation.html" class="pagination-link" aria-label="Installation Guide">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation Guide</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
-</div> <!-- /content -->
-
-
-
-
-</body></html>
+      </script>
+      <nav class="page-navigation">
+        <div class="nav-page nav-page-previous">
+          <a
+            href="./intro.html"
+            class="pagination-link"
+            aria-label="Introduction"
+          >
+            <i class="bi bi-arrow-left-short"></i>
+            <span class="nav-page-text"
+              ><span class="chapter-number">2</span>&nbsp;
+              <span class="chapter-title">Introduction</span></span
+            >
+          </a>
+        </div>
+        <div class="nav-page nav-page-next">
+          <a
+            href="./installation.html"
+            class="pagination-link"
+            aria-label="Installation Guide"
+          >
+            <span class="nav-page-text"
+              ><span class="chapter-number">4</span>&nbsp;
+              <span class="chapter-title">Installation Guide</span></span
+            >
+            <i class="bi bi-arrow-right-short"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <!-- /content -->
+  </body>
+</html>

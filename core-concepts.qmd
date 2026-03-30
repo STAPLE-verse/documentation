@@ -78,7 +78,7 @@ Invitations are how collaborators join projects in STAPLE. Project administrator
 -   On the main dashboard, you can view all of your pending invitations across projects and choose to accept or decline them.
 -   On a project dashboard, only project administrators can see the invitations they have sent for that specific project.
 
-A contributor cannot be assigned tasks or added to teams until they have accepted their invitation. This system ensures that every collaborator's involvement is explicit, documented, and consented to before work begins. Each person will receive an email from app\@staple.science. The email may go to spam and may need to be marked as safe to ensure all invitation and notification emails are received. We also have emails that can be sent from app@staplescience.com to alleviate issues with universities blocking `.science` addresses. 
+A contributor cannot be assigned tasks or added to teams until they have accepted their invitation. This system ensures that every collaborator's involvement is explicit, documented, and consented to before work begins. Each person will receive an email from app\@staplescience.com. The email may go to spam and may need to be marked as safe to ensure all invitation and notification emails are received. We also have emails that can be sent from app@staplescience.com to alleviate issues with universities blocking `.science` addresses. 
 
 #### Tasks
 
@@ -105,7 +105,7 @@ Notifications keep you informed about project activity without needing to check 
 -   You've received a project invitation.
 -   You've been added to a team.
 
-On the main dashboard, notifications show updates from all of your projects in one place. On a project dashboard, notifications are filtered to that project only, helping you focus on what matters most in the current context. The Notifications page ensures you never miss important updates in collaborative projects. Each day you will receive a summary email of your notifications from app\@staple.science. The email may go to spam and may need to be marked as safe to ensure all notification emails are received. We also have emails that can be sent from app@staplescience.com to alleviate issues with universities blocking `.science` addresses. 
+On the main dashboard, notifications show updates from all of your projects in one place. On a project dashboard, notifications are filtered to that project only, helping you focus on what matters most in the current context. The Notifications page ensures you never miss important updates in collaborative projects. Each day you will receive a summary email of your notifications from app\@staplescience.com. The email may go to spam and may need to be marked as safe to ensure all notification emails are received. We also have emails that can be sent from app@staplescience.com to alleviate issues with universities blocking `.science` addresses. 
 
 #### Forms
 
