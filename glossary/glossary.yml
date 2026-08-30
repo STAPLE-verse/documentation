@@ -1,5 +1,6 @@
 FAIR: |
   FAIR stands for Findable, Accessible, Interoperable, and Reusable, a set of guiding principles that aim to improve the management and stewardship of scientific data, metadata, and other research outputs. Originally proposed by Wilkinson et al. (2016), the FAIR principles emphasize that data should be findable through rich metadata and persistent identifiers; accessible using standardized protocols, even when access is restricted; interoperable via the use of shared formats, vocabularies, and ontologies; and reusable by ensuring clear licensing, documentation, and provenance. FAIR is not a strict standard but a framework to guide the development of research practices and infrastructure that support transparency, reproducibility, and long-term reuse by both humans and machines.
+  
 metadata: |
   Metadata is information that describes other data. It helps explain what a dataset or research output is, how it was created, who created it, and how it can be used. Metadata makes data easier to find, understand, and reuse.
   
@@ -20,6 +21,9 @@ Project: |
   
 Task: |
   A discrete unit of work within a project, such as designing a survey, analyzing data, or drafting a manuscript. Tasks can be assigned, tracked, and logged to monitor progress.
+  
+Contributor/Member: |
+  An individual who actively participates in a project. Contributors may take on different roles, responsibilities, and levels of access within STAPLE.
   
 Team: |
   The group of contributors working together on a project. Teams may span labs, institutions, or disciplines, and are defined by shared access to project tasks and resources.
@@ -45,5 +49,10 @@ Project Summary: |
 Task Logs: |
   A chronological record of all activity on a task, including assignments, updates, completions, and notes. Task logs create a transparent history of project work, making it easier to track progress, maintain accountability, and reconstruct decisions.
   
-Contributor/Member: |
-  An individual who actively participates in a project. Contributors may take on different roles, responsibilities, and levels of access within STAPLE.
+Form Template: |
+  A pre-built form provided by STAPLE as a starting point for common metadata needs (e.g., ethics approvals, dataset descriptions). Templates can be added to your form library and customized rather than built from scratch.
+  
+Form Version: |
+  A snapshot of a form's schema created each time it is saved. Earlier versions remain available to tasks that already used them, so editing a form does not change the metadata already collected under a prior version.
+Form Data: |
+  The metadata that has been submitted through a project's forms. Form Data gives a centralized, exportable view of every completed form within a project, separate from the form templates used to collect it.

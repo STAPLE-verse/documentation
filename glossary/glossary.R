@@ -20,3 +20,7 @@ glossary_add("Milestones", "Markers of significant progress within a project, su
 glossary_add("Project Summary", "An automatically generated overview that consolidates key project information, including tasks, contributors, metadata, milestones, and outputs, into a shareable format.")
 glossary_add("Task Logs", "A chronological record of all activity on a task, including assignments, updates, completions, and notes. Task logs create a transparent history of project work, making it easier to track progress, maintain accountability, and reconstruct decisions.")
 
+glossary_add("Form Template", "A pre-built form provided by STAPLE as a starting point for common metadata needs (e.g., ethics approvals, dataset descriptions). Templates can be added to your form library and customized rather than built from scratch.")
+glossary_add("Form Version", "A snapshot of a form's schema created each time it is saved. Earlier versions remain available to tasks that already used them, so editing a form does not change the metadata already collected under a prior version.")
+glossary_add("Form Data", "The metadata that has been submitted through a project's forms. Form Data gives a centralized, exportable view of every completed form within a project, separate from the form templates used to collect it.")
+
