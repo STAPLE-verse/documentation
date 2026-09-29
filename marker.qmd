@@ -13,9 +13,9 @@ If STAPLE is where you *fill in* metadata, MARKER is where you *design and publi
 - **Your private collection** (like a reference manager): the templates you have created, imported, or been invited to work on, including drafts you are still refining.
 - **A public archive** (like a data repository): templates that you have published, each frozen with a permanent identifier so that other researchers can find, cite, fork, and reuse them.
 
-MARKER is available at [https://marker.staplescience.com](https://marker.staplescience.com).
+MARKER is available at <https://marker.staplescience.com>.
 
-![The MARKER home page, showing the most recently published templates.](images/marker/01-home.png)
+![The MARKER home page, showing the most recently published templates.](images/marker/01-home.jpg)
 
 ## Signing In
 
@@ -24,7 +24,7 @@ MARKER uses your STAPLE account, so there is nothing separate to set up.
 - **Already have a STAPLE account?** Choose **Log in** and use your usual username or email and password.
 - **New to STAPLE?** Choose **Sign up**. Creating an account in MARKER also creates your STAPLE account, so you do not need to register twice.
 
-![The MARKER login page.](images/marker/02-login.png)
+![The MARKER login page.](images/marker/02-login.jpg)
 
 You can browse and search the public archive (the **Explore** page) without an account. You need to be signed in to create, import, edit, or publish templates.
 
@@ -32,21 +32,21 @@ You can browse and search the public archive (the **Explore** page) without an a
 
 Open **Profile** from the account menu in the top navigation bar to edit your name, institution, ORCID iD, preferred language, and theme (light or dark). Your **first name, last name, and ORCID iD** are used to pre-fill the contributor list when you publish a template, so it is worth completing them before you publish.
 
-![The Edit Profile page, with name, institution, ORCID iD, language, and theme settings.](images/marker/03-profile.png)
+![The Edit Profile page, with name, institution, ORCID iD, language, and theme settings.](images/marker/03-profile.jpg)
 
 ## Finding Your Way Around
 
 Once signed in, the top navigation bar has three main areas:
 
 | Area | What it is for |
-|---|---|
+|------------------------------------|------------------------------------|
 | **Dashboard** | A quick overview of your collection (including your published and archived schemas), plus recent activity and notifications. |
 | **Collection** | Your workspace: every template you own or share with others, where you create, edit, and publish. |
 | **Explore** | The public archive: search and reuse templates published by anyone. |
 
 The bell icon shows your notifications (see [Collaborating with Others](#collaborating-with-others)).
 
-![The main navigation bar and the Dashboard.](images/marker/04-dashboard.png)
+![The main navigation bar and the Dashboard.](images/marker/04-dashboard.jpg)
 
 ## Your Collection
 
@@ -57,7 +57,7 @@ The **My Collection** page lists your templates in four tabs:
 - **Archived**: templates you have set aside (see [Archiving and Deleting](#archiving-and-deleting)).
 - **Published**: templates you have published to the public archive.
 
-![My Collection, showing the Owned, Shared with me, Archived, and Published tabs.](images/marker/05-collection.png)
+![My Collection, showing the Owned, Shared with me, Archived, and Published tabs.](images/marker/05-collection.jpg)
 
 ## Creating a Template
 
@@ -66,23 +66,23 @@ Choose the add button on the **My Collection** page to see the ways to start a n
 - **Blank draft**: start from scratch in MARKER's form builder.
 - **From STAPLE**: bring in a form you have already built in STAPLE.
 
-![The Add Schema page, offering a Blank draft or an import From STAPLE.](images/marker/06-add-methods.png)
+![The Add Schema page, offering a Blank draft or an import From STAPLE.](images/marker/06-add-methods.jpg)
 
 ### Starting from a Blank Draft
 
-1. Choose **Blank draft**.
-2. Give the template a name and create it. MARKER opens the form builder so you can start adding fields.
+1.  Choose **Blank draft**.
+2.  Give the template a name and create it. MARKER opens the form builder so you can start adding fields.
 
-![Creating a blank draft.](images/marker/07-blank-draft.png)
+![Creating a blank draft.](images/marker/07-blank-draft.jpg)
 
 ### Importing from STAPLE
 
 If you have already built a form in STAPLE, you can copy it into MARKER rather than rebuilding it.
 
-1. Choose **From STAPLE**. MARKER lists the STAPLE forms you own.
-2. Select the form and the version you want, then confirm the import.
+1.  Choose **From STAPLE**. MARKER lists the STAPLE forms you own.
+2.  Select the form and the version you want, then confirm the import.
 
-![The Import from STAPLE page, listing your STAPLE forms and whether each one has already been imported.](images/marker/08-import-staple.png)
+![The Import from STAPLE page, listing your STAPLE forms and whether each one has already been imported.](images/marker/08-import-staple.jpg)
 
 The import creates an **independent snapshot**: a copy of one version of the form. It does not stay linked to the original, so changing the template in MARKER never changes your STAPLE form, and vice versa.
 
@@ -93,7 +93,7 @@ Imported templates are labelled so you can tell where they came from:
 
 If you later update the form in STAPLE, open the imported template and use the **Update from STAPLE** option to pull in the newer version. MARKER asks you to confirm before overwriting any local changes you have made, and it keeps the publication details you have already filled in.
 
-![An imported template, showing its Imported badge and the option to update from STAPLE.](images/marker/09-imported-badge.png)
+![An imported template, showing its Imported badge and the option to update from STAPLE.](images/marker/09-imported-badge.jpg)
 
 ### Cloning a Template
 
@@ -103,14 +103,14 @@ On any template's page, **Clone** makes a fully independent copy of the current 
 
 Open a template from your collection and choose **Edit Structure** to open the editor. It works like the STAPLE form builder: you add fields, set their types and labels, and preview the finished form as someone filling it in would see it. Refer to [Building a Form](metadata-and-forms.qmd#building-a-form) for how the builder itself works.
 
-![The template editor, with the field list and the live preview.](images/marker/10-editor.png)
+![The template editor, with the field list and the live preview.](images/marker/10-editor.jpg)
 
 Two things worth knowing:
 
 - **Your work is protected.** MARKER keeps an unsaved-changes safeguard and asks before you leave the editor with edits that have not been saved.
 - **Semantic bindings are optional.** In addition to the fields themselves, the editor lets you attach machine-readable meaning (for example, a link to a term in a standard vocabulary) to individual fields. This is optional; a template without it is still valid and publishable. See the [specification](https://staplescience.com/profiles/marker-template/semantic/v1) for the details.
 
-![Optional semantic bindings on a field in the editor.](images/marker/11-semantics.png)
+![Optional semantic bindings on a field in the editor.](images/marker/11-semantics.jpg)
 
 ### Versions and History
 
@@ -122,7 +122,7 @@ Every template keeps a version history, shown in the sidebar of its page.
 - **Restore** brings an older version back as a new draft. It never rewrites history: the old version stays exactly as it was.
 - An unpublished draft can be deleted, unless it is the only version the template has.
 
-![The version history sidebar and a comparison between two versions.](images/marker/12-version-history.png)
+![The version history sidebar and a comparison between two versions.](images/marker/12-version-history.jpg)
 
 ## Publishing a Template
 
@@ -132,7 +132,7 @@ Open the template and choose **Publish Schema**. A three-step wizard guides you 
 
 ![The Publish Schema button on a template's page.](images/marker/13-publish-button.png)
 
-::: {.callout-note}
+::: callout-note
 If your template does not meet the publishing requirements, MARKER shows a **Can't publish yet** page explaining what needs to change instead of opening the wizard. Fix the issue in the editor (**Go to Schema Editor**) and try again.
 :::
 
@@ -193,14 +193,14 @@ The original author is notified when someone forks their template.
 
 ![Forking a published template, and the resulting draft in your collection.](images/marker/19-fork.png)
 
-## Collaborating with Others
+## Collaborating with Others {#collaborating-with-others}
 
 You can share a template you own with other MARKER users. On the template's page, open the collaborators control and search for a person by username or email. Choose a role and send the invitation.
 
 ![Inviting a collaborator by username or email.](images/marker/20-invite.png)
 
 | Role | Can do |
-|---|---|
+|------------------------------------|------------------------------------|
 | **Owner** | Everything, including managing collaborators, archiving, deleting drafts, and transferring ownership. Each template has one owner. |
 | **Editor** | Edit the template and its publication details. |
 | **Viewer** | View the template, but not change it. |
@@ -217,7 +217,7 @@ The bell icon in the navigation bar, and the **Notifications** page, tell you wh
 
 ![The notifications bell and the Notifications page.](images/marker/22-notifications.png)
 
-## Archiving and Deleting
+## Archiving and Deleting {#archiving-and-deleting}
 
 MARKER protects published work while letting you discard drafts freely.
 
@@ -231,21 +231,21 @@ MARKER protects published work while letting you discard drafts freely.
 
 MARKER and STAPLE are designed to complement each other.
 
-| | **STAPLE** | **MARKER** |
-|---|---|---|
+|   | **STAPLE** | **MARKER** |
+|------------------------|------------------------|------------------------|
 | **Purpose** | Everyday project management | Curating, sharing, and citing metadata templates |
 | **Forms are** | Task checklists and data collection instruments used in projects | Reusable templates intended for publication |
 | **Typical use** | Fill in metadata as you work | Design, version, and publish the template itself |
 
 A typical workflow looks like this:
 
-1. Build and try out a form in STAPLE on a real project.
-2. Import it into MARKER with **From STAPLE**.
-3. Refine it, add semantic bindings if you wish, and invite collaborators to review it.
-4. Publish it so that other researchers can find, cite, and reuse it.
+1.  Build and try out a form in STAPLE on a real project.
+2.  Import it into MARKER with **From STAPLE**.
+3.  Refine it, add semantic bindings if you wish, and invite collaborators to review it.
+4.  Publish it so that other researchers can find, cite, and reuse it.
 
 Because MARKER copies rather than links, nothing you do in MARKER changes your STAPLE projects.
 
 ## Getting Help
 
-If something is not working, or you have a suggestion, email [staple.helpdesk@gmail.com](mailto:staple.helpdesk@gmail.com).
+If something is not working, or you have a suggestion, email [staple.helpdesk\@gmail.com](mailto:staple.helpdesk@gmail.com).
