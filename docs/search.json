@@ -198,5 +198,125 @@
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>References</span>"
     ]
+  },
+  {
+    "objectID": "marker.html",
+    "href": "marker.html",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "",
+    "text": "5.1 Signing In\nThe Metadata and Forms section showed how STAPLE Forms collect metadata while you work on a project. MARKER is the companion app for the other half of the job: building, curating, sharing, and citing the metadata templates those forms are made from.\nIf STAPLE is where you fill in metadata, MARKER is where you design and publish the templates. You can think of it as two things in one:\nMARKER is available at https://marker.staplescience.com.\nMARKER uses your STAPLE account, so there is nothing separate to set up.\nYou can browse and search the public archive (the Explore page) without an account. You need to be signed in to create, import, edit, or publish templates.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#signing-in",
+    "href": "marker.html#signing-in",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "",
+    "text": "Already have a STAPLE account? Choose Log in and use your usual username or email and password.\nNew to STAPLE? Choose Sign up. Creating an account in MARKER also creates your STAPLE account, so you do not need to register twice.\n\n\n\n\nThe MARKER login page.\n\n\n\n\n5.1.1 Completing Your Profile\nOpen Profile from the account menu in the top navigation bar to edit your name, institution, ORCID iD, preferred language, and theme (light or dark). Your first name, last name, and ORCID iD are used to pre-fill the contributor list when you publish a template, so it is worth completing them before you publish.\n\n\n\nThe Edit Profile page, with name, institution, ORCID iD, language, and theme settings.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#finding-your-way-around",
+    "href": "marker.html#finding-your-way-around",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.2 Finding Your Way Around",
+    "text": "5.2 Finding Your Way Around\nOnce signed in, the top navigation bar has three main areas:\n\n\n\n\n\n\n\nArea\nWhat it is for\n\n\n\n\nDashboard\nA quick overview of your collection (including your published and archived schemas), plus recent activity and notifications.\n\n\nCollection\nYour workspace: every template you own or share with others, where you create, edit, and publish.\n\n\nExplore\nThe public archive: search and reuse templates published by anyone.\n\n\n\nThe bell icon shows your notifications (see Collaborating with Others).\n\n\n\nThe main navigation bar and the Dashboard.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#your-collection",
+    "href": "marker.html#your-collection",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.3 Your Collection",
+    "text": "5.3 Your Collection\nThe My Collection page lists your templates in four tabs:\n\nOwned: templates you created or imported.\nShared with me: templates other people have invited you to collaborate on.\nArchived: templates you have set aside (see Archiving and Deleting).\nPublished: templates you have published to the public archive.\n\n\n\n\nMy Collection, showing the Owned, Shared with me, Archived, and Published tabs.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#creating-a-template",
+    "href": "marker.html#creating-a-template",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.4 Creating a Template",
+    "text": "5.4 Creating a Template\nChoose the add button on the My Collection page to see the ways to start a new template. There are two:\n\nBlank draft: start from scratch in MARKER’s form builder.\nFrom STAPLE: bring in a form you have already built in STAPLE.\n\n\n\n\nThe Add Schema page, offering a Blank draft or an import From STAPLE.\n\n\n\n5.4.1 Starting from a Blank Draft\n\nChoose Blank draft.\nGive the template a name and create it. MARKER opens the form builder so you can start adding fields.\n\n\n\n\nCreating a blank draft.\n\n\n\n\n5.4.2 Importing from STAPLE\nIf you have already built a form in STAPLE, you can copy it into MARKER rather than rebuilding it.\n\nChoose From STAPLE. MARKER lists the STAPLE forms you own.\nSelect the form and the version you want, then confirm the import.\n\n\n\n\nThe Import from STAPLE page, listing your STAPLE forms and whether each one has already been imported.\n\n\nThe import creates an independent snapshot: a copy of one version of the form. It does not stay linked to the original, so changing the template in MARKER never changes your STAPLE form, and vice versa.\nImported templates are labelled so you can tell where they came from:\n\nImported: the template is unchanged from the STAPLE version you imported.\nBased on import: you have changed the template since importing it.\n\nIf you later update the form in STAPLE, open the imported template and use the Update from STAPLE option to pull in the newer version. MARKER asks you to confirm before overwriting any local changes you have made, and it keeps the publication details you have already filled in.\n\n\n\nAn imported template, showing its Imported badge and the option to update from STAPLE.\n\n\n\n\n5.4.3 Cloning a Template\nOn any template’s page, Clone makes a fully independent copy of the current version, with its own identity and history. Use this to start a variation of a template you already have.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#editing-a-template",
+    "href": "marker.html#editing-a-template",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.5 Editing a Template",
+    "text": "5.5 Editing a Template\nOpen a template from your collection and choose Edit Structure to open the editor. It works like the STAPLE form builder: you add fields, set their types and labels, and preview the finished form as someone filling it in would see it. Refer to Building a Form for how the builder itself works.\n\n\n\nThe template editor, with the field list and the live preview.\n\n\nTwo things worth knowing:\n\nYour work is protected. MARKER keeps an unsaved-changes safeguard and asks before you leave the editor with edits that have not been saved.\nSemantic bindings are optional. In addition to the fields themselves, the editor lets you attach machine-readable meaning (for example, a link to a term in a standard vocabulary) to individual fields. This is optional; a template without it is still valid and publishable. See the specification for the details.\n\n\n\n\nOptional semantic bindings on a field in the editor.\n\n\n\n5.5.1 Versions and History\nEvery template keeps a version history, shown in the sidebar of its page.\n\nDrafts are numbered (Draft 1, Draft 2, …). Published versions carry their release number (for example v1.0.0).\nNew draft version copies the latest version so you can keep editing. Use it after publishing, since published versions are frozen.\nYou can compare two versions side by side to see exactly what changed.\nRestore brings an older version back as a new draft. It never rewrites history: the old version stays exactly as it was.\nAn unpublished draft can be deleted, unless it is the only version the template has.\n\n\n\n\nThe version history sidebar and a comparison between two versions.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#publishing-a-template",
+    "href": "marker.html#publishing-a-template",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.6 Publishing a Template",
+    "text": "5.6 Publishing a Template\nPublishing adds a template to the public archive so that other researchers can find and reuse it. Because published templates are meant to be cited, publishing is permanent: a published version is frozen, and it cannot be edited or deleted. Changes go into a new version.\nOpen the template and choose Publish Schema. A three-step wizard guides you through it.\n\n\n\nThe Publish Schema button on a template’s page.\n\n\n\n\n\n\n\n\nNote\n\n\n\nIf your template does not meet the publishing requirements, MARKER shows a Can’t publish yet page explaining what needs to change instead of opening the wizard. Fix the issue in the editor (Go to Schema Editor) and try again.\n\n\n\n5.6.1 Step 1: Core FAIR Metadata\nDescribe the template so others can discover it. This is what makes it FAIR.\n\nDomain / Discipline: for example Psychology, Neuroscience, Economics, or Sociology.\nPrimary Language: for example English (US), English (UK), Spanish, French, or German.\nLicense: Creative Commons Attribution 4.0 (CC-BY-4.0), CC0 1.0 (public domain), or MIT. An open license is required for publication.\nKeywords: type a keyword and press Enter, comma, or semicolon to add it. Keywords are required, because they are how people find your template.\n\n\n\n\nStep 1 of the publish wizard, Core FAIR Metadata.\n\n\n\n\n5.6.2 Step 2: Contributors\nList the people who should be credited. At least one contributor is required. MARKER starts the list with you, using the name, ORCID iD, and institution from your profile (this is why completing your profile first helps). For each contributor you can record a role: Author, Creator, Maintainer, Translator, or Data Curator.\n\n\n\nStep 2 of the publish wizard, Contributors.\n\n\n\n\n5.6.3 Step 3: Review and Freeze\nFinish the release and publish it.\n\nSemantic Release Version: use the Major.Minor.Patch format (for example 1.0.0). MARKER suggests the next number and warns you if the version has already been used for this template.\nDescription: a longer description for researchers deciding whether to reuse your template. This is different from the form’s own description, which is shown to people filling it in.\nRelease Notes (optional): what is new or changed in this version.\nRelated Publication DOI (optional): link the template to a paper or dataset to strengthen its provenance.\n\nWhen you publish, MARKER mints a permanent identifier (PID) for the template and freezes the version.\n\n\n\nStep 3 of the publish wizard, Review and Freeze.\n\n\nAfter publishing, the template’s page offers View Public URL, which opens the public page other people will see.\n\n\n5.6.4 Publishing a New Version\nTo release an updated template, choose New draft version, make your changes, and publish again with a higher version number. Each published version stays available under the same template family, so older citations keep working.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#exploring-published-templates",
+    "href": "marker.html#exploring-published-templates",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.7 Exploring Published Templates",
+    "text": "5.7 Exploring Published Templates\nThe Explore page is open to everyone. Use the search box to look through titles, descriptions, contributors, and keywords, and narrow the results with the filters:\n\nDomain, License, Language, and Source\nAfter and Before, to limit results by publication date\n\n\n\n\nThe Explore page, with the search box and filters.\n\n\nSelect a template to open its public page. Here you can read the description, see the contributors and license, browse other published versions, and preview the form. Export JSON downloads the template as a machine-readable file.\n\n\n\nThe public page for a published template.\n\n\n\n5.7.1 Forking a Template\nTo build on someone else’s template, choose Fork This Schema. MARKER copies the published template into your own collection as a new draft, and records where it came from, so the lineage is traceable. You can then change it freely and publish your own version. If you have already forked it, the button changes to View Your Draft.\nThe original author is notified when someone forks their template.\n\n\n\nForking a published template, and the resulting draft in your collection.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#collaborating-with-others",
+    "href": "marker.html#collaborating-with-others",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.8 Collaborating with Others",
+    "text": "5.8 Collaborating with Others\nYou can share a template you own with other MARKER users. On the template’s page, open the collaborators control and search for a person by username or email. Choose a role and send the invitation.\n\n\n\nInviting a collaborator by username or email.\n\n\n\n\n\n\n\n\n\nRole\nCan do\n\n\n\n\nOwner\nEverything, including managing collaborators, archiving, deleting drafts, and transferring ownership. Each template has one owner.\n\n\nEditor\nEdit the template and its publication details.\n\n\nViewer\nView the template, but not change it.\n\n\n\nThe invited person sees a banner, You’ve been invited to collaborate, and can accept or decline. Until they accept, they do not have access. The template then appears in their Shared with me tab.\nOwners can change a collaborator’s role, remove a collaborator, or transfer ownership to another collaborator (choosing what role they themselves keep afterwards).\n\n\n\nThe collaborators dialog, showing roles and pending invitations.\n\n\n\n5.8.1 Notifications\nThe bell icon in the navigation bar, and the Notifications page, tell you when something happens that involves you, such as being invited to a template, being removed from one, ownership being transferred to you, a template being archived, or someone forking one of your published templates.\n\n\n\nThe notifications bell and the Notifications page.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#archiving-and-deleting",
+    "href": "marker.html#archiving-and-deleting",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.9 Archiving and Deleting",
+    "text": "5.9 Archiving and Deleting\nMARKER protects published work while letting you discard drafts freely.\n\nArchive (recoverable). The owner can archive any template. It disappears from your active collection, and collaborators no longer see it (they are notified). Archived templates cannot be edited or published. Published versions stay in the public archive and keep resolving at their public URL. Open the Archived tab and use Recover to bring a template back.\nPermanently Delete (not recoverable). Only available for an archived template that was never published. This removes it completely.\nPublished templates are never deleted. Once a template has been published, its public record must remain so that citations keep working. Archiving is as far as you can go for the private workspace copy.\n\n\n\n\nThe Archived tab, with the Recover and Permanently Delete options.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#working-together-with-staple",
+    "href": "marker.html#working-together-with-staple",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.10 Working Together with STAPLE",
+    "text": "5.10 Working Together with STAPLE\nMARKER and STAPLE are designed to complement each other.\n\n\n\n\n\n\n\n\n\nSTAPLE\nMARKER\n\n\n\n\nPurpose\nEveryday project management\nCurating, sharing, and citing metadata templates\n\n\nForms are\nTask checklists and data collection instruments used in projects\nReusable templates intended for publication\n\n\nTypical use\nFill in metadata as you work\nDesign, version, and publish the template itself\n\n\n\nA typical workflow looks like this:\n\nBuild and try out a form in STAPLE on a real project.\nImport it into MARKER with From STAPLE.\nRefine it, add semantic bindings if you wish, and invite collaborators to review it.\nPublish it so that other researchers can find, cite, and reuse it.\n\nBecause MARKER copies rather than links, nothing you do in MARKER changes your STAPLE projects.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
+  },
+  {
+    "objectID": "marker.html#getting-help",
+    "href": "marker.html#getting-help",
+    "title": "5  MARKER: Metadata Templates",
+    "section": "5.11 Getting Help",
+    "text": "5.11 Getting Help\nIf something is not working, or you have a suggestion, email staple.helpdesk@gmail.com.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>MARKER: Metadata Templates</span>"
+    ]
   }
 ]

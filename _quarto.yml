@@ -13,6 +13,7 @@ book:
     - intro.qmd
     - core-concepts.qmd
     - metadata-and-forms.qmd
+    - marker.qmd
     - installation.qmd
     - glossary.qmd
     - references.qmd

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; MARKER: Metadata Templates – STAPLE Documentation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./installation.html" rel="next">
+<link href="./metadata-and-forms.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="glossary/glossary.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./marker.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">MARKER: Metadata Templates</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">STAPLE Documentation</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./core-concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Core Concepts</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metadata-and-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metadata and Forms</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./marker.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">MARKER: Metadata Templates</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation Guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#signing-in" id="toc-signing-in" class="nav-link active" data-scroll-target="#signing-in"><span class="header-section-number">5.1</span> Signing In</a>
+  <ul class="collapse">
+  <li><a href="#completing-your-profile" id="toc-completing-your-profile" class="nav-link" data-scroll-target="#completing-your-profile"><span class="header-section-number">5.1.1</span> Completing Your Profile</a></li>
+  </ul></li>
+  <li><a href="#finding-your-way-around" id="toc-finding-your-way-around" class="nav-link" data-scroll-target="#finding-your-way-around"><span class="header-section-number">5.2</span> Finding Your Way Around</a></li>
+  <li><a href="#your-collection" id="toc-your-collection" class="nav-link" data-scroll-target="#your-collection"><span class="header-section-number">5.3</span> Your Collection</a></li>
+  <li><a href="#creating-a-template" id="toc-creating-a-template" class="nav-link" data-scroll-target="#creating-a-template"><span class="header-section-number">5.4</span> Creating a Template</a>
+  <ul class="collapse">
+  <li><a href="#starting-from-a-blank-draft" id="toc-starting-from-a-blank-draft" class="nav-link" data-scroll-target="#starting-from-a-blank-draft"><span class="header-section-number">5.4.1</span> Starting from a Blank Draft</a></li>
+  <li><a href="#importing-from-staple" id="toc-importing-from-staple" class="nav-link" data-scroll-target="#importing-from-staple"><span class="header-section-number">5.4.2</span> Importing from STAPLE</a></li>
+  <li><a href="#cloning-a-template" id="toc-cloning-a-template" class="nav-link" data-scroll-target="#cloning-a-template"><span class="header-section-number">5.4.3</span> Cloning a Template</a></li>
+  </ul></li>
+  <li><a href="#editing-a-template" id="toc-editing-a-template" class="nav-link" data-scroll-target="#editing-a-template"><span class="header-section-number">5.5</span> Editing a Template</a>
+  <ul class="collapse">
+  <li><a href="#versions-and-history" id="toc-versions-and-history" class="nav-link" data-scroll-target="#versions-and-history"><span class="header-section-number">5.5.1</span> Versions and History</a></li>
+  </ul></li>
+  <li><a href="#publishing-a-template" id="toc-publishing-a-template" class="nav-link" data-scroll-target="#publishing-a-template"><span class="header-section-number">5.6</span> Publishing a Template</a>
+  <ul class="collapse">
+  <li><a href="#step-1-core-fair-metadata" id="toc-step-1-core-fair-metadata" class="nav-link" data-scroll-target="#step-1-core-fair-metadata"><span class="header-section-number">5.6.1</span> Step 1: Core FAIR Metadata</a></li>
+  <li><a href="#step-2-contributors" id="toc-step-2-contributors" class="nav-link" data-scroll-target="#step-2-contributors"><span class="header-section-number">5.6.2</span> Step 2: Contributors</a></li>
+  <li><a href="#step-3-review-and-freeze" id="toc-step-3-review-and-freeze" class="nav-link" data-scroll-target="#step-3-review-and-freeze"><span class="header-section-number">5.6.3</span> Step 3: Review and Freeze</a></li>
+  <li><a href="#publishing-a-new-version" id="toc-publishing-a-new-version" class="nav-link" data-scroll-target="#publishing-a-new-version"><span class="header-section-number">5.6.4</span> Publishing a New Version</a></li>
+  </ul></li>
+  <li><a href="#exploring-published-templates" id="toc-exploring-published-templates" class="nav-link" data-scroll-target="#exploring-published-templates"><span class="header-section-number">5.7</span> Exploring Published Templates</a>
+  <ul class="collapse">
+  <li><a href="#forking-a-template" id="toc-forking-a-template" class="nav-link" data-scroll-target="#forking-a-template"><span class="header-section-number">5.7.1</span> Forking a Template</a></li>
+  </ul></li>
+  <li><a href="#collaborating-with-others" id="toc-collaborating-with-others" class="nav-link" data-scroll-target="#collaborating-with-others"><span class="header-section-number">5.8</span> Collaborating with Others</a>
+  <ul class="collapse">
+  <li><a href="#notifications" id="toc-notifications" class="nav-link" data-scroll-target="#notifications"><span class="header-section-number">5.8.1</span> Notifications</a></li>
+  </ul></li>
+  <li><a href="#archiving-and-deleting" id="toc-archiving-and-deleting" class="nav-link" data-scroll-target="#archiving-and-deleting"><span class="header-section-number">5.9</span> Archiving and Deleting</a></li>
+  <li><a href="#working-together-with-staple" id="toc-working-together-with-staple" class="nav-link" data-scroll-target="#working-together-with-staple"><span class="header-section-number">5.10</span> Working Together with STAPLE</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help"><span class="header-section-number">5.11</span> Getting Help</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">MARKER: Metadata Templates</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The <a href="./metadata-and-forms.html">Metadata and Forms</a> section showed how STAPLE <a class="glossary" title="Structured templates for capturing important project metadata, such as study design details, instruments used, or ethical approvals, ensuring consistency and transparency.">Forms</a> collect metadata while you work on a project. <strong>MARKER</strong> is the companion app for the other half of the job: building, curating, sharing, and citing the metadata <em>templates</em> those forms are made from.</p>
+<p>If STAPLE is where you <em>fill in</em> metadata, MARKER is where you <em>design and publish</em> the templates. You can think of it as two things in one:</p>
+<ul>
+<li><strong>Your private collection</strong> (like a reference manager): the templates you have created, imported, or been invited to work on, including drafts you are still refining.</li>
+<li><strong>A public archive</strong> (like a data repository): templates that you have published, each frozen with a permanent identifier so that other researchers can find, cite, fork, and reuse them.</li>
+</ul>
+<p>MARKER is available at <a href="https://marker.staplescience.com">https://marker.staplescience.com</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/01-home.png" class="img-fluid figure-img"></p>
+<figcaption>The MARKER home page, showing the most recently published templates.</figcaption>
+</figure>
+</div>
+<section id="signing-in" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="signing-in"><span class="header-section-number">5.1</span> Signing In</h2>
+<p>MARKER uses your STAPLE account, so there is nothing separate to set up.</p>
+<ul>
+<li><strong>Already have a STAPLE account?</strong> Choose <strong>Log in</strong> and use your usual username or email and password.</li>
+<li><strong>New to STAPLE?</strong> Choose <strong>Sign up</strong>. Creating an account in MARKER also creates your STAPLE account, so you do not need to register twice.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/02-login.png" class="img-fluid figure-img"></p>
+<figcaption>The MARKER login page.</figcaption>
+</figure>
+</div>
+<p>You can browse and search the public archive (the <strong>Explore</strong> page) without an account. You need to be signed in to create, import, edit, or publish templates.</p>
+<section id="completing-your-profile" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="completing-your-profile"><span class="header-section-number">5.1.1</span> Completing Your Profile</h3>
+<p>Open <strong>Profile</strong> from the account menu in the top navigation bar to edit your name, institution, ORCID iD, preferred language, and theme (light or dark). Your <strong>first name, last name, and ORCID iD</strong> are used to pre-fill the contributor list when you publish a template, so it is worth completing them before you publish.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/03-profile.png" class="img-fluid figure-img"></p>
+<figcaption>The Edit Profile page, with name, institution, ORCID iD, language, and theme settings.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="finding-your-way-around" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="finding-your-way-around"><span class="header-section-number">5.2</span> Finding Your Way Around</h2>
+<p>Once signed in, the top navigation bar has three main areas:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Area</th>
+<th>What it is for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Dashboard</strong></td>
+<td>A quick overview of your collection (including your published and archived schemas), plus recent activity and notifications.</td>
+</tr>
+<tr class="even">
+<td><strong>Collection</strong></td>
+<td>Your workspace: every template you own or share with others, where you create, edit, and publish.</td>
+</tr>
+<tr class="odd">
+<td><strong>Explore</strong></td>
+<td>The public archive: search and reuse templates published by anyone.</td>
+</tr>
+</tbody>
+</table>
+<p>The bell icon shows your notifications (see <a href="#collaborating-with-others">Collaborating with Others</a>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/04-dashboard.png" class="img-fluid figure-img"></p>
+<figcaption>The main navigation bar and the Dashboard.</figcaption>
+</figure>
+</div>
+</section>
+<section id="your-collection" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="your-collection"><span class="header-section-number">5.3</span> Your Collection</h2>
+<p>The <strong>My Collection</strong> page lists your templates in four tabs:</p>
+<ul>
+<li><strong>Owned</strong>: templates you created or imported.</li>
+<li><strong>Shared with me</strong>: templates other people have invited you to collaborate on.</li>
+<li><strong>Archived</strong>: templates you have set aside (see <a href="#archiving-and-deleting">Archiving and Deleting</a>).</li>
+<li><strong>Published</strong>: templates you have published to the public archive.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/05-collection.png" class="img-fluid figure-img"></p>
+<figcaption>My Collection, showing the Owned, Shared with me, Archived, and Published tabs.</figcaption>
+</figure>
+</div>
+</section>
+<section id="creating-a-template" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="creating-a-template"><span class="header-section-number">5.4</span> Creating a Template</h2>
+<p>Choose the add button on the <strong>My Collection</strong> page to see the ways to start a new template. There are two:</p>
+<ul>
+<li><strong>Blank draft</strong>: start from scratch in MARKER’s form builder.</li>
+<li><strong>From STAPLE</strong>: bring in a form you have already built in STAPLE.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/06-add-methods.png" class="img-fluid figure-img"></p>
+<figcaption>The Add Schema page, offering a Blank draft or an import From STAPLE.</figcaption>
+</figure>
+</div>
+<section id="starting-from-a-blank-draft" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="starting-from-a-blank-draft"><span class="header-section-number">5.4.1</span> Starting from a Blank Draft</h3>
+<ol type="1">
+<li>Choose <strong>Blank draft</strong>.</li>
+<li>Give the template a name and create it. MARKER opens the form builder so you can start adding fields.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/07-blank-draft.png" class="img-fluid figure-img"></p>
+<figcaption>Creating a blank draft.</figcaption>
+</figure>
+</div>
+</section>
+<section id="importing-from-staple" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="importing-from-staple"><span class="header-section-number">5.4.2</span> Importing from STAPLE</h3>
+<p>If you have already built a form in STAPLE, you can copy it into MARKER rather than rebuilding it.</p>
+<ol type="1">
+<li>Choose <strong>From STAPLE</strong>. MARKER lists the STAPLE forms you own.</li>
+<li>Select the form and the version you want, then confirm the import.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/08-import-staple.png" class="img-fluid figure-img"></p>
+<figcaption>The Import from STAPLE page, listing your STAPLE forms and whether each one has already been imported.</figcaption>
+</figure>
+</div>
+<p>The import creates an <strong>independent snapshot</strong>: a copy of one version of the form. It does not stay linked to the original, so changing the template in MARKER never changes your STAPLE form, and vice versa.</p>
+<p>Imported templates are labelled so you can tell where they came from:</p>
+<ul>
+<li><strong>Imported</strong>: the template is unchanged from the STAPLE version you imported.</li>
+<li><strong>Based on import</strong>: you have changed the template since importing it.</li>
+</ul>
+<p>If you later update the form in STAPLE, open the imported template and use the <strong>Update from STAPLE</strong> option to pull in the newer version. MARKER asks you to confirm before overwriting any local changes you have made, and it keeps the publication details you have already filled in.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/09-imported-badge.png" class="img-fluid figure-img"></p>
+<figcaption>An imported template, showing its Imported badge and the option to update from STAPLE.</figcaption>
+</figure>
+</div>
+</section>
+<section id="cloning-a-template" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="cloning-a-template"><span class="header-section-number">5.4.3</span> Cloning a Template</h3>
+<p>On any template’s page, <strong>Clone</strong> makes a fully independent copy of the current version, with its own identity and history. Use this to start a variation of a template you already have.</p>
+</section>
+</section>
+<section id="editing-a-template" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="editing-a-template"><span class="header-section-number">5.5</span> Editing a Template</h2>
+<p>Open a template from your collection and choose <strong>Edit Structure</strong> to open the editor. It works like the STAPLE form builder: you add fields, set their types and labels, and preview the finished form as someone filling it in would see it. Refer to <a href="./metadata-and-forms.html#building-a-form">Building a Form</a> for how the builder itself works.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/10-editor.png" class="img-fluid figure-img"></p>
+<figcaption>The template editor, with the field list and the live preview.</figcaption>
+</figure>
+</div>
+<p>Two things worth knowing:</p>
+<ul>
+<li><strong>Your work is protected.</strong> MARKER keeps an unsaved-changes safeguard and asks before you leave the editor with edits that have not been saved.</li>
+<li><strong>Semantic bindings are optional.</strong> In addition to the fields themselves, the editor lets you attach machine-readable meaning (for example, a link to a term in a standard vocabulary) to individual fields. This is optional; a template without it is still valid and publishable. See the <a href="https://staplescience.com/profiles/marker-template/semantic/v1">specification</a> for the details.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/11-semantics.png" class="img-fluid figure-img"></p>
+<figcaption>Optional semantic bindings on a field in the editor.</figcaption>
+</figure>
+</div>
+<section id="versions-and-history" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="versions-and-history"><span class="header-section-number">5.5.1</span> Versions and History</h3>
+<p>Every template keeps a version history, shown in the sidebar of its page.</p>
+<ul>
+<li>Drafts are numbered (<strong>Draft 1</strong>, <strong>Draft 2</strong>, …). Published versions carry their release number (for example <strong>v1.0.0</strong>).</li>
+<li><strong>New draft version</strong> copies the latest version so you can keep editing. Use it after publishing, since published versions are frozen.</li>
+<li>You can compare two versions side by side to see exactly what changed.</li>
+<li><strong>Restore</strong> brings an older version back as a new draft. It never rewrites history: the old version stays exactly as it was.</li>
+<li>An unpublished draft can be deleted, unless it is the only version the template has.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/12-version-history.png" class="img-fluid figure-img"></p>
+<figcaption>The version history sidebar and a comparison between two versions.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="publishing-a-template" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="publishing-a-template"><span class="header-section-number">5.6</span> Publishing a Template</h2>
+<p>Publishing adds a template to the public archive so that other researchers can find and reuse it. Because published templates are meant to be cited, <strong>publishing is permanent</strong>: a published version is frozen, and it cannot be edited or deleted. Changes go into a new version.</p>
+<p>Open the template and choose <strong>Publish Schema</strong>. A three-step wizard guides you through it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/13-publish-button.png" class="img-fluid figure-img"></p>
+<figcaption>The Publish Schema button on a template’s page.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your template does not meet the publishing requirements, MARKER shows a <strong>Can’t publish yet</strong> page explaining what needs to change instead of opening the wizard. Fix the issue in the editor (<strong>Go to Schema Editor</strong>) and try again.</p>
+</div>
+</div>
+<section id="step-1-core-fair-metadata" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="step-1-core-fair-metadata"><span class="header-section-number">5.6.1</span> Step 1: Core FAIR Metadata</h3>
+<p>Describe the template so others can discover it. This is what makes it <a class="glossary" title="FAIR stands for Findable, Accessible, Interoperable, and Reusable, a set of guiding principles that aim to improve the management and stewardship of scientific data, metadata, and other research outputs. Originally proposed by Wilkinson et al. (2016), the FAIR principles emphasize that data should be findable through rich metadata and persistent identifiers; accessible using standardized protocols, even when access is restricted; interoperable via the use of shared formats, vocabularies, and ontologies; and reusable by ensuring clear licensing, documentation, and provenance. FAIR is not a strict standard but a framework to guide the development of research practices and infrastructure that support transparency, reproducibility, and long-term reuse by both humans and machines.">FAIR</a>.</p>
+<ul>
+<li><strong>Domain / Discipline</strong>: for example Psychology, Neuroscience, Economics, or Sociology.</li>
+<li><strong>Primary Language</strong>: for example English (US), English (UK), Spanish, French, or German.</li>
+<li><strong>License</strong>: Creative Commons Attribution 4.0 (CC-BY-4.0), CC0 1.0 (public domain), or MIT. An open license is required for publication.</li>
+<li><strong>Keywords</strong>: type a keyword and press Enter, comma, or semicolon to add it. Keywords are required, because they are how people find your template.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/14-publish-step1.png" class="img-fluid figure-img"></p>
+<figcaption>Step 1 of the publish wizard, Core FAIR Metadata.</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-2-contributors" class="level3" data-number="5.6.2">
+<h3 data-number="5.6.2" class="anchored" data-anchor-id="step-2-contributors"><span class="header-section-number">5.6.2</span> Step 2: Contributors</h3>
+<p>List the people who should be credited. At least one contributor is required. MARKER starts the list with you, using the name, ORCID iD, and institution from your profile (this is why completing your profile first helps). For each contributor you can record a role: <strong>Author</strong>, <strong>Creator</strong>, <strong>Maintainer</strong>, <strong>Translator</strong>, or <strong>Data Curator</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/15-publish-step2.png" class="img-fluid figure-img"></p>
+<figcaption>Step 2 of the publish wizard, Contributors.</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-3-review-and-freeze" class="level3" data-number="5.6.3">
+<h3 data-number="5.6.3" class="anchored" data-anchor-id="step-3-review-and-freeze"><span class="header-section-number">5.6.3</span> Step 3: Review and Freeze</h3>
+<p>Finish the release and publish it.</p>
+<ul>
+<li><strong>Semantic Release Version</strong>: use the Major.Minor.Patch format (for example <code>1.0.0</code>). MARKER suggests the next number and warns you if the version has already been used for this template.</li>
+<li><strong>Description</strong>: a longer description for researchers deciding whether to reuse your template. This is different from the form’s own description, which is shown to people filling it in.</li>
+<li><strong>Release Notes</strong> (optional): what is new or changed in this version.</li>
+<li><strong>Related Publication DOI</strong> (optional): link the template to a paper or dataset to strengthen its provenance.</li>
+</ul>
+<p>When you publish, MARKER mints a permanent identifier (PID) for the template and freezes the version.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/16-publish-step3.png" class="img-fluid figure-img"></p>
+<figcaption>Step 3 of the publish wizard, Review and Freeze.</figcaption>
+</figure>
+</div>
+<p>After publishing, the template’s page offers <strong>View Public URL</strong>, which opens the public page other people will see.</p>
+</section>
+<section id="publishing-a-new-version" class="level3" data-number="5.6.4">
+<h3 data-number="5.6.4" class="anchored" data-anchor-id="publishing-a-new-version"><span class="header-section-number">5.6.4</span> Publishing a New Version</h3>
+<p>To release an updated template, choose <strong>New draft version</strong>, make your changes, and publish again with a higher version number. Each published version stays available under the same template family, so older citations keep working.</p>
+</section>
+</section>
+<section id="exploring-published-templates" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="exploring-published-templates"><span class="header-section-number">5.7</span> Exploring Published Templates</h2>
+<p>The <strong>Explore</strong> page is open to everyone. Use the search box to look through titles, descriptions, contributors, and keywords, and narrow the results with the filters:</p>
+<ul>
+<li><strong>Domain</strong>, <strong>License</strong>, <strong>Language</strong>, and <strong>Source</strong></li>
+<li><strong>After</strong> and <strong>Before</strong>, to limit results by publication date</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/17-explore.png" class="img-fluid figure-img"></p>
+<figcaption>The Explore page, with the search box and filters.</figcaption>
+</figure>
+</div>
+<p>Select a template to open its public page. Here you can read the description, see the contributors and license, browse other published versions, and preview the form. <strong>Export JSON</strong> downloads the template as a machine-readable file.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/18-public-schema.png" class="img-fluid figure-img"></p>
+<figcaption>The public page for a published template.</figcaption>
+</figure>
+</div>
+<section id="forking-a-template" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="forking-a-template"><span class="header-section-number">5.7.1</span> Forking a Template</h3>
+<p>To build on someone else’s template, choose <strong>Fork This Schema</strong>. MARKER copies the published template into your own collection as a new draft, and records where it came from, so the lineage is traceable. You can then change it freely and publish your own version. If you have already forked it, the button changes to <strong>View Your Draft</strong>.</p>
+<p>The original author is notified when someone forks their template.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/19-fork.png" class="img-fluid figure-img"></p>
+<figcaption>Forking a published template, and the resulting draft in your collection.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="collaborating-with-others" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="collaborating-with-others"><span class="header-section-number">5.8</span> Collaborating with Others</h2>
+<p>You can share a template you own with other MARKER users. On the template’s page, open the collaborators control and search for a person by username or email. Choose a role and send the invitation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/20-invite.png" class="img-fluid figure-img"></p>
+<figcaption>Inviting a collaborator by username or email.</figcaption>
+</figure>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Can do</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Owner</strong></td>
+<td>Everything, including managing collaborators, archiving, deleting drafts, and transferring ownership. Each template has one owner.</td>
+</tr>
+<tr class="even">
+<td><strong>Editor</strong></td>
+<td>Edit the template and its publication details.</td>
+</tr>
+<tr class="odd">
+<td><strong>Viewer</strong></td>
+<td>View the template, but not change it.</td>
+</tr>
+</tbody>
+</table>
+<p>The invited person sees a banner, <strong>You’ve been invited to collaborate</strong>, and can accept or decline. Until they accept, they do not have access. The template then appears in their <strong>Shared with me</strong> tab.</p>
+<p>Owners can change a collaborator’s role, remove a collaborator, or <strong>transfer ownership</strong> to another collaborator (choosing what role they themselves keep afterwards).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/21-collaborators.png" class="img-fluid figure-img"></p>
+<figcaption>The collaborators dialog, showing roles and pending invitations.</figcaption>
+</figure>
+</div>
+<section id="notifications" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="notifications"><span class="header-section-number">5.8.1</span> Notifications</h3>
+<p>The bell icon in the navigation bar, and the <strong>Notifications</strong> page, tell you when something happens that involves you, such as being invited to a template, being removed from one, ownership being transferred to you, a template being archived, or someone forking one of your published templates.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/22-notifications.png" class="img-fluid figure-img"></p>
+<figcaption>The notifications bell and the Notifications page.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="archiving-and-deleting" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="archiving-and-deleting"><span class="header-section-number">5.9</span> Archiving and Deleting</h2>
+<p>MARKER protects published work while letting you discard drafts freely.</p>
+<ul>
+<li><strong>Archive</strong> (recoverable). The owner can archive any template. It disappears from your active collection, and collaborators no longer see it (they are notified). Archived templates cannot be edited or published. Published versions stay in the public archive and keep resolving at their public URL. Open the <strong>Archived</strong> tab and use <strong>Recover</strong> to bring a template back.</li>
+<li><strong>Permanently Delete</strong> (not recoverable). Only available for an <em>archived</em> template that was <strong>never published</strong>. This removes it completely.</li>
+<li><strong>Published templates are never deleted.</strong> Once a template has been published, its public record must remain so that citations keep working. Archiving is as far as you can go for the private workspace copy.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/marker/23-archive.png" class="img-fluid figure-img"></p>
+<figcaption>The Archived tab, with the Recover and Permanently Delete options.</figcaption>
+</figure>
+</div>
+</section>
+<section id="working-together-with-staple" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="working-together-with-staple"><span class="header-section-number">5.10</span> Working Together with STAPLE</h2>
+<p>MARKER and STAPLE are designed to complement each other.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>STAPLE</strong></th>
+<th><strong>MARKER</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Purpose</strong></td>
+<td>Everyday project management</td>
+<td>Curating, sharing, and citing metadata templates</td>
+</tr>
+<tr class="even">
+<td><strong>Forms are</strong></td>
+<td>Task checklists and data collection instruments used in projects</td>
+<td>Reusable templates intended for publication</td>
+</tr>
+<tr class="odd">
+<td><strong>Typical use</strong></td>
+<td>Fill in metadata as you work</td>
+<td>Design, version, and publish the template itself</td>
+</tr>
+</tbody>
+</table>
+<p>A typical workflow looks like this:</p>
+<ol type="1">
+<li>Build and try out a form in STAPLE on a real project.</li>
+<li>Import it into MARKER with <strong>From STAPLE</strong>.</li>
+<li>Refine it, add semantic bindings if you wish, and invite collaborators to review it.</li>
+<li>Publish it so that other researchers can find, cite, and reuse it.</li>
+</ol>
+<p>Because MARKER copies rather than links, nothing you do in MARKER changes your STAPLE projects.</p>
+</section>
+<section id="getting-help" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="getting-help"><span class="header-section-number">5.11</span> Getting Help</h2>
+<p>If something is not working, or you have a suggestion, email <a href="mailto:staple.helpdesk@gmail.com">staple.helpdesk@gmail.com</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./metadata-and-forms.html" class="pagination-link" aria-label="Metadata and Forms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metadata and Forms</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./installation.html" class="pagination-link" aria-label="Installation Guide">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation Guide</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
