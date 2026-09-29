@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Installation Guide – STAPLE Documentation</title>
+<title>6&nbsp; Installation Guide – STAPLE Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./glossary.html" rel="next">
-<link href="./metadata-and-forms.html" rel="prev">
+<link href="./marker.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installation Guide</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation Guide</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,20 +135,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./marker.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">MARKER: Metadata Templates</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./installation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installation Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation Guide</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
@@ -161,34 +167,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#assumptions" id="toc-assumptions" class="nav-link active" data-scroll-target="#assumptions"><span class="header-section-number">5.1</span> Assumptions</a></li>
-  <li><a href="#local-development-or-hosting" id="toc-local-development-or-hosting" class="nav-link" data-scroll-target="#local-development-or-hosting"><span class="header-section-number">5.2</span> Local Development or Hosting</a></li>
-  <li><a href="#installation-steps" id="toc-installation-steps" class="nav-link" data-scroll-target="#installation-steps"><span class="header-section-number">5.3</span> Installation Steps</a>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link active" data-scroll-target="#assumptions"><span class="header-section-number">6.1</span> Assumptions</a></li>
+  <li><a href="#local-development-or-hosting" id="toc-local-development-or-hosting" class="nav-link" data-scroll-target="#local-development-or-hosting"><span class="header-section-number">6.2</span> Local Development or Hosting</a></li>
+  <li><a href="#installation-steps" id="toc-installation-steps" class="nav-link" data-scroll-target="#installation-steps"><span class="header-section-number">6.3</span> Installation Steps</a>
   <ul class="collapse">
-  <li><a href="#web-server-installation" id="toc-web-server-installation" class="nav-link" data-scroll-target="#web-server-installation"><span class="header-section-number">5.3.1</span> Web Server Installation</a></li>
-  <li><a href="#blitzjs-installation" id="toc-blitzjs-installation" class="nav-link" data-scroll-target="#blitzjs-installation"><span class="header-section-number">5.3.2</span> Blitz/JS Installation</a></li>
-  <li><a href="#clone-the-repository" id="toc-clone-the-repository" class="nav-link" data-scroll-target="#clone-the-repository"><span class="header-section-number">5.3.3</span> Clone the Repository</a></li>
-  <li><a href="#database-installation" id="toc-database-installation" class="nav-link" data-scroll-target="#database-installation"><span class="header-section-number">5.3.4</span> Database Installation</a></li>
-  <li><a href="#connect-database-to-staple-app" id="toc-connect-database-to-staple-app" class="nav-link" data-scroll-target="#connect-database-to-staple-app"><span class="header-section-number">5.3.5</span> Connect Database to STAPLE App</a></li>
-  <li><a href="#configure-email" id="toc-configure-email" class="nav-link" data-scroll-target="#configure-email"><span class="header-section-number">5.3.6</span> Configure Email</a></li>
-  <li><a href="#install-staple-requirements" id="toc-install-staple-requirements" class="nav-link" data-scroll-target="#install-staple-requirements"><span class="header-section-number">5.3.7</span> Install STAPLE Requirements</a></li>
-  <li><a href="#setting-up-the-staple-viewer-worker" id="toc-setting-up-the-staple-viewer-worker" class="nav-link" data-scroll-target="#setting-up-the-staple-viewer-worker"><span class="header-section-number">5.3.8</span> Setting Up the STAPLE Viewer Worker</a></li>
-  <li><a href="#starting-the-app---local-testing" id="toc-starting-the-app---local-testing" class="nav-link" data-scroll-target="#starting-the-app---local-testing"><span class="header-section-number">5.3.9</span> Starting the App - Local Testing</a></li>
-  <li><a href="#starting-the-app---production" id="toc-starting-the-app---production" class="nav-link" data-scroll-target="#starting-the-app---production"><span class="header-section-number">5.3.10</span> Starting the App - Production</a></li>
-  <li><a href="#keeping-the-app-going" id="toc-keeping-the-app-going" class="nav-link" data-scroll-target="#keeping-the-app-going"><span class="header-section-number">5.3.11</span> Keeping the App Going</a></li>
-  <li><a href="#setting-up-the-proxy-nginx" id="toc-setting-up-the-proxy-nginx" class="nav-link" data-scroll-target="#setting-up-the-proxy-nginx"><span class="header-section-number">5.3.12</span> Setting Up the Proxy (Nginx)</a></li>
-  <li><a href="#enable-https" id="toc-enable-https" class="nav-link" data-scroll-target="#enable-https"><span class="header-section-number">5.3.13</span> Enable HTTPS</a></li>
-  <li><a href="#install-pgadmin-optional" id="toc-install-pgadmin-optional" class="nav-link" data-scroll-target="#install-pgadmin-optional"><span class="header-section-number">5.3.14</span> Install pgAdmin (Optional)</a></li>
-  <li><a href="#updating-staple" id="toc-updating-staple" class="nav-link" data-scroll-target="#updating-staple"><span class="header-section-number">5.3.15</span> Updating STAPLE</a></li>
+  <li><a href="#web-server-installation" id="toc-web-server-installation" class="nav-link" data-scroll-target="#web-server-installation"><span class="header-section-number">6.3.1</span> Web Server Installation</a></li>
+  <li><a href="#blitzjs-installation" id="toc-blitzjs-installation" class="nav-link" data-scroll-target="#blitzjs-installation"><span class="header-section-number">6.3.2</span> Blitz/JS Installation</a></li>
+  <li><a href="#clone-the-repository" id="toc-clone-the-repository" class="nav-link" data-scroll-target="#clone-the-repository"><span class="header-section-number">6.3.3</span> Clone the Repository</a></li>
+  <li><a href="#database-installation" id="toc-database-installation" class="nav-link" data-scroll-target="#database-installation"><span class="header-section-number">6.3.4</span> Database Installation</a></li>
+  <li><a href="#connect-database-to-staple-app" id="toc-connect-database-to-staple-app" class="nav-link" data-scroll-target="#connect-database-to-staple-app"><span class="header-section-number">6.3.5</span> Connect Database to STAPLE App</a></li>
+  <li><a href="#configure-email" id="toc-configure-email" class="nav-link" data-scroll-target="#configure-email"><span class="header-section-number">6.3.6</span> Configure Email</a></li>
+  <li><a href="#install-staple-requirements" id="toc-install-staple-requirements" class="nav-link" data-scroll-target="#install-staple-requirements"><span class="header-section-number">6.3.7</span> Install STAPLE Requirements</a></li>
+  <li><a href="#setting-up-the-staple-viewer-worker" id="toc-setting-up-the-staple-viewer-worker" class="nav-link" data-scroll-target="#setting-up-the-staple-viewer-worker"><span class="header-section-number">6.3.8</span> Setting Up the STAPLE Viewer Worker</a></li>
+  <li><a href="#starting-the-app---local-testing" id="toc-starting-the-app---local-testing" class="nav-link" data-scroll-target="#starting-the-app---local-testing"><span class="header-section-number">6.3.9</span> Starting the App - Local Testing</a></li>
+  <li><a href="#starting-the-app---production" id="toc-starting-the-app---production" class="nav-link" data-scroll-target="#starting-the-app---production"><span class="header-section-number">6.3.10</span> Starting the App - Production</a></li>
+  <li><a href="#keeping-the-app-going" id="toc-keeping-the-app-going" class="nav-link" data-scroll-target="#keeping-the-app-going"><span class="header-section-number">6.3.11</span> Keeping the App Going</a></li>
+  <li><a href="#setting-up-the-proxy-nginx" id="toc-setting-up-the-proxy-nginx" class="nav-link" data-scroll-target="#setting-up-the-proxy-nginx"><span class="header-section-number">6.3.12</span> Setting Up the Proxy (Nginx)</a></li>
+  <li><a href="#enable-https" id="toc-enable-https" class="nav-link" data-scroll-target="#enable-https"><span class="header-section-number">6.3.13</span> Enable HTTPS</a></li>
+  <li><a href="#install-pgadmin-optional" id="toc-install-pgadmin-optional" class="nav-link" data-scroll-target="#install-pgadmin-optional"><span class="header-section-number">6.3.14</span> Install pgAdmin (Optional)</a></li>
+  <li><a href="#updating-staple" id="toc-updating-staple" class="nav-link" data-scroll-target="#updating-staple"><span class="header-section-number">6.3.15</span> Updating STAPLE</a></li>
   </ul></li>
-  <li><a href="#common-issues-fixes" id="toc-common-issues-fixes" class="nav-link" data-scroll-target="#common-issues-fixes"><span class="header-section-number">5.4</span> Common Issues &amp; Fixes</a>
+  <li><a href="#common-issues-fixes" id="toc-common-issues-fixes" class="nav-link" data-scroll-target="#common-issues-fixes"><span class="header-section-number">6.4</span> Common Issues &amp; Fixes</a>
   <ul class="collapse">
-  <li><a href="#prisma-database-errors" id="toc-prisma-database-errors" class="nav-link" data-scroll-target="#prisma-database-errors"><span class="header-section-number">5.4.1</span> Prisma / Database Errors</a></li>
-  <li><a href="#build-errors" id="toc-build-errors" class="nav-link" data-scroll-target="#build-errors"><span class="header-section-number">5.4.2</span> Build Errors</a></li>
-  <li><a href="#email-issues" id="toc-email-issues" class="nav-link" data-scroll-target="#email-issues"><span class="header-section-number">5.4.3</span> Email Issues</a></li>
-  <li><a href="#nginx-proxy-issues" id="toc-nginx-proxy-issues" class="nav-link" data-scroll-target="#nginx-proxy-issues"><span class="header-section-number">5.4.4</span> Nginx / Proxy Issues</a></li>
-  <li><a href="#service-issues" id="toc-service-issues" class="nav-link" data-scroll-target="#service-issues"><span class="header-section-number">5.4.5</span> Service Issues</a></li>
-  <li><a href="#general-tips" id="toc-general-tips" class="nav-link" data-scroll-target="#general-tips"><span class="header-section-number">5.4.6</span> General Tips</a></li>
+  <li><a href="#prisma-database-errors" id="toc-prisma-database-errors" class="nav-link" data-scroll-target="#prisma-database-errors"><span class="header-section-number">6.4.1</span> Prisma / Database Errors</a></li>
+  <li><a href="#build-errors" id="toc-build-errors" class="nav-link" data-scroll-target="#build-errors"><span class="header-section-number">6.4.2</span> Build Errors</a></li>
+  <li><a href="#email-issues" id="toc-email-issues" class="nav-link" data-scroll-target="#email-issues"><span class="header-section-number">6.4.3</span> Email Issues</a></li>
+  <li><a href="#nginx-proxy-issues" id="toc-nginx-proxy-issues" class="nav-link" data-scroll-target="#nginx-proxy-issues"><span class="header-section-number">6.4.4</span> Nginx / Proxy Issues</a></li>
+  <li><a href="#service-issues" id="toc-service-issues" class="nav-link" data-scroll-target="#service-issues"><span class="header-section-number">6.4.5</span> Service Issues</a></li>
+  <li><a href="#general-tips" id="toc-general-tips" class="nav-link" data-scroll-target="#general-tips"><span class="header-section-number">6.4.6</span> General Tips</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -198,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installation Guide</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installation Guide</span></h1>
 </div>
 
 
@@ -217,8 +223,8 @@ ul.task-list li input[type="checkbox"] {
 
 <p>STAPLE is available as a hosted service at https://app.staple.science, which is the simplest way to get started. You can also go to https://app.staplescience.com if your internet provider blocks <code>.science</code> addresses.</p>
 <p>This guide is for individuals or organizations who would like to host their own instance of STAPLE. Running your own version gives you full control over your data, configuration, and integration with your existing infrastructure.</p>
-<section id="assumptions" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">5.1</span> Assumptions</h2>
+<section id="assumptions" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">6.1</span> Assumptions</h2>
 <p>This guide assumes you meet the following prerequisites:</p>
 <ul>
 <li>You are working on a Linux server. We use Ubuntu 20.04 in this guide, but the steps should be consistent for most Linux distributions.</li>
@@ -231,8 +237,8 @@ ul.task-list li input[type="checkbox"] {
 <li>You can imagine yourself using git (even if you’re new to it).</li>
 </ul>
 </section>
-<section id="local-development-or-hosting" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="local-development-or-hosting"><span class="header-section-number">5.2</span> Local Development or Hosting</h2>
+<section id="local-development-or-hosting" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="local-development-or-hosting"><span class="header-section-number">6.2</span> Local Development or Hosting</h2>
 <p>You can also run STAPLE locally on your own computer, with a few limitations.</p>
 <ul>
 <li>If you are using a Linux system, you can follow the same instructions described in this guide from Blitz/JS Installation through Starting the App – Production.</li>
@@ -247,10 +253,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Managing personal projects without a shared server</li>
 </ul>
 </section>
-<section id="installation-steps" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="installation-steps"><span class="header-section-number">5.3</span> Installation Steps</h2>
-<section id="web-server-installation" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="web-server-installation"><span class="header-section-number">5.3.1</span> Web Server Installation</h3>
+<section id="installation-steps" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="installation-steps"><span class="header-section-number">6.3</span> Installation Steps</h2>
+<section id="web-server-installation" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="web-server-installation"><span class="header-section-number">6.3.1</span> Web Server Installation</h3>
 <p>STAPLE requires a web server to handle requests. You can choose between <strong>Apache</strong> or <strong>Nginx</strong>:</p>
 <ul>
 <li><p><strong>Apache</strong> – <a href="https://ubuntu.com/tutorials/install-and-configure-apache">Installation Instructions</a></p></li>
@@ -261,8 +267,8 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>We recommend using <strong>Nginx</strong>, and our production server is configured with Nginx. This step is only required for people who want to host the software online. You do not need it for local development or use.</p>
 </section>
-<section id="blitzjs-installation" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="blitzjs-installation"><span class="header-section-number">5.3.2</span> Blitz/JS Installation</h3>
+<section id="blitzjs-installation" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="blitzjs-installation"><span class="header-section-number">6.3.2</span> Blitz/JS Installation</h3>
 <p>STAPLE is built with <strong>Blitz.js</strong>, which runs on Node.js. To install the required tools:</p>
 <ul>
 <li>Install Node.js and npm
@@ -294,8 +300,8 @@ npm -v</code></pre>
 <p>ℹ️ Note: Depending on your server setup, you may need to prepend commands with <code>sudo</code>.</p>
 </blockquote>
 </section>
-<section id="clone-the-repository" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="clone-the-repository"><span class="header-section-number">5.3.3</span> Clone the Repository</h3>
+<section id="clone-the-repository" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="clone-the-repository"><span class="header-section-number">6.3.3</span> Clone the Repository</h3>
 <p>Next, you’ll need to copy the STAPLE source code onto your server.</p>
 <ul>
 <li>Install Git (if not already installed):</li>
@@ -323,8 +329,8 @@ sudo apt-get install git</code></pre>
 </ul>
 <pre><code>cd STAPLE</code></pre>
 </section>
-<section id="database-installation" class="level3" data-number="5.3.4">
-<h3 data-number="5.3.4" class="anchored" data-anchor-id="database-installation"><span class="header-section-number">5.3.4</span> Database Installation</h3>
+<section id="database-installation" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="database-installation"><span class="header-section-number">6.3.4</span> Database Installation</h3>
 <p>STAPLE requires a PostgreSQL database.</p>
 <ul>
 <li>Install PostgreSQL
@@ -406,8 +412,8 @@ staple=# </code></pre>
 <li>Exit PostgreSQL using <code>\q</code></li>
 </ul>
 </section>
-<section id="connect-database-to-staple-app" class="level3" data-number="5.3.5">
-<h3 data-number="5.3.5" class="anchored" data-anchor-id="connect-database-to-staple-app"><span class="header-section-number">5.3.5</span> Connect Database to STAPLE App</h3>
+<section id="connect-database-to-staple-app" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="connect-database-to-staple-app"><span class="header-section-number">6.3.5</span> Connect Database to STAPLE App</h3>
 <ul>
 <li>Now we’ll connect the PostgreSQL database you created to the STAPLE application.</li>
 <li>Navigate to your STAPLE project folder</li>
@@ -471,11 +477,11 @@ APP_ORIGIN="http://localhost:3000/"</code></pre>
 </ul>
 <pre><code>DATABASE_URL=postgresql://username:password@localhost:5432/staple_test</code></pre>
 </section>
-<section id="configure-email" class="level3" data-number="5.3.6">
-<h3 data-number="5.3.6" class="anchored" data-anchor-id="configure-email"><span class="header-section-number">5.3.6</span> Configure Email</h3>
+<section id="configure-email" class="level3" data-number="6.3.6">
+<h3 data-number="6.3.6" class="anchored" data-anchor-id="configure-email"><span class="header-section-number">6.3.6</span> Configure Email</h3>
 <p>STAPLE requires an email provider to send system emails (e.g., password resets, project invitations). You can use other options here, but we’ve configured three of them in our current code.</p>
-<section id="secret-keys" class="level4" data-number="5.3.6.1">
-<h4 data-number="5.3.6.1" class="anchored" data-anchor-id="secret-keys"><span class="header-section-number">5.3.6.1</span> Secret Keys</h4>
+<section id="secret-keys" class="level4" data-number="6.3.6.1">
+<h4 data-number="6.3.6.1" class="anchored" data-anchor-id="secret-keys"><span class="header-section-number">6.3.6.1</span> Secret Keys</h4>
 <ul>
 <li><p>You must configure at least one of the following options:</p></li>
 <li><p>Gmail (App Passwords)</p>
@@ -503,8 +509,8 @@ SECRET_ACCESS_KEY="amazonSECRET"</code></pre>
 </ul>
 <pre><code>RESEND_API_KEY="resendAPI"</code></pre>
 </section>
-<section id="edit-the-mailer-configuration" class="level4" data-number="5.3.6.2">
-<h4 data-number="5.3.6.2" class="anchored" data-anchor-id="edit-the-mailer-configuration"><span class="header-section-number">5.3.6.2</span> Edit the Mailer Configuration</h4>
+<section id="edit-the-mailer-configuration" class="level4" data-number="6.3.6.2">
+<h4 data-number="6.3.6.2" class="anchored" data-anchor-id="edit-the-mailer-configuration"><span class="header-section-number">6.3.6.2</span> Edit the Mailer Configuration</h4>
 <p>In addition to adding one of the above environment variables, you’ll need to edit the mailer configuration file so STAPLE knows which provider to use.</p>
 <ul>
 <li>Open the mailer configuration file:</li>
@@ -532,8 +538,8 @@ await ResendMsg(createForgotPasswordMsg(to, resetUrl))
 <pre><code>nano integrations/emails.tsx</code></pre>
 </section>
 </section>
-<section id="install-staple-requirements" class="level3" data-number="5.3.7">
-<h3 data-number="5.3.7" class="anchored" data-anchor-id="install-staple-requirements"><span class="header-section-number">5.3.7</span> Install STAPLE Requirements</h3>
+<section id="install-staple-requirements" class="level3" data-number="6.3.7">
+<h3 data-number="6.3.7" class="anchored" data-anchor-id="install-staple-requirements"><span class="header-section-number">6.3.7</span> Install STAPLE Requirements</h3>
 <ul>
 <li>Make sure you are in the STAPLE main folder before running these commands.</li>
 <li>Use the following (not the <code>#</code> line, these are notes) to install packages, tailwind, and daisyui.</li>
@@ -555,8 +561,8 @@ blitz prisma generate
 # Run migrations to create database structure
 blitz prisma migrate dev</code></pre>
 </section>
-<section id="setting-up-the-staple-viewer-worker" class="level3" data-number="5.3.8">
-<h3 data-number="5.3.8" class="anchored" data-anchor-id="setting-up-the-staple-viewer-worker"><span class="header-section-number">5.3.8</span> Setting Up the STAPLE Viewer Worker</h3>
+<section id="setting-up-the-staple-viewer-worker" class="level3" data-number="6.3.8">
+<h3 data-number="6.3.8" class="anchored" data-anchor-id="setting-up-the-staple-viewer-worker"><span class="header-section-number">6.3.8</span> Setting Up the STAPLE Viewer Worker</h3>
 <p>The Viewer Worker is a background process that supports the Build Summary Viewer in STAPLE. It listens for Redis messages and processes summary-building tasks asynchronously.</p>
 <ul>
 <li>Run the Viewer Worker (manual test)</li>
@@ -625,8 +631,8 @@ sudo systemctl start viewer-worker</code></pre>
 </ul>
 <pre><code>sudo systemctl restart viewer-worker</code></pre>
 </section>
-<section id="starting-the-app---local-testing" class="level3" data-number="5.3.9">
-<h3 data-number="5.3.9" class="anchored" data-anchor-id="starting-the-app---local-testing"><span class="header-section-number">5.3.9</span> Starting the App - Local Testing</h3>
+<section id="starting-the-app---local-testing" class="level3" data-number="6.3.9">
+<h3 data-number="6.3.9" class="anchored" data-anchor-id="starting-the-app---local-testing"><span class="header-section-number">6.3.9</span> Starting the App - Local Testing</h3>
 <ul>
 <li>Open a terminal window and navigate to the STAPLE folder you cloned:</li>
 </ul>
@@ -639,8 +645,8 @@ sudo systemctl start viewer-worker</code></pre>
 <li>Once the server is running, open your browser and go to: http://localhost:3000 (or whatever address is shown in your terminal output).</li>
 </ul>
 </section>
-<section id="starting-the-app---production" class="level3" data-number="5.3.10">
-<h3 data-number="5.3.10" class="anchored" data-anchor-id="starting-the-app---production"><span class="header-section-number">5.3.10</span> Starting the App - Production</h3>
+<section id="starting-the-app---production" class="level3" data-number="6.3.10">
+<h3 data-number="6.3.10" class="anchored" data-anchor-id="starting-the-app---production"><span class="header-section-number">6.3.10</span> Starting the App - Production</h3>
 <ul>
 <li>Open a terminal window and navigate to the STAPLE folder you cloned:</li>
 </ul>
@@ -657,8 +663,8 @@ sudo systemctl start viewer-worker</code></pre>
 </ul>
 <pre><code>blitz start</code></pre>
 </section>
-<section id="keeping-the-app-going" class="level3" data-number="5.3.11">
-<h3 data-number="5.3.11" class="anchored" data-anchor-id="keeping-the-app-going"><span class="header-section-number">5.3.11</span> Keeping the App Going</h3>
+<section id="keeping-the-app-going" class="level3" data-number="6.3.11">
+<h3 data-number="6.3.11" class="anchored" data-anchor-id="keeping-the-app-going"><span class="header-section-number">6.3.11</span> Keeping the App Going</h3>
 <p>When running in production, you’ll want STAPLE to automatically restart after crashes or reboots. The recommended way to do this on Linux is by creating a systemd service.</p>
 <ul>
 <li>Create a service file
@@ -720,8 +726,8 @@ sudo systemctl reset-failed blitz  </code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="setting-up-the-proxy-nginx" class="level3" data-number="5.3.12">
-<h3 data-number="5.3.12" class="anchored" data-anchor-id="setting-up-the-proxy-nginx"><span class="header-section-number">5.3.12</span> Setting Up the Proxy (Nginx)</h3>
+<section id="setting-up-the-proxy-nginx" class="level3" data-number="6.3.12">
+<h3 data-number="6.3.12" class="anchored" data-anchor-id="setting-up-the-proxy-nginx"><span class="header-section-number">6.3.12</span> Setting Up the Proxy (Nginx)</h3>
 <p>Now that STAPLE is running as a background service, you’ll want to expose it through your web domain with Nginx.</p>
 <ul>
 <li>Navigate to your Nginx configuration folder</li>
@@ -767,8 +773,8 @@ sudo systemctl reset-failed blitz  </code></pre>
 </ul>
 <pre><code>sudo systemctl reload nginx</code></pre>
 </section>
-<section id="enable-https" class="level3" data-number="5.3.13">
-<h3 data-number="5.3.13" class="anchored" data-anchor-id="enable-https"><span class="header-section-number">5.3.13</span> Enable HTTPS</h3>
+<section id="enable-https" class="level3" data-number="6.3.13">
+<h3 data-number="6.3.13" class="anchored" data-anchor-id="enable-https"><span class="header-section-number">6.3.13</span> Enable HTTPS</h3>
 <ul>
 <li>Use Let’s Encrypt to add SSL by changing the location of your app in the following:</li>
 </ul>
@@ -779,8 +785,8 @@ sudo certbot --nginx -d app.staple.science</code></pre>
 <li>See <a href="https://certbot.eff.org/">Installation Instructions</a>.</li>
 </ul>
 </section>
-<section id="install-pgadmin-optional" class="level3" data-number="5.3.14">
-<h3 data-number="5.3.14" class="anchored" data-anchor-id="install-pgadmin-optional"><span class="header-section-number">5.3.14</span> Install pgAdmin (Optional)</h3>
+<section id="install-pgadmin-optional" class="level3" data-number="6.3.14">
+<h3 data-number="6.3.14" class="anchored" data-anchor-id="install-pgadmin-optional"><span class="header-section-number">6.3.14</span> Install pgAdmin (Optional)</h3>
 <p>pgAdmin provides a graphical interface for managing your PostgreSQL database. Follow these steps to install and configure pgAdmin on your server.</p>
 <ul>
 <li>Update your system:</li>
@@ -832,8 +838,8 @@ sudo certbot --nginx -d app.staple.science</code></pre>
 <li>Verify the port is open:</li>
 </ul>
 <pre><code>sudo ss -tulnp | grep :81</code></pre>
-<section id="accessing-pgadmin" class="level4" data-number="5.3.14.1">
-<h4 data-number="5.3.14.1" class="anchored" data-anchor-id="accessing-pgadmin"><span class="header-section-number">5.3.14.1</span> <strong>Accessing pgAdmin</strong></h4>
+<section id="accessing-pgadmin" class="level4" data-number="6.3.14.1">
+<h4 data-number="6.3.14.1" class="anchored" data-anchor-id="accessing-pgadmin"><span class="header-section-number">6.3.14.1</span> <strong>Accessing pgAdmin</strong></h4>
 <ul>
 <li>Once Apache is running, open pgAdmin in your browser:</li>
 </ul>
@@ -842,8 +848,8 @@ sudo certbot --nginx -d app.staple.science</code></pre>
 <li>Log in using the email and password you configured earlier.</li>
 </ul>
 </section>
-<section id="verifying-postgresql-connectivity" class="level4" data-number="5.3.14.2">
-<h4 data-number="5.3.14.2" class="anchored" data-anchor-id="verifying-postgresql-connectivity"><span class="header-section-number">5.3.14.2</span> <strong>Verifying PostgreSQL Connectivity</strong></h4>
+<section id="verifying-postgresql-connectivity" class="level4" data-number="6.3.14.2">
+<h4 data-number="6.3.14.2" class="anchored" data-anchor-id="verifying-postgresql-connectivity"><span class="header-section-number">6.3.14.2</span> <strong>Verifying PostgreSQL Connectivity</strong></h4>
 <ul>
 <li>Ensure that PostgreSQL is configured to accept connections:</li>
 </ul>
@@ -855,8 +861,8 @@ sudo certbot --nginx -d app.staple.science</code></pre>
 </ul>
 <p><img src="images/clipboard-2313045562.png" class="img-fluid"></p>
 </section>
-<section id="connecting-to-your-database" class="level4" data-number="5.3.14.3">
-<h4 data-number="5.3.14.3" class="anchored" data-anchor-id="connecting-to-your-database"><span class="header-section-number">5.3.14.3</span> <strong>Connecting to Your Database</strong></h4>
+<section id="connecting-to-your-database" class="level4" data-number="6.3.14.3">
+<h4 data-number="6.3.14.3" class="anchored" data-anchor-id="connecting-to-your-database"><span class="header-section-number">6.3.14.3</span> <strong>Connecting to Your Database</strong></h4>
 <ul>
 <li>In pgAdmin, click Add New Server.</li>
 </ul>
@@ -883,8 +889,8 @@ sudo certbot --nginx -d app.staple.science</code></pre>
 <p><img src="images/clipboard-3098028311.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="updating-staple" class="level3" data-number="5.3.15">
-<h3 data-number="5.3.15" class="anchored" data-anchor-id="updating-staple"><span class="header-section-number">5.3.15</span> Updating STAPLE</h3>
+<section id="updating-staple" class="level3" data-number="6.3.15">
+<h3 data-number="6.3.15" class="anchored" data-anchor-id="updating-staple"><span class="header-section-number">6.3.15</span> Updating STAPLE</h3>
 <p>To keep your STAPLE installation up to date with the latest features and fixes, follow these steps:</p>
 <ul>
 <li>Navigate to your STAPLE directory: Open a terminal and change into the folder where you originally cloned the STAPLE repository:</li>
@@ -914,8 +920,8 @@ sudo certbot --nginx -d app.staple.science</code></pre>
 <p><strong>Tip:</strong> You can check that STAPLE is running correctly after the update by visiting your instance’s URL or reviewing the logs:</p>
 </blockquote>
 <pre><code>sudo journalctl -u blitz.service -f</code></pre>
-<section id="database-migration" class="level4" data-number="5.3.15.1">
-<h4 data-number="5.3.15.1" class="anchored" data-anchor-id="database-migration"><span class="header-section-number">5.3.15.1</span> Database Migration</h4>
+<section id="database-migration" class="level4" data-number="6.3.15.1">
+<h4 data-number="6.3.15.1" class="anchored" data-anchor-id="database-migration"><span class="header-section-number">6.3.15.1</span> Database Migration</h4>
 <p>Every so often, we update features that require a manual migration of the database - for example, when we created Milestones, we had to copy over the data from the old naming system into the new. These types of changes are not handled by <code>blitz prisma migrate dev</code>.</p>
 <ul>
 <li>You can create a ‘super user’ by having a person with their user.role == ADMIN rather than user. This role adds a link on the main home side bar:</li>
@@ -931,10 +937,10 @@ sudo certbot --nginx -d app.staple.science</code></pre>
 </section>
 </section>
 </section>
-<section id="common-issues-fixes" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="common-issues-fixes"><span class="header-section-number">5.4</span> Common Issues &amp; Fixes</h2>
-<section id="prisma-database-errors" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="prisma-database-errors"><span class="header-section-number">5.4.1</span> Prisma / Database Errors</h3>
+<section id="common-issues-fixes" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="common-issues-fixes"><span class="header-section-number">6.4</span> Common Issues &amp; Fixes</h2>
+<section id="prisma-database-errors" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="prisma-database-errors"><span class="header-section-number">6.4.1</span> Prisma / Database Errors</h3>
 <ul>
 <li>Error: Error: P1000: Authentication failed against database server
 <ul>
@@ -955,8 +961,8 @@ sudo certbot --nginx -d app.staple.science</code></pre>
 <pre><code>ALTER ROLE your_username CREATEDB;
 GRANT ALL ON SCHEMA public TO your_username;</code></pre>
 </section>
-<section id="build-errors" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="build-errors"><span class="header-section-number">5.4.2</span> Build Errors</h3>
+<section id="build-errors" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="build-errors"><span class="header-section-number">6.4.2</span> Build Errors</h3>
 <ul>
 <li>Error: blitz build fails with missing dependencies
 <ul>
@@ -969,8 +975,8 @@ GRANT ALL ON SCHEMA public TO your_username;</code></pre>
 </ul>
 <pre><code>blitz prisma generate</code></pre>
 </section>
-<section id="email-issues" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="email-issues"><span class="header-section-number">5.4.3</span> Email Issues</h3>
+<section id="email-issues" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="email-issues"><span class="header-section-number">6.4.3</span> Email Issues</h3>
 <ul>
 <li>No emails are being sent
 <ul>
@@ -981,8 +987,8 @@ GRANT ALL ON SCHEMA public TO your_username;</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="nginx-proxy-issues" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="nginx-proxy-issues"><span class="header-section-number">5.4.4</span> Nginx / Proxy Issues</h3>
+<section id="nginx-proxy-issues" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="nginx-proxy-issues"><span class="header-section-number">6.4.4</span> Nginx / Proxy Issues</h3>
 <ul>
 <li>Nginx won’t start
 <ul>
@@ -1001,8 +1007,8 @@ GRANT ALL ON SCHEMA public TO your_username;</code></pre>
 </ul>
 <pre><code>sudo certbot --nginx -d yourdomain.com</code></pre>
 </section>
-<section id="service-issues" class="level3" data-number="5.4.5">
-<h3 data-number="5.4.5" class="anchored" data-anchor-id="service-issues"><span class="header-section-number">5.4.5</span> Service Issues</h3>
+<section id="service-issues" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="service-issues"><span class="header-section-number">6.4.5</span> Service Issues</h3>
 <ul>
 <li>Blitz doesn’t restart after reboot
 <ul>
@@ -1017,8 +1023,8 @@ GRANT ALL ON SCHEMA public TO your_username;</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="general-tips" class="level3" data-number="5.4.6">
-<h3 data-number="5.4.6" class="anchored" data-anchor-id="general-tips"><span class="header-section-number">5.4.6</span> General Tips</h3>
+<section id="general-tips" class="level3" data-number="6.4.6">
+<h3 data-number="6.4.6" class="anchored" data-anchor-id="general-tips"><span class="header-section-number">6.4.6</span> General Tips</h3>
 <ul>
 <li>After editing .env.local, .env.test.local, or blitz.service, restart the app:</li>
 </ul>
@@ -1436,13 +1442,13 @@ GRANT ALL ON SCHEMA public TO your_username;</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./metadata-and-forms.html" class="pagination-link" aria-label="Metadata and Forms">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metadata and Forms</span></span>
+      <a href="./marker.html" class="pagination-link" aria-label="MARKER: Metadata Templates">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">MARKER: Metadata Templates</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./glossary.html" class="pagination-link" aria-label="Glossary">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Glossary</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Glossary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -130,7 +130,7 @@ Publishing adds a template to the public archive so that other researchers can f
 
 Open the template and choose **Publish Schema**. A three-step wizard guides you through it.
 
-![The Publish Schema button on a template's page.](images/marker/13-publish-button.png)
+![The Publish Schema button on a template's page.](images/marker/13-publish-button.jpg)
 
 ::: callout-note
 If your template does not meet the publishing requirements, MARKER shows a **Can't publish yet** page explaining what needs to change instead of opening the wizard. Fix the issue in the editor (**Go to Schema Editor**) and try again.
@@ -145,13 +145,13 @@ Describe the template so others can discover it. This is what makes it `r glossa
 - **License**: Creative Commons Attribution 4.0 (CC-BY-4.0), CC0 1.0 (public domain), or MIT. An open license is required for publication.
 - **Keywords**: type a keyword and press Enter, comma, or semicolon to add it. Keywords are required, because they are how people find your template.
 
-![Step 1 of the publish wizard, Core FAIR Metadata.](images/marker/14-publish-step1.png)
+![Step 1 of the publish wizard, Core FAIR Metadata.](images/marker/14-publish-step1.jpg)
 
 ### Step 2: Contributors
 
 List the people who should be credited. At least one contributor is required. MARKER starts the list with you, using the name, ORCID iD, and institution from your profile (this is why completing your profile first helps). For each contributor you can record a role: **Author**, **Creator**, **Maintainer**, **Translator**, or **Data Curator**.
 
-![Step 2 of the publish wizard, Contributors.](images/marker/15-publish-step2.png)
+![Step 2 of the publish wizard, Contributors.](images/marker/15-publish-step2.jpg)
 
 ### Step 3: Review and Freeze
 
@@ -164,7 +164,7 @@ Finish the release and publish it.
 
 When you publish, MARKER mints a permanent identifier (PID) for the template and freezes the version.
 
-![Step 3 of the publish wizard, Review and Freeze.](images/marker/16-publish-step3.png)
+![Step 3 of the publish wizard, Review and Freeze.](images/marker/16-publish-step3.jpg)
 
 After publishing, the template's page offers **View Public URL**, which opens the public page other people will see.
 
@@ -179,25 +179,19 @@ The **Explore** page is open to everyone. Use the search box to look through tit
 - **Domain**, **License**, **Language**, and **Source**
 - **After** and **Before**, to limit results by publication date
 
-![The Explore page, with the search box and filters.](images/marker/17-explore.png)
+![The Explore page, with the search box and filters.](images/marker/17-explore.jpg)
 
 Select a template to open its public page. Here you can read the description, see the contributors and license, browse other published versions, and preview the form. **Export JSON** downloads the template as a machine-readable file.
 
-![The public page for a published template.](images/marker/18-public-schema.png)
-
 ### Forking a Template
 
-To build on someone else's template, choose **Fork This Schema**. MARKER copies the published template into your own collection as a new draft, and records where it came from, so the lineage is traceable. You can then change it freely and publish your own version. If you have already forked it, the button changes to **View Your Draft**.
-
-The original author is notified when someone forks their template.
-
-![Forking a published template, and the resulting draft in your collection.](images/marker/19-fork.png)
+To build on someone else's template, choose **Fork This Schema**. MARKER copies the published template into your own collection as a new draft, and records where it came from, so the lineage is traceable. You can then change it freely and publish your own version. If you have already forked it, the button changes to **View Your Draft**. The original author is notified when someone forks their template.
 
 ## Collaborating with Others {#collaborating-with-others}
 
-You can share a template you own with other MARKER users. On the template's page, open the collaborators control and search for a person by username or email. Choose a role and send the invitation.
+You can share a template you own with other MARKER users. Click on your icon on the template page to open the contributors view.
 
-![Inviting a collaborator by username or email.](images/marker/20-invite.png)
+![Inviting a collaborator by username or email.](images/marker/20-invite.jpg)
 
 | Role | Can do |
 |------------------------------------|------------------------------------|
@@ -209,13 +203,13 @@ The invited person sees a banner, **You've been invited to collaborate**, and ca
 
 Owners can change a collaborator's role, remove a collaborator, or **transfer ownership** to another collaborator (choosing what role they themselves keep afterwards).
 
-![The collaborators dialog, showing roles and pending invitations.](images/marker/21-collaborators.png)
+![The collaborators dialog, showing roles and pending invitations.](images/marker/21-collaborators.jpg)
 
 ### Notifications
 
 The bell icon in the navigation bar, and the **Notifications** page, tell you when something happens that involves you, such as being invited to a template, being removed from one, ownership being transferred to you, a template being archived, or someone forking one of your published templates.
 
-![The notifications bell and the Notifications page.](images/marker/22-notifications.png)
+![The notifications bell and the Notifications page.](images/marker/22-notifications.jpg)
 
 ## Archiving and Deleting {#archiving-and-deleting}
 
@@ -224,8 +218,6 @@ MARKER protects published work while letting you discard drafts freely.
 - **Archive** (recoverable). The owner can archive any template. It disappears from your active collection, and collaborators no longer see it (they are notified). Archived templates cannot be edited or published. Published versions stay in the public archive and keep resolving at their public URL. Open the **Archived** tab and use **Recover** to bring a template back.
 - **Permanently Delete** (not recoverable). Only available for an *archived* template that was **never published**. This removes it completely.
 - **Published templates are never deleted.** Once a template has been published, its public record must remain so that citations keep working. Archiving is as far as you can go for the private workspace copy.
-
-![The Archived tab, with the Recover and Permanently Delete options.](images/marker/23-archive.png)
 
 ## Working Together with STAPLE
 
